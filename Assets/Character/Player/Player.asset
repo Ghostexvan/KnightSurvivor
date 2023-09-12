@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94d33d56911396b4b8a55532fd8eb083, type: 3}
+  m_Name: Player
+  m_EditorClassIdentifier: 
+  health:
+    BaseValue: 100
+  defense:
+    BaseValue: 0
+  attackDamage:
+    BaseValue: 10
+  attackCooldown:
+    BaseValue: 2
+  attackCount:
+    BaseValue: 1
+  moveSpeed:
+    BaseValue: 5
+  critChance:
+    BaseValue: 5
+  critDamage:
+    BaseValue: 100
+  isOnGround: 1
+  isJump: 0
+  isMove: 0
+  isAttack: 0
+  currentState: RunState
+  moveDirection: 0

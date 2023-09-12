@@ -1,0 +1,26 @@
+using UnityEngine;
+
+[CreateAssetMenu]
+public class WeaponData : ItemData
+{
+    public WeaponType weaponType;
+    public HandleType handleType;
+}
+
+public enum WeaponType{
+    Dagger,
+    Mace,
+    Pistol,
+    Spear,
+    Sword,
+    Axe,
+    Bow,
+    Crossbow,
+    Shooting,
+    Staff
+};
+
+public enum HandleType{
+    OneHand,
+    TwoHand
+};

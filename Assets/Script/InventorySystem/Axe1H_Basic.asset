@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abb9cc79a61b16479e5a71a413b0d7e, type: 3}
+  m_Name: Axe1H_Basic
+  m_EditorClassIdentifier: 
+  itemName: Axe
+  description: An axe so heavy that it need to be hold by two hand.
+  icon: {fileID: 21300000, guid: f38d3d2770ff8444284b05503a135458, type: 3}
+  itemStats:
+  - level: 1
+    statAffect: 2
+    statType: 100
+    value: 15
+  - level: 1
+    statAffect: 3
+    statType: 200
+    value: 0.15
+  - level: 2
+    statAffect: 2
+    statType: 300
+    value: 0.5
+  - level: 3
+    statAffect: 4
+    statType: 100
+    value: 1
+  - level: 3
+    statAffect: 6
+    statType: 100
+    value: 15
+  weaponType: 5
+  handleType: 1
