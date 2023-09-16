@@ -1320,8 +1320,8 @@ MonoBehaviour:
   attackDamage: 0
   critChance: 0
   critDamage: 0
+  coolDownTime: 0
   isActive: 1
-  isAttack: 0
   isCooldown: 0
 --- !u!114 &8554451275804312654
 MonoBehaviour:
@@ -6503,8 +6503,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.22663942, y: 0.17247105, z: 0.113882534}
-  m_Center: {x: 0.008533873, y: 0.019093482, z: 0.0023899123}
+  m_Size: {x: 0.41603145, y: 0.17247105, z: 0.3084083}
+  m_Center: {x: 0.10322988, y: 0.01909348, z: 0.010517307}
 --- !u!114 &1579581627657268527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6517,7 +6517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e030d3553fdd7044982305409a6b6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 3031276526210350381}
   attackDamage: 0
 --- !u!1 &9074348004328168356
 GameObject:
@@ -6785,13 +6784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e030d3553fdd7044982305409a6b6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 8533230066050388161}
   attackDamage: 0
---- !u!65 &8533230066050388161 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 5219446949774964142, guid: a9de5a98f016a334c9a1113e07b1a12f, type: 3}
-  m_PrefabInstance: {fileID: 4468464528971588975}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6437446964013034083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6897,10 +6890,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e030d3553fdd7044982305409a6b6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 3972815404750480987}
   attackDamage: 0
---- !u!65 &3972815404750480987 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 7959023171228912696, guid: 956a1ab0ff6ebf7418125a284024ba00, type: 3}
-  m_PrefabInstance: {fileID: 6437446964013034083}
-  m_PrefabAsset: {fileID: 0}

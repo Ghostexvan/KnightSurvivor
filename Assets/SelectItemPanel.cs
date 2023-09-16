@@ -7,10 +7,16 @@ public class SelectItemPanel : MonoBehaviour
     public GameObject character,
                       panel1,
                       panel2,
-                      panel3;
+                      panel3,
+                      panel,
+                      prefab;
     public bool isSet;
 
     public List<ItemInstance> itemList = new List<ItemInstance>();
+
+    private void Awake() {
+        panel = gameObject.transform.GetChild(1).gameObject;
+    }
 
     private void Start() {
         gameObject.SetActive(false);
@@ -18,23 +24,30 @@ public class SelectItemPanel : MonoBehaviour
 
     private void FixedUpdate() {
         if (isSet){
-            if (itemList.Count >= 1){
-                panel1.GetComponent<WeaponSelect>().itemInstance = itemList[0];
-                panel1.GetComponent<WeaponSelect>().character = character;
-            }
-            panel1.GetComponent<WeaponSelect>().isSet = true;
+            // if (itemList.Count >= 1){
+            //     panel1.GetComponent<WeaponSelect>().itemInstance = itemList[0];
+            //     panel1.GetComponent<WeaponSelect>().character = character;
+            // }
+            // panel1.GetComponent<WeaponSelect>().isSet = true;
             
-            if (itemList.Count >= 2){
-                panel2.GetComponent<WeaponSelect>().itemInstance = itemList[1];
-                panel2.GetComponent<WeaponSelect>().character = character;
-            }
-            panel2.GetComponent<WeaponSelect>().isSet = true;
+            // if (itemList.Count >= 2){
+            //     panel2.GetComponent<WeaponSelect>().itemInstance = itemList[1];
+            //     panel2.GetComponent<WeaponSelect>().character = character;
+            // }
+            // panel2.GetComponent<WeaponSelect>().isSet = true;
 
-            if (itemList.Count >= 3){
-                panel3.GetComponent<WeaponSelect>().itemInstance = itemList[2];
-                panel3.GetComponent<WeaponSelect>().character = character;
+            // if (itemList.Count >= 3){
+            //     panel3.GetComponent<WeaponSelect>().itemInstance = itemList[2];
+            //     panel3.GetComponent<WeaponSelect>().character = character;
+            // }
+            // panel3.GetComponent<WeaponSelect>().isSet = true;
+            for (int index = 0; index < itemList.Count; index++){
+                GameObject itemPanel = Instantiate(prefab, panel.transform);
+                itemPanel.GetComponent<WeaponSelect>().itemInstance = itemList[index];
+                itemPanel.GetComponent<WeaponSelect>().character = character;
+                itemPanel.GetComponent<WeaponSelect>().isSet = true;
             }
-            panel3.GetComponent<WeaponSelect>().isSet = true;
+
             isSet = false;
         }
     }
