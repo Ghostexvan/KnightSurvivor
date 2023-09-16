@@ -15,6 +15,7 @@ public class Movable : MonoBehaviour
         characterData.isMove = moveVector != Vector2.zero;
         characterData.moveDirection = GetMoveDirection(Vector2.SignedAngle(moveVector, lookVector));
         //Debug.Log(GetMoveDirection(Vector2.SignedAngle(moveVector, lookVector)));
+
         Move();
     }
 

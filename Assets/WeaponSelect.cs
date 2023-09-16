@@ -18,123 +18,77 @@ public class WeaponSelect : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        if (itemInstance == null && isSet){
-            gameObject.SetActive(false);
-            isSet = false;
-        } else if (itemInstance != null){
+        if (isSet){
             gameObject.transform.GetChild(0).gameObject.GetComponent<RawImage>().texture = itemInstance.itemType.icon.texture;
             itemName.text = itemInstance.itemType.itemName;
             description.text = itemInstance.itemType.description;
+            stat.text = GetDescription();
+            isSet = false;
+        }
+    }
 
-            stat.text = "";
-            if (itemInstance.itemType.GetType().Name == "WeaponData" && character.GetComponent<Equipment>().weapon.itemType == itemInstance.itemType){
-                for (int index = 0; index < itemInstance.itemType.itemStats.Count; index++){
-                    if (itemInstance.itemType.itemStats[index].level == character.GetComponent<Equipment>().weapon.currentLevel + 1){
-                        if (stat.text != "")
-                            stat.text += "; ";
-                        stat.text += itemInstance.itemType.itemStats[index].statAffect.ToString();
-                        stat.text += ": ";
+    private int GetWeaponLevel(){
+        // The character already equip this weapon
+        if (character.GetComponent<Equipment>().weapon.itemType == itemInstance.itemType){
+            return character.GetComponent<Equipment>().weapon.currentLevel + 1;
+        }
+        return 1;
+    }
 
-                        if (itemInstance.itemType.itemStats[index].statType == StatModType.Flat || itemInstance.itemType.itemStats[index].statType == StatModType.PercentAdd){
-                            if (itemInstance.itemType.itemStats[index].value >= 0)
-                                stat.text += "+";
-                        }
-                        else {
-                            stat.text += "x";
-                        }
-
-                        stat.text += itemInstance.itemType.itemStats[index].value;
-
-                        if (itemInstance.itemType.itemStats[index].statType == StatModType.PercentAdd || itemInstance.itemType.itemStats[index].statType == StatModType.PercentMult){
-                            stat.text += "%";
-                        }
-                    }
-                }
+    private int GetItemLevel(){
+        // Search through character item list to see if the character already have this item
+        for (int index = 0; index < character.GetComponent<Equipment>().item.Count; index++){
+            if (itemInstance.itemType == character.GetComponent<Equipment>().item[index].itemType){
+                return character.GetComponent<Equipment>().item[index].currentLevel + 1;
             }
-            else if (itemInstance.itemType.GetType().Name == "WeaponData"){
-                for (int index = 0; index < itemInstance.itemType.itemStats.Count; index++){
-                    if (itemInstance.itemType.itemStats[index].level == 1){
-                        if (stat.text != "")
-                            stat.text += "; ";
-                        stat.text += itemInstance.itemType.itemStats[index].statAffect.ToString();
-                        stat.text += ": ";
+        }
+        return 1;
+    }
 
-                        if (itemInstance.itemType.itemStats[index].statType == StatModType.Flat || itemInstance.itemType.itemStats[index].statType == StatModType.PercentAdd){
-                            if (itemInstance.itemType.itemStats[index].value >= 0)
-                                stat.text += "+";
-                        }
-                        else {
-                            stat.text += "x";
-                        }
+    private string GetDescription(){
+        string statDescription = "";
+        
+        int targetLevel;
+        if (itemInstance.itemType.GetType().Name == "WeaponData")
+            targetLevel = GetWeaponLevel();
+        else
+            targetLevel = GetItemLevel();
 
-                        stat.text += itemInstance.itemType.itemStats[index].value;
+            
+        for (int index = 0; index < itemInstance.itemType.itemStats.Count; index++){
+            if (itemInstance.itemType.itemStats[index].level == targetLevel)
+            {
+                if (statDescription != "")
+                    statDescription += "; ";
+                statDescription += itemInstance.itemType.itemStats[index].statAffect.ToString();
+                statDescription += ": ";
 
-                        if (itemInstance.itemType.itemStats[index].statType == StatModType.PercentAdd || itemInstance.itemType.itemStats[index].statType == StatModType.PercentMult){
-                            stat.text += "%";
-                        }
-                    }
+                if (itemInstance.itemType.itemStats[index].statType == StatModType.Flat || itemInstance.itemType.itemStats[index].statType == StatModType.PercentAdd){
+                    if (itemInstance.itemType.itemStats[index].value >= 0)
+                        statDescription += "+";
                 }
-            }
-
-            for (int indexItem = 0; indexItem < character.GetComponent<Equipment>().item.Count; indexItem++){
-                if (itemInstance.itemType.GetType().Name == "ItemData" && character.GetComponent<Equipment>().item[indexItem].itemType == itemInstance.itemType){
-                    for (int index = 0; index < itemInstance.itemType.itemStats.Count; index++){
-                        if (itemInstance.itemType.itemStats[index].level == character.GetComponent<Equipment>().item[indexItem].currentLevel + 1){
-                            if (stat.text != "")
-                                stat.text += "; ";
-                            stat.text += itemInstance.itemType.itemStats[index].statAffect.ToString();
-                            stat.text += ": ";
-
-                            if (itemInstance.itemType.itemStats[index].statType == StatModType.Flat || itemInstance.itemType.itemStats[index].statType == StatModType.PercentAdd){
-                                if (itemInstance.itemType.itemStats[index].value >= 0)
-                                    stat.text += "+";
-                            }
-                            else {
-                                stat.text += "x";
-                            }
-
-                            stat.text += itemInstance.itemType.itemStats[index].value;
-
-                            if (itemInstance.itemType.itemStats[index].statType == StatModType.PercentAdd || itemInstance.itemType.itemStats[index].statType == StatModType.PercentMult){
-                                stat.text += "%";
-                            }
-                        }
-                    }
-                    break;
+                else {
+                    statDescription += "x";
                 }
-            }
 
-            if (stat.text == "" && itemInstance.itemType.GetType().Name == "ItemData"){
-                for (int index = 0; index < itemInstance.itemType.itemStats.Count; index++){
-                    if (itemInstance.itemType.itemStats[index].level == 1){
-                        if (stat.text != "")
-                            stat.text += "; ";
-                        stat.text += itemInstance.itemType.itemStats[index].statAffect.ToString();
-                        stat.text += ": ";
+                statDescription += itemInstance.itemType.itemStats[index].value;
 
-                        if (itemInstance.itemType.itemStats[index].statType == StatModType.Flat || itemInstance.itemType.itemStats[index].statType == StatModType.PercentAdd){
-                            if (itemInstance.itemType.itemStats[index].value >= 0)
-                                stat.text += "+";
-                        }
-                        else {
-                            stat.text += "x";
-                        }
-
-                        stat.text += itemInstance.itemType.itemStats[index].value;
-
-                        if (itemInstance.itemType.itemStats[index].statType == StatModType.PercentAdd || itemInstance.itemType.itemStats[index].statType == StatModType.PercentMult){
-                            stat.text += "%";
-                        }
-                    }
+                if (itemInstance.itemType.itemStats[index].statType == StatModType.PercentAdd || itemInstance.itemType.itemStats[index].statType == StatModType.PercentMult){
+                    statDescription += "%";
                 }
             }
         }
-            
+
+        return statDescription;
     }
 
     private void OnEnable() {
         itemInstance = null;
         character = null;
+    }
+
+    private void OnDisable() {
+        Destroy(gameObject);
     }
 
     public void OnClick(){

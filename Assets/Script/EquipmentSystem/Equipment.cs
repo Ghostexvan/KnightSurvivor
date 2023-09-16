@@ -92,56 +92,13 @@ public class Equipment : MonoBehaviour
         }
     }
 
-    public void RemoveItem(ItemInstance item){
-
-    }
-
-    public void RemoveWeapon(){
-        if (weapon == null)
-            return;
-
-        weapon = null;
-        Debug.Log("Remove Complete");
-    }
-
     public void SetData(CharacterData data){
         characterData = data;
     }
 
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.TryGetComponent(out CollectableItem item)){
-            switch (item.itemInstance.itemType.GetType().Name){
-                case "WeaponData":
-                    if (weapon != null && weapon.itemType != item.itemInstance.itemType){
-                        weapon.Unequip(characterData);
-                        weapon = item.Collect();
-                        weapon.Equip(characterData);
-                    }
-                    else if (weapon != null && weapon.itemType == item.itemInstance.itemType){
-                        item.Collect();
-                        weapon.LevelUp(characterData);
-                    }
-                    else {
-                        weapon = item.Collect();
-                        weapon.Equip(characterData);
-                    }
-                    break;
-                case "ItemData":
-                    if (this.item.Count < maxItem){
-                        for (int index = 0; index < this.item.Count; index++){
-                            if (this.item[index].itemType == item.itemInstance.itemType)
-                                this.item[index].LevelUp(characterData);
-                                item.Collect();
-                                return;
-                        }
-                        item.itemInstance.Equip(characterData);
-                        this.item.Add(item.Collect());
-                    }
-                    break;
-                default:
-                    break;
-            }
-            
+            Equip(item.Collect());            
         }
     }
 
