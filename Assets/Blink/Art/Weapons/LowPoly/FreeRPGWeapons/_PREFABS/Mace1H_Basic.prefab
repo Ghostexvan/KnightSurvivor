@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 6715374904229609137}
   - component: {fileID: 7682602684937056532}
   - component: {fileID: 5583022327172580830}
-  - component: {fileID: 7794725589296351151}
-  - component: {fileID: 9026359508449811578}
   - component: {fileID: 7959023171228912696}
   m_Layer: 0
   m_Name: Mace1H_Basic
@@ -86,38 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7794725589296351151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6231325237256774667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f44702ef65712aa4a8f8a7f9c2beb5c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemInstance:
-    itemType: {fileID: 11400000, guid: 25371ff361aeb944a8db41ee4ef8c03f, type: 2}
-    currentLevel: 0
-  rotateSpeed: 20
---- !u!54 &9026359508449811578
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6231325237256774667}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &7959023171228912696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -126,8 +92,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6231325237256774667}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.37297946, y: 0.7585692, z: 0.3562519}
-  m_Center: {x: -0.0003350973, y: 0.23784456, z: 0.000000059604645}
+  m_Size: {x: 0.37297946, y: 0.30978775, z: 0.3562519}
+  m_Center: {x: -0.0003350973, y: 0.46223527, z: 0.000000059604645}

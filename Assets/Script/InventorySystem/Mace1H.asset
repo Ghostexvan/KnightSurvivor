@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4abb9cc79a61b16479e5a71a413b0d7e, type: 3}
-  m_Name: Mace1H_Basic
+  m_Name: Mace1H
   m_EditorClassIdentifier: 
   itemName: Mace
   description: A mace that maybe small, but it still dangerous.
@@ -22,3 +22,4 @@ MonoBehaviour:
     value: 5
   weaponType: 1
   handleType: 0
+  model: {fileID: 6231325237256774667, guid: 956a1ab0ff6ebf7418125a284024ba00, type: 3}
