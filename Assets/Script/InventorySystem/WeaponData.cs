@@ -5,6 +5,7 @@ public class WeaponData : ItemData
 {
     public WeaponType weaponType;
     public HandleType handleType;
+    public GameObject model;
 }
 
 public enum WeaponType{

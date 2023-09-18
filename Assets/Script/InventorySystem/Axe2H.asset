@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4abb9cc79a61b16479e5a71a413b0d7e, type: 3}
-  m_Name: Axe1H_Basic
+  m_Name: Axe2H
   m_EditorClassIdentifier: 
   itemName: Axe
   description: An axe so heavy that it need to be hold by two hand.
@@ -38,3 +38,4 @@ MonoBehaviour:
     value: 15
   weaponType: 5
   handleType: 1
+  model: {fileID: 5409340933053809108, guid: 90785c74b47617741aa5d3792af17448, type: 3}

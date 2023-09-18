@@ -7,19 +7,22 @@ public class Equipment : MonoBehaviour
     public CharacterData characterData;
     public ItemInstance weapon;
     public List<ItemInstance> item;
-    public GameObject itemJoin;
+    public GameObject itemJoinRight,
+                      itemJoinLeft,
+                      weaponInstance;
     public Animator ani;
     public RuntimeAnimatorController unarmed;
     public AnimatorOverrideController axe2Hand;
     public AnimatorOverrideController mace1Hand;
     
     private void Awake() {
-        itemJoin = gameObject.GetComponent<Attackable>().itemHand;
+        itemJoinRight = gameObject.transform.Find("Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/jointItemR").gameObject;
+        itemJoinLeft = gameObject.transform.Find("Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/jointItemL").gameObject;
         ani = gameObject.GetComponent<Animator>();
     }
 
     private void FixedUpdate() {
-        DisplayWeapon();
+        //DisplayWeapon();
         ChangeWeaponAnimation();
         gameObject.GetComponent<Animator>().SetInteger("WeaponLevel", weapon.currentLevel);
     }
@@ -29,8 +32,10 @@ public class Equipment : MonoBehaviour
                 case "WeaponData":
                     if (weapon != null && weapon.itemType != item.itemType){
                         weapon.Unequip(characterData);
+                        Destroy(weaponInstance);
                         weapon = item;
                         weapon.Equip(characterData);
+                        DisplayWeapon();
                     }
                     else if (weapon != null && weapon.itemType == item.itemType){
                         weapon.LevelUp(characterData);
@@ -38,6 +43,7 @@ public class Equipment : MonoBehaviour
                     else {
                         weapon = item;
                         weapon.Equip(characterData);
+                        DisplayWeapon();
                     }
                     break;
                 case "ItemData":
@@ -57,16 +63,8 @@ public class Equipment : MonoBehaviour
     }
 
     public void DisplayWeapon(){
-        for (int index = 0; index < itemJoin.transform.childCount; index++){
-            if (weapon != null && itemJoin.transform.GetChild(index).gameObject.name == weapon.itemType.name){
-                itemJoin.transform.GetChild(index).gameObject.SetActive(true);
-            }
-            else if (weapon == null && itemJoin.transform.GetChild(index).gameObject.name == "Unarmed"){
-                itemJoin.transform.GetChild(index).gameObject.SetActive(true);
-            }
-            else
-                itemJoin.transform.GetChild(index).gameObject.SetActive(false);
-        }
+        weaponInstance = Instantiate(((WeaponData) weapon.itemType).model, itemJoinRight.transform.position, Quaternion.identity, itemJoinRight.transform);
+        weaponInstance.transform.localEulerAngles = Vector3.zero;
     }
 
     public void ChangeWeaponAnimation(){
