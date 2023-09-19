@@ -14,6 +14,7 @@ public class PlayerWeaponImage : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        image.texture = player.GetComponent<Equipment>().weapon.itemType.icon.texture;
+        if (player.GetComponent<Equipment>().weapon != null)
+            image.texture = player.GetComponent<Equipment>().weapon.itemType.icon.texture;
     }
 }

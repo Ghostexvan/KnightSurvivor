@@ -6,6 +6,7 @@ public class WeaponData : ItemData
     public WeaponType weaponType;
     public HandleType handleType;
     public GameObject model;
+    public AnimatorOverrideController animator;
 }
 
 public enum WeaponType{
@@ -22,6 +23,7 @@ public enum WeaponType{
 };
 
 public enum HandleType{
-    OneHand,
-    TwoHand
+    LeftHand,
+    RightHand,
+    BothHand
 };

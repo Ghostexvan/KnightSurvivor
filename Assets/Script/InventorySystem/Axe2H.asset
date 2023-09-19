@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Axe
   description: An axe so heavy that it need to be hold by two hand.
-  icon: {fileID: 21300000, guid: f38d3d2770ff8444284b05503a135458, type: 3}
+  icon: {fileID: 21300000, guid: b9505e419a14dda4ea399d26d5955f94, type: 3}
   itemStats:
   - level: 1
     statAffect: 2
@@ -37,5 +37,6 @@ MonoBehaviour:
     statType: 100
     value: 15
   weaponType: 5
-  handleType: 1
+  handleType: 2
   model: {fileID: 5409340933053809108, guid: 90785c74b47617741aa5d3792af17448, type: 3}
+  animator: {fileID: 22100000, guid: 2a8c6a4936da862418b60d76ae1b60a8, type: 2}

@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Mace
   description: A mace that maybe small, but it still dangerous.
-  icon: {fileID: 21300000, guid: f219a5a0e0f384d46a230e58e7f22336, type: 3}
+  icon: {fileID: 21300000, guid: e67e11d800ebc144b9a0a05702c468e4, type: 3}
   itemStats:
   - level: 1
     statAffect: 2
     statType: 200
     value: 5
   weaponType: 1
-  handleType: 0
+  handleType: 1
   model: {fileID: 6231325237256774667, guid: 956a1ab0ff6ebf7418125a284024ba00, type: 3}
+  animator: {fileID: 22100000, guid: 0980d8c782070b2499692f975ddc2f86, type: 2}
