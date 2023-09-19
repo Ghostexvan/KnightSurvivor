@@ -409,14 +409,7 @@ ModelImporter:
       curves: []
       events:
       - time: 0.39270985
-        functionName: ActiveTrigger
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: ca2e554fa8a531c4eaeb113ba8d57d2d, type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.47024924
-        functionName: DeactiveTrigger
+        functionName: Attacking
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: ca2e554fa8a531c4eaeb113ba8d57d2d, type: 3}
         floatParameter: 0

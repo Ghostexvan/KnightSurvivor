@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Attackable : MonoBehaviour
 {
-    public GameObject itemHand;
     public CharacterData characterData;
     public float attackDamage,
                  critChance,
@@ -48,8 +47,8 @@ public class Attackable : MonoBehaviour
 
         Debug.Log(totalDamage);
         
-        itemHand.BroadcastMessage("SetDamage", totalDamage);
-        itemHand.BroadcastMessage("SetIsCrit", -totalDamage > characterData.attackDamage.Value);
+        gameObject.GetComponent<Equipment>().weaponInstance.SendMessage("SetDamage", totalDamage);
+        gameObject.GetComponent<Equipment>().weaponInstance.SendMessage("SetIsCrit", -totalDamage > characterData.attackDamage.Value);
     }
 
     IEnumerator CooldownAttack(){
@@ -59,12 +58,8 @@ public class Attackable : MonoBehaviour
         isCooldown = false;
     }
 
-    public void ActiveTrigger(){
-        itemHand.BroadcastMessage("ActiveTrigger");
-    }
-
-    public void DeactiveTrigger(){
-        itemHand.BroadcastMessage("DeactiveTrigger");
+    public void Attacking(){
+        gameObject.GetComponent<Equipment>().weaponInstance.SendMessage("Attack");
     }
 
     public void SetData(CharacterData data){

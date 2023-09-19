@@ -411,15 +411,8 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.42982322
-        functionName: ActiveTrigger
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: ca2e554fa8a531c4eaeb113ba8d57d2d, type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.96145177
-        functionName: DeactiveTrigger
+      - time: 0.42567384
+        functionName: Attacking
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: ca2e554fa8a531c4eaeb113ba8d57d2d, type: 3}
         floatParameter: 0

@@ -1,9 +1,20 @@
+using System.Collections;
 using UnityEngine;
 
-public class HitboxController : MonoBehaviour
+public class MeleeWeaponControl : MonoBehaviour
 {
     public float attackDamage;
     private bool isCrit;
+
+    private void Awake() {
+        DeactiveTrigger();
+    }
+
+    public IEnumerator Attack(){
+        ActiveTrigger();
+        yield return new WaitForSeconds(0.1f);
+        DeactiveTrigger();
+    }
 
     public void ActiveTrigger(){
         gameObject.GetComponent<Collider>().enabled = true;

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7682602684937056532}
   - component: {fileID: 5583022327172580830}
   - component: {fileID: 7959023171228912696}
+  - component: {fileID: 7734811872719183838}
   m_Layer: 0
   m_Name: Mace1H_Basic
   m_TagString: Untagged
@@ -97,3 +98,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.37297946, y: 0.30978775, z: 0.3562519}
   m_Center: {x: -0.0003350973, y: 0.46223527, z: 0.000000059604645}
+--- !u!114 &7734811872719183838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6231325237256774667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e030d3553fdd7044982305409a6b6a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 0

@@ -20,7 +20,7 @@ public class WeaponSelect : MonoBehaviour
     private void FixedUpdate() {
         if (isSet){
             gameObject.transform.GetChild(0).gameObject.GetComponent<RawImage>().texture = itemInstance.itemType.icon.texture;
-            itemName.text = itemInstance.itemType.itemName;
+            itemName.text = itemInstance.itemType.itemName + " | Level " + GetLevel();
             description.text = itemInstance.itemType.description;
             stat.text = GetDescription();
             isSet = false;
@@ -45,16 +45,17 @@ public class WeaponSelect : MonoBehaviour
         return 1;
     }
 
+    private int GetLevel(){
+        if (itemInstance.itemType.GetType().Name == "WeaponData")
+            return GetWeaponLevel();
+        return GetItemLevel();
+    }
+
     private string GetDescription(){
         string statDescription = "";
         
-        int targetLevel;
-        if (itemInstance.itemType.GetType().Name == "WeaponData")
-            targetLevel = GetWeaponLevel();
-        else
-            targetLevel = GetItemLevel();
-
-            
+        int targetLevel= GetLevel();
+          
         for (int index = 0; index < itemInstance.itemType.itemStats.Count; index++){
             if (itemInstance.itemType.itemStats[index].level == targetLevel)
             {

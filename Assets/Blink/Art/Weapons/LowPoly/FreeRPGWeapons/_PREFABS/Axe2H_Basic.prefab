@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4637025671381998446}
   - component: {fileID: 8644058957898863819}
   - component: {fileID: 5769439443266609153}
+  - component: {fileID: 3712236300369795994}
+  - component: {fileID: 4493181784676159092}
   m_Layer: 0
   m_Name: Axe2H_Basic
   m_TagString: Untagged
@@ -83,3 +85,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3712236300369795994
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5409340933053809108}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5136179, y: 0.45421192, z: 0.07258974}
+  m_Center: {x: -0.018406888, y: 0.63105696, z: -0.001221103}
+--- !u!114 &4493181784676159092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5409340933053809108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e030d3553fdd7044982305409a6b6a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 0

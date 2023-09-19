@@ -12,18 +12,15 @@ public class Equipment : MonoBehaviour
                       weaponInstance;
     public Animator ani;
     public RuntimeAnimatorController unarmed;
-    public AnimatorOverrideController axe2Hand;
-    public AnimatorOverrideController mace1Hand;
     
     private void Awake() {
         itemJoinRight = gameObject.transform.Find("Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/jointItemR").gameObject;
         itemJoinLeft = gameObject.transform.Find("Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/jointItemL").gameObject;
         ani = gameObject.GetComponent<Animator>();
+        weaponInstance = itemJoinRight.transform.GetChild(0).gameObject;
     }
 
     private void FixedUpdate() {
-        //DisplayWeapon();
-        ChangeWeaponAnimation();
         gameObject.GetComponent<Animator>().SetInteger("WeaponLevel", weapon.currentLevel);
     }
 
@@ -63,31 +60,32 @@ public class Equipment : MonoBehaviour
     }
 
     public void DisplayWeapon(){
-        weaponInstance = Instantiate(((WeaponData) weapon.itemType).model, itemJoinRight.transform.position, Quaternion.identity, itemJoinRight.transform);
-        weaponInstance.transform.localEulerAngles = Vector3.zero;
+        if (weapon != null){
+            GameObject target;
+            switch (((WeaponData) weapon.itemType).handleType){
+                case HandleType.LeftHand:
+                    target = itemJoinLeft;
+                    break;
+                default:
+                    target = itemJoinRight;
+                    break;
+            }
+
+            itemJoinRight.transform.GetChild(0).gameObject.SetActive(false);
+            weaponInstance = Instantiate(((WeaponData) weapon.itemType).model, target.transform.position, Quaternion.identity, target.transform);
+            weaponInstance.transform.localEulerAngles = Vector3.zero;
+            ChangeWeaponAnimation(((WeaponData) weapon.itemType).animator);
+        }
+        else{
+            ChangeWeaponAnimation((AnimatorOverrideController) unarmed);
+            itemJoinRight.transform.GetChild(0).gameObject.SetActive(true);
+            weaponInstance = itemJoinRight.transform.GetChild(0).gameObject;
+        }
+            
     }
 
-    public void ChangeWeaponAnimation(){
-        WeaponData weaponData = (WeaponData) weapon.itemType;
-        switch (weaponData.weaponType){
-            case WeaponType.Axe:
-                switch (weaponData.handleType){
-                    case HandleType.TwoHand:
-                        ani.runtimeAnimatorController = axe2Hand;
-                        break;
-                }
-                break;
-            case WeaponType.Mace:
-                switch (weaponData.handleType){
-                    case HandleType.OneHand:
-                        ani.runtimeAnimatorController = mace1Hand;
-                        break;
-                }
-                break;
-            default:
-                ani.runtimeAnimatorController = unarmed;
-                break;
-        }
+    public void ChangeWeaponAnimation(AnimatorOverrideController animation){
+        ani.runtimeAnimatorController = animation;
     }
 
     public void SetData(CharacterData data){

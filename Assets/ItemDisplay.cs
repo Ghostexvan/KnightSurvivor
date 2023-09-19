@@ -6,23 +6,23 @@ public class ItemDisplay : MonoBehaviour
 {
     GameObject player;
     public int index;
-    Image image;
+    RawImage image;
     TMP_Text text;
 
     private void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
-        image = gameObject.GetComponent<Image>();
+        image = gameObject.GetComponent<RawImage>();
         text =  gameObject.transform.GetChild(0).gameObject.GetComponent<TMP_Text>();
     }
 
     private void FixedUpdate() {
         if (player.GetComponent<Equipment>().item.Count < index + 1){
-            image.sprite = null;
+            image.texture = null;
             text.text = "";
             return;
         }
 
-        image.sprite = player.GetComponent<Equipment>().item[index].itemType.icon;
+        image.texture = player.GetComponent<Equipment>().item[index].itemType.icon.texture;
         if (player.GetComponent<Equipment>().item[index].currentLevel == 0)
             text.text = "";
         else

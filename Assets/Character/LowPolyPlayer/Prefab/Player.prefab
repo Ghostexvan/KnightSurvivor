@@ -1176,8 +1176,6 @@ MonoBehaviour:
   weaponInstance: {fileID: 0}
   ani: {fileID: 0}
   unarmed: {fileID: 9100000, guid: 27718ddd9b3f2a54e9b557f065d432a0, type: 2}
-  axe2Hand: {fileID: 22100000, guid: 2a8c6a4936da862418b60d76ae1b60a8, type: 2}
-  mace1Hand: {fileID: 22100000, guid: 0980d8c782070b2499692f975ddc2f86, type: 2}
 --- !u!114 &9129681325562485288
 MonoBehaviour:
   m_ObjectHideFlags: 0
