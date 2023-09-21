@@ -11,8 +11,12 @@ public class DamagePopupController : MonoBehaviour
         StartCoroutine("SelfDestroy");
     }
 
+    private void Start() {
+        Debug.Log("Get text position: " + gameObject.transform.position);
+    }
+
     private void FixedUpdate() {
-        transform.Translate(1.0f * Vector3.up * Time.deltaTime, Space.World);
+        transform.Translate(1.0f * Vector3.up * Time.deltaTime, Space.Self);
     }
 
     public void SetValue(float value){

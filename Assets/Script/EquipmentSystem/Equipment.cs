@@ -29,7 +29,8 @@ public class Equipment : MonoBehaviour
                 case "WeaponData":
                     if (weapon != null && weapon.itemType != item.itemType){
                         weapon.Unequip(characterData);
-                        Destroy(weaponInstance);
+                        if (weaponInstance != itemJoinRight.transform.GetChild(0).gameObject)
+                            Destroy(weaponInstance);
                         weapon = item;
                         weapon.Equip(characterData);
                         DisplayWeapon();
