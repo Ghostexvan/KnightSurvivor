@@ -7,6 +7,10 @@ public class ExpItem : MonoBehaviour
     public float rotateSpeed;
     public int expAmount;
 
+    private void Awake() {
+        Debug.Log("Item position: " + gameObject.transform.position + ", local: " + gameObject.transform.localPosition);
+    }
+
     private void FixedUpdate() {
         if (IsOnGround()){
             gameObject.GetComponent<Rigidbody>().isKinematic = true;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestCube
   m_EditorClassIdentifier: 
   health:
-    BaseValue: 100
+    BaseValue: 10
   defense:
     BaseValue: 0
   attackDamage:

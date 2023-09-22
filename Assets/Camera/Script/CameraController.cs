@@ -10,8 +10,6 @@ public class CameraController : MonoBehaviour
     private void Awake() {
         Cursor.lockState = CursorLockMode.Confined;
 
-        DontDestroyOnLoad(this.gameObject);
-
         cameraData.distance = default_distance;
         cameraData.angle = default_angle;
 

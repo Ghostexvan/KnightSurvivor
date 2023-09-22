@@ -18,7 +18,7 @@ public class SelectItemPanel : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void FixedUpdate() {
+    private void Update() {
         if (isSet){
             for (int index = 0; index < itemList.Count; index++){
                 GameObject itemPanel = Instantiate(prefab, panel.transform);
@@ -28,6 +28,7 @@ public class SelectItemPanel : MonoBehaviour
             }
 
             isSet = false;
+            Time.timeScale = 0f;
         }
     }
 

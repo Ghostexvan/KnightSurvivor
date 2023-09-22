@@ -21,7 +21,7 @@ public class Equipment : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        gameObject.GetComponent<Animator>().SetInteger("WeaponLevel", weapon.currentLevel);
+        //gameObject.GetComponent<Animator>().SetInteger("WeaponLevel", weapon.currentLevel);
     }
 
     public void Equip(ItemInstance item){
