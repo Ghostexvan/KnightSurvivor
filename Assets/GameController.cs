@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
 
     void SpawnEnemy(){
         while (enemyList.Count < maxNumberEnemy){
-            GameObject enemy = Instantiate(enemyPrefab, GetSpawnPosition(), Quaternion.identity, gameObject.transform.GetChild(1).gameObject.transform);
+            GameObject enemy = Instantiate(enemyPrefab, GetSpawnPosition(), Quaternion.identity, gameObject.transform.GetChild(1));
             enemyList.Add(enemy);
         }
 

@@ -17,6 +17,12 @@ public class DamagePopupController : MonoBehaviour
 
     private void FixedUpdate() {
         transform.Translate(1.0f * Vector3.up * Time.deltaTime, Space.Self);
+        //transform.eulerAngles = Vector3.zero;
+    }
+
+    private void LateUpdate() {
+        //transform.LookAt( - GameObject.Find("Main Camera").transform.position);
+        transform.rotation = GameObject.Find("Main Camera").transform.rotation;
     }
 
     public void SetValue(float value){

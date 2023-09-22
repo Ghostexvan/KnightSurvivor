@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,8 +7,11 @@ public class Destroyable : MonoBehaviour
     public bool isActive;
 
     public void DestroyObject(){
+        if (!isActive)
+            return;
+
         onDestroy.Invoke();
-        Destroy(this.gameObject);
+        Destroy(gameObject, 0.1f);
     }
 
     public void Active(){

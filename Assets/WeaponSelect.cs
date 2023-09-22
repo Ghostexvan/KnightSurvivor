@@ -17,7 +17,7 @@ public class WeaponSelect : MonoBehaviour
         stat = gameObject.transform.GetChild(1).transform.GetChild(2).gameObject.GetComponent<TMP_Text>();
     }
 
-    private void FixedUpdate() {
+    private void Update() {
         if (isSet){
             gameObject.transform.GetChild(0).gameObject.GetComponent<RawImage>().texture = itemInstance.itemType.icon.texture;
             itemName.text = itemInstance.itemType.itemName + " | Level " + GetLevel();
@@ -95,6 +95,7 @@ public class WeaponSelect : MonoBehaviour
     public void OnClick(){
         character.GetComponent<Equipment>().Equip(itemInstance);
         gameObject.transform.parent.transform.parent.gameObject.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void SetCharacterData(GameObject character){
