@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CollectableItem : MonoBehaviour
@@ -45,6 +46,11 @@ public class ItemInstance{
     {
         this.itemType = itemType;
         currentLevel = 1;
+    }
+
+    public ItemInstance(ItemInstance other){
+        itemType = other.itemType;
+        currentLevel = other.currentLevel;
     }
 
     
@@ -99,5 +105,16 @@ public class ItemInstance{
         Unequip(data);
         currentLevel += 1;
         Equip(data);
+    }
+
+    public int GetMaxLevel(){
+        int maxLevel = 0;
+
+        for (int index = 0; index < itemType.itemStats.Count; index++){
+            maxLevel = Math.Max(maxLevel, itemType.itemStats[index].level);
+        }
+
+        Debug.Log("Max level: " + maxLevel);
+        return maxLevel;
     }
 }
