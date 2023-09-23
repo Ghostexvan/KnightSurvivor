@@ -10,10 +10,6 @@ public class ChestCollect : MonoBehaviour
     public int itemCount;
     public float rotateSpeed;
 
-    private void Awake() {
-        GetDropItems();
-    }
-
     private void FixedUpdate() {
         if (IsOnGround()){
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -46,20 +42,72 @@ public class ChestCollect : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player"){
+            GetDropItems(other.gameObject);
             GameObject.Find("GameCanvas").GetComponent<GameUIController>().selectItem.SetActive(true);
             GameObject.Find("GameCanvas").GetComponent<GameUIController>().selectItem.GetComponent<SelectItemPanel>().SetPlayer(other.gameObject);
             GameObject.Find("GameCanvas").GetComponent<GameUIController>().selectItem.GetComponent<SelectItemPanel>().SetItemList(itemInstances);
+            Debug.Log("Done setting to canvas!");
             Destroy(gameObject);
         }
     }
 
-    public void GetDropItems(){
-        List<ItemData> temp = data.itemLists;
-        temp.Shuffle();
+    public void GetDropItems(GameObject character){
+        List<ItemData> dropList = new List<ItemData>();
 
-        for (int index = 0; index < itemCount; index++){
-            itemInstances.Add(new ItemInstance(temp[index]));
+        List<ItemInstance> currentItems = new List<ItemInstance>(character.GetComponent<Equipment>().item);
+        Debug.Log("Curent: " + currentItems.Count);
+        int itemNumber = currentItems.Count;
+        Debug.Log(itemNumber);
+        
+        if (character.GetComponent<Equipment>().weapon.itemType != null)
+            currentItems.Add(new ItemInstance(character.GetComponent<Equipment>().weapon));
+        Debug.Log("Curent after add weapon: " + currentItems.Count);
+
+        List<ItemData> currentItemsData = new List<ItemData>();
+        for (int index = 0; index < currentItems.Count; index++)
+            currentItemsData.Add(currentItems[index].itemType);
+
+        int numberGetCurrentItem = UnityEngine.Random.Range(0, Math.Min(itemCount, currentItems.Count));
+        Debug.Log(numberGetCurrentItem);
+
+        currentItems.Shuffle();
+        int getIndex = 0;
+        while(numberGetCurrentItem > 0 && getIndex < currentItems.Count){
+            if (currentItems[getIndex].currentLevel < currentItems[getIndex].GetMaxLevel()){
+                Debug.Log("Add item from current list: " + currentItems[getIndex].itemType.name);
+                dropList.Add(currentItems[getIndex].itemType);
+                numberGetCurrentItem -= 1;
+            }
+            getIndex++;
         }
+        Debug.Log(numberGetCurrentItem + " - " + getIndex);
+
+        List<ItemData> avaiableList = new List<ItemData>(data.itemLists);
+        avaiableList.Shuffle();
+        int numberToGet = itemCount - dropList.Count;
+        Debug.Log(numberToGet);
+        getIndex = 0;
+        while(numberToGet > 0 && getIndex < avaiableList.Count){
+            if (itemNumber == 5 && avaiableList[getIndex].GetType().Name == "ItemData")
+                continue;
+
+            if (!dropList.Contains(avaiableList[getIndex]) && !currentItemsData.Contains(avaiableList[getIndex])){
+                Debug.Log("Add item from avaiable list: " + avaiableList[getIndex].name);
+                dropList.Add(avaiableList[getIndex]);
+                numberToGet -= 1;
+            }
+
+            getIndex++;
+        }
+        Debug.Log(numberToGet + " - " + getIndex);
+
+        for (int index = 0; index < dropList.Count; index++){
+            itemInstances.Add(new ItemInstance(dropList[index]));
+        }
+        currentItems.Clear();
+        currentItemsData.Clear();
+        dropList.Clear();
+        Debug.Log("--------------");
     }
 }
 
