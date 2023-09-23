@@ -1,8 +1,9 @@
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class WeaponSelect : MonoBehaviour
+public class WeaponSelect : MonoBehaviour, IPointerEnterHandler
 {
     public ItemInstance itemInstance;
     public GameObject character;
@@ -10,6 +11,7 @@ public class WeaponSelect : MonoBehaviour
     public TMP_Text itemName, 
                     description,
                     stat;
+    public int index;
 
     private void Awake() {
         itemName = gameObject.transform.GetChild(1).transform.GetChild(0).gameObject.GetComponent<TMP_Text>();
@@ -104,5 +106,19 @@ public class WeaponSelect : MonoBehaviour
 
     public void SetItemInstance(ItemInstance itemInstance){
         this.itemInstance = itemInstance;
+    }
+
+    public void HighLight(bool isHighLight){
+        if (isHighLight){
+            gameObject.GetComponent<Image>().color = Color.white;
+        }
+        else
+            gameObject.GetComponent<Image>().color = Color.black;
+    }
+
+    void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("Hover: " + index);
+        gameObject.transform.parent.parent.gameObject.GetComponent<SelectItemPanel>().SetCurrentIndex(index);
     }
 }
