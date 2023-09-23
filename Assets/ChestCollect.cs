@@ -67,7 +67,7 @@ public class ChestCollect : MonoBehaviour
         for (int index = 0; index < currentItems.Count; index++)
             currentItemsData.Add(currentItems[index].itemType);
 
-        int numberGetCurrentItem = UnityEngine.Random.Range(0, Math.Min(itemCount, currentItems.Count));
+        int numberGetCurrentItem = itemNumber < 5 ? UnityEngine.Random.Range(0, Math.Min(itemCount, currentItems.Count)) : 3;
         Debug.Log(numberGetCurrentItem);
 
         currentItems.Shuffle();
@@ -88,8 +88,12 @@ public class ChestCollect : MonoBehaviour
         Debug.Log(numberToGet);
         getIndex = 0;
         while(numberToGet > 0 && getIndex < avaiableList.Count){
-            if (itemNumber == 5 && avaiableList[getIndex].GetType().Name == "ItemData")
+            if (itemNumber == 5 && avaiableList[getIndex].GetType().Name == "ItemData"){
+                Debug.Log("Skip");
+                getIndex++;
                 continue;
+            }
+                
 
             if (!dropList.Contains(avaiableList[getIndex]) && !currentItemsData.Contains(avaiableList[getIndex])){
                 Debug.Log("Add item from avaiable list: " + avaiableList[getIndex].name);

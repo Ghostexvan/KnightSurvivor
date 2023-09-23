@@ -45,15 +45,18 @@ public class Equipment : MonoBehaviour
                     }
                     break;
                 case "ItemData":
-                    if (this.item.Count < maxItem){
-                        for (int index = 0; index < this.item.Count; index++){
-                            if (this.item[index].itemType == item.itemType)
-                                this.item[index].LevelUp(characterData);
-                                return;
+                    for (int index = 0; index < this.item.Count; index++){
+                        if (this.item[index].itemType == item.itemType){
+                            this.item[index].LevelUp(characterData);
+                            break;
                         }
+                    }
+
+                    if (this.item.Count < maxItem){
                         item.Equip(characterData);
                         this.item.Add(item);
                     }
+                    
                     break;
                 default:
                     break;
