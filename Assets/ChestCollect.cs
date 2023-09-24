@@ -54,7 +54,11 @@ public class ChestCollect : MonoBehaviour
     public void GetDropItems(GameObject character){
         List<ItemData> dropList = new List<ItemData>();
 
-        List<ItemInstance> currentItems = new List<ItemInstance>(character.GetComponent<Equipment>().item);
+        List<ItemInstance> currentItems = new List<ItemInstance>(/*character.GetComponent<Equipment>().item*/);
+        foreach(ItemInstance item in character.GetComponent<Equipment>().item){
+            Debug.Log("Item in current: " + item.itemType.name + " - " + item.currentLevel);
+            currentItems.Add(new ItemInstance(item.itemType, item.currentLevel));
+        }
         Debug.Log("Curent: " + currentItems.Count);
         int itemNumber = currentItems.Count;
         Debug.Log(itemNumber);
@@ -74,7 +78,7 @@ public class ChestCollect : MonoBehaviour
         int getIndex = 0;
         while(numberGetCurrentItem > 0 && getIndex < currentItems.Count){
             if (currentItems[getIndex].currentLevel < currentItems[getIndex].GetMaxLevel()){
-                Debug.Log("Add item from current list: " + currentItems[getIndex].itemType.name);
+                Debug.Log("Add item from current list: " + currentItems[getIndex].itemType.name + " (" + currentItems[getIndex].currentLevel + ", " + currentItems[getIndex].GetMaxLevel() + ")");
                 dropList.Add(currentItems[getIndex].itemType);
                 numberGetCurrentItem -= 1;
             }
