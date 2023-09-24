@@ -1062,7 +1062,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &4474353031870484072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1149,6 +1149,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: bd393d96-df44-46f2-bc09-2a2d6245c444
     m_ActionName: Player/MousePosition[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f6131bc8-8153-4f32-a991-f5080cd31409
+    m_ActionName: GUI/Select[/Keyboard/w,/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 95be2555-5aa6-4ce8-b84e-1ebff09ab0d5
+    m_ActionName: GUI/Confirm[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

@@ -42,17 +42,16 @@ public class ItemInstance{
     public ItemData itemType;
     public int currentLevel;
     
-    public ItemInstance(ItemData itemType)
+    public ItemInstance(ItemData itemType, int currentLevel = 1)
     {
         this.itemType = itemType;
-        currentLevel = 1;
+        this.currentLevel = currentLevel;
     }
 
     public ItemInstance(ItemInstance other){
         itemType = other.itemType;
         currentLevel = other.currentLevel;
     }
-
     
     public void Equip(CharacterData data){
         for (int index = 0; index < itemType.itemStats.Count; index++){
