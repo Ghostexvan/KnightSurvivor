@@ -13,10 +13,26 @@ MonoBehaviour:
   m_Name: Beer
   m_EditorClassIdentifier: 
   itemName: Beer
-  description: Increase critical chance.
+  description: A beverage made from barley and yeast.
   icon: {fileID: 21300000, guid: d0c05b9125ed56349a5385e1a77547b7, type: 3}
   itemStats:
   - level: 1
+    statAffect: 6
+    statType: 100
+    value: 5
+  - level: 2
+    statAffect: 6
+    statType: 100
+    value: 5
+  - level: 3
+    statAffect: 6
+    statType: 100
+    value: 5
+  - level: 4
+    statAffect: 6
+    statType: 100
+    value: 5
+  - level: 5
     statAffect: 6
     statType: 100
     value: 5

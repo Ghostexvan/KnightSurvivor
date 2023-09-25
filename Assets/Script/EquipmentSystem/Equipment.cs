@@ -45,15 +45,19 @@ public class Equipment : MonoBehaviour
                     }
                     break;
                 case "ItemData":
+                    bool isAdded = false;
                     for (int index = 0; index < this.item.Count; index++){
                         if (this.item[index].itemType == item.itemType){
                             this.item[index].LevelUp(characterData);
+                            Debug.Log("Add item: Level up");
+                            isAdded = true;
                             break;
                         }
                     }
 
-                    if (this.item.Count < maxItem){
+                    if (!isAdded && this.item.Count < maxItem){
                         item.Equip(characterData);
+                        Debug.Log("Add item: New");
                         this.item.Add(item);
                     }
                     

@@ -13,10 +13,26 @@ MonoBehaviour:
   m_Name: Ham
   m_EditorClassIdentifier: 
   itemName: Ham
-  description: Increase health.
+  description: An elaborately prepared piece of pork.
   icon: {fileID: 21300000, guid: c1101a972f67d164db2754844fbeeda2, type: 3}
   itemStats:
   - level: 1
     statAffect: 0
-    statType: 100
-    value: 10
+    statType: 200
+    value: 0.1
+  - level: 2
+    statAffect: 0
+    statType: 200
+    value: 0.1
+  - level: 3
+    statAffect: 0
+    statType: 200
+    value: 0.1
+  - level: 4
+    statAffect: 0
+    statType: 200
+    value: 0.1
+  - level: 5
+    statAffect: 0
+    statType: 200
+    value: 0.1
