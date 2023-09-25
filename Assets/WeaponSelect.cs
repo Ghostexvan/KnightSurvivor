@@ -22,7 +22,12 @@ public class WeaponSelect : MonoBehaviour, IPointerEnterHandler
     private void Update() {
         if (isSet){
             gameObject.transform.GetChild(0).gameObject.GetComponent<RawImage>().texture = itemInstance.itemType.icon.texture;
-            itemName.text = itemInstance.itemType.itemName + " | Level " + GetLevel();
+            itemName.text = itemInstance.itemType.itemName + " | Level ";
+            if (GetLevel() == itemInstance.GetMaxLevel())
+                itemName.text += "Max";
+            else
+                itemName.text += GetLevel();
+                
             description.text = itemInstance.itemType.description;
             stat.text = GetDescription();
             isSet = false;

@@ -13,10 +13,26 @@ MonoBehaviour:
   m_Name: Armor
   m_EditorClassIdentifier: 
   itemName: Armor
-  description: Increase defense.
+  description: An armor that designed to protect the wearer.
   icon: {fileID: 21300000, guid: 567fdd2e557fefc478f8aaa7ae56fb11, type: 3}
   itemStats:
   - level: 1
     statAffect: 1
-    statType: 100
-    value: 10
+    statType: 200
+    value: 0.1
+  - level: 2
+    statAffect: 1
+    statType: 200
+    value: 0.1
+  - level: 3
+    statAffect: 1
+    statType: 200
+    value: 0.1
+  - level: 4
+    statAffect: 1
+    statType: 200
+    value: 0.1
+  - level: 5
+    statAffect: 1
+    statType: 200
+    value: 0.1
