@@ -34,6 +34,8 @@ public class SelectItemPanel : MonoBehaviour
             }
 
             isSet = false;
+
+            // Stops game time / Pauses the game while UI is on screen - when UI isSet
             Time.timeScale = 0f;
         }
 
@@ -96,6 +98,14 @@ public class SelectItemPanel : MonoBehaviour
     public void ConfirmSelect(InputAction.CallbackContext context){
         if (context.started){
             Debug.Log("Select");
+            panelList[currentIndex].GetComponent<WeaponSelect>().OnClick();
+        }
+    }
+
+    public void UDPConfirmSelect(bool accept)
+    {
+        if (accept)
+        {
             panelList[currentIndex].GetComponent<WeaponSelect>().OnClick();
         }
     }

@@ -14,7 +14,7 @@ public class DropItemable : MonoBehaviour
     public List<dropList> drops;
 
     private void OnDestroy() {
-        Debug.Log("Instantiate position: " + gameObject.transform.position + ", local: " + gameObject.transform.localPosition);
+        //Debug.Log("Instantiate position: " + gameObject.transform.position + ", local: " + gameObject.transform.localPosition);
         DropItem();
     }
     
