@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
@@ -11,13 +11,59 @@ public class Controllable : MonoBehaviour
                       onAttack;
     public bool isActive;
 
+    [HideInInspector]
+    public GameObject gameController;
+
+    // Dùng để xét nếu UDP có bật hay ko, nếu có thì hàm OnMoveInput sẽ Invoke cả onMove và onLook (vì ta đã disable chuột khi có UDP nên nhân vật sẽ ko rotate đc)
+    [Tooltip("Is used to check whether UDP is active or not. If it is, then OnMoveInput will Invoke both onMove and onLook (Because when UDP is active, we disable our mouse input, so our character can't rotate)")]
+    private bool isUDPConActive;
+
+    private void Awake()
+    {
+        gameController = GameObject.Find("GameController");
+    }
+
+    private void Start()
+    {
+        isUDPConActive = gameController.GetComponent<UDPControllable>().isActive;
+    }
+
     public void OnMoveInput(InputAction.CallbackContext context){
         if (!isActive){
             return;
         }
 
+        print("----- On Move Input");
         onMove.Invoke(context.ReadValue<Vector2>());
+        if (context.ReadValue<Vector2>() == Vector2.zero)
+        {
+            print("V2 Zero is read");
+        }
+
+        if (isUDPConActive == true)
+        {
+            onLook.Invoke(context.ReadValue<Vector2>());
+        }
     }
+
+    //public void OnHoldInteraction(InputAction.CallbackContext context)
+    //{
+    //    switch(context.phase)
+    //    {
+    //        case InputActionPhase.Started:
+    //            print(context.interaction + "--- Started");
+    //            break;
+    //        case InputActionPhase.Performed:
+    //            print(context.interaction + "--- Performed");
+    //            break;
+    //        case InputActionPhase.Canceled:
+    //            print(context.interaction + "--- Cancelled");
+    //            break;
+
+    //        default:
+    //            break;
+    //    }
+    //}
 
     public void OnJumpInput(InputAction.CallbackContext context){
         if (!isActive){
