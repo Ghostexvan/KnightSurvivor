@@ -36,9 +36,9 @@ public class Movable : MonoBehaviour
     }
 
     private void Rotate(){
-        if (characterData.isAttack){
-            return;
-        }
+        // if (characterData.isAttack){
+        //     return;
+        // }
 
         if (lookVector == Vector2.zero && moveVector != Vector2.zero)
             lookVector = moveVector;

@@ -40,7 +40,7 @@ public class Controllable : MonoBehaviour
             print("V2 Zero is read");
         }
 
-        if (isUDPConActive == true)
+        if (isUDPConActive == true && !gameController.GetComponent<UDPControllable>().isKeyboardInput)
         {
             onLook.Invoke(context.ReadValue<Vector2>());
         }
