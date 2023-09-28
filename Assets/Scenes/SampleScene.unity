@@ -3707,6 +3707,8 @@ MonoBehaviour:
   enemyList: []
   maxNumberEnemy: 100
   enemyPrefab: {fileID: 1922417409238373823, guid: 668047a09f5076845b85a235d80208cc, type: 3}
+  player: {fileID: 0}
+  spawnRadius: 100
 --- !u!114 &1774604076
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.IO.Compression;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -10,13 +9,16 @@ public class GameController : MonoBehaviour
     public bool isSet;
     public List<GameObject> enemyList;
     public int maxNumberEnemy;
-    public GameObject enemyPrefab;
+    public GameObject enemyPrefab,
+                      player;
+    public float spawnRadius;
 
     private void Awake() {
         Screen.SetResolution(1600, 900, true);
         planeCenter = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.center;
         planeExtends = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.extents;
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Start is called before the first frame update
@@ -55,13 +57,15 @@ public class GameController : MonoBehaviour
     }
 
     Vector3 GetSpawnPosition(){
-        Vector3 position = new Vector3(planeCenter.x + Random.Range(-planeExtends.x, planeExtends.x),
+        Vector3 playerPosition = GetPlayerPosition();
+        Vector3 position = new Vector3(playerPosition.x + Random.Range(-spawnRadius, spawnRadius),
                                        5f,
-                                       planeCenter.z + Random.Range(-planeExtends.z, planeExtends.z));
+                                       playerPosition.z + Random.Range(-spawnRadius, spawnRadius));
         Debug.Log("Is in viewport: " + IsPositionOnCameraViewPort(position) + ", " + mainCamera.WorldToViewportPoint(position));
-        while (IsPositionOnCameraViewPort(position)){
-            position = new Vector3(planeCenter.x + Random.Range(-planeExtends.x, planeExtends.x),
-                                   planeCenter.y + Random.Range(-planeExtends.y, planeExtends.y));
+        while (IsPositionOnCameraViewPort(position) || !IsPositionInPlane(position)){
+            position = new Vector3(playerPosition.x + Random.Range(-spawnRadius, spawnRadius),
+                                   5f,
+                                   playerPosition.z + Random.Range(-spawnRadius, spawnRadius));
         }
 
         return position;
@@ -73,5 +77,19 @@ public class GameController : MonoBehaviour
             mainCamera.WorldToViewportPoint(position).z >= 0)
             return true;
         return false;
+    }
+
+    bool IsPositionInPlane(Vector3 position){
+        if (position.x < planeCenter.x - planeExtends.x || position.x > planeCenter.x + planeExtends.x)
+            return false;
+
+        if (position.z < planeCenter.z - planeExtends.z || position.z > planeCenter.z + planeExtends.z)
+            return false;
+
+        return true;
+    }
+
+    Vector3 GetPlayerPosition(){
+        return player.transform.position;
     }
 }

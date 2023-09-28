@@ -140,6 +140,7 @@ public class UDPControllable : MonoBehaviour
         if (Time.time > KBInputWaitTime)
         {
             isKeyboardInput = false;
+            InputSystem.DisableDevice(Mouse.current); // Time-out then disable mouse input
         }
 
         //OnGestureInput_(clInput);
@@ -262,6 +263,7 @@ public class UDPControllable : MonoBehaviour
     public void SetKeyboardInput()
     {
         isKeyboardInput = true;
+        InputSystem.EnableDevice(Mouse.current); // You forgot to enable the mouse
 
         // Thời điểm để xét có thêm input từ Keyboard hay không
         //KBInputWaitTime = Time.realtimeSinceStartup + TimeToWait;

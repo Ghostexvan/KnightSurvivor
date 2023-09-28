@@ -1404,6 +1404,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   isActive: 1
+  gameController: {fileID: 0}
 --- !u!114 &6480643349760244089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6593,8 +6594,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.41603145, y: 0.17247105, z: 0.3084083}
-  m_Center: {x: 0.10322988, y: 0.01909348, z: 0.010517307}
+  m_Size: {x: 0.71469647, y: 0.66976696, z: 0.3084083}
+  m_Center: {x: 0.25256196, y: 0.022432076, z: 0.010517311}
 --- !u!114 &1579581627657268527
 MonoBehaviour:
   m_ObjectHideFlags: 0
