@@ -45,7 +45,7 @@ public class Attackable : MonoBehaviour
         else
             totalDamage = -attackDamage;
 
-        Debug.Log(totalDamage);
+        //Debug.Log(totalDamage);
         
         gameObject.GetComponent<Equipment>().weaponInstance.SendMessage("SetDamage", totalDamage);
         gameObject.GetComponent<Equipment>().weaponInstance.SendMessage("SetIsCrit", -totalDamage > characterData.attackDamage.Value);

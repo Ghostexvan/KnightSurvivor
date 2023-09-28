@@ -13,6 +13,6 @@ public class ExpbarController : MonoBehaviour
 
     private void FixedUpdate() {
         expBar.fillAmount = (float) player.GetComponent<CharacterLevel>().currentEXP / player.GetComponent<CharacterLevel>().needEXP;
-        Debug.Log(expBar.fillAmount);
+        //Debug.Log(expBar.fillAmount);
     }
 }

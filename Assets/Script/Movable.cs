@@ -16,6 +16,7 @@ public class Movable : MonoBehaviour
         characterData.moveDirection = GetMoveDirection(Vector2.SignedAngle(moveVector, lookVector));
         //Debug.Log(GetMoveDirection(Vector2.SignedAngle(moveVector, lookVector)));
 
+        //print("Move Vector: " + moveVector);
         Move();
     }
 
@@ -29,6 +30,8 @@ public class Movable : MonoBehaviour
     }
 
     private void Move(){
+        //if (moveVector != Vector2.zero)
+            //print("Move() Is Called");
         transform.Translate(characterData.moveSpeed.Value * new Vector3(moveVector.x, 0f, moveVector.y) * Time.deltaTime, Space.World);
     }
 
@@ -40,14 +43,19 @@ public class Movable : MonoBehaviour
         if (lookVector == Vector2.zero && moveVector != Vector2.zero)
             lookVector = moveVector;
             
-            
-        transform.rotation = Quaternion.Slerp(transform.rotation,
-                                              Quaternion.LookRotation(new Vector3(lookVector.x, 0, lookVector.y)),
-                                              Time.deltaTime * rotateSpeed);
+        if (lookVector != Vector2.zero)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                                                  Quaternion.LookRotation(new Vector3(lookVector.x, 0, lookVector.y)),
+                                                  Time.deltaTime * rotateSpeed);
+        }  
     }
 
     public void SetMoveVector(Vector2 vec){
         moveVector = vec;
+        print("--------- Move Vector set");
+        if (vec == Vector2.zero)
+            print("Zero");
     }
 
     public void SetLookVector(Vector2 vec){

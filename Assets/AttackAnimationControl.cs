@@ -18,7 +18,7 @@ public class AttackAnimationControl : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
        animator.SetInteger("AttackCount", animator.GetInteger("AttackCount") - 1);
-       Debug.Log(animator.GetInteger("AttackCount"));
+       //Debug.Log(animator.GetInteger("AttackCount"));
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
