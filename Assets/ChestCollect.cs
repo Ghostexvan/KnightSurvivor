@@ -9,6 +9,11 @@ public class ChestCollect : MonoBehaviour
     public List<ItemInstance> itemInstances = new List<ItemInstance>();
     public int itemCount;
     public float rotateSpeed;
+    public Vector3 iconRotation;
+
+    private void Awake() {
+        iconRotation = gameObject.transform.GetChild(0).rotation.eulerAngles;
+    }
 
     private void FixedUpdate() {
         if (IsOnGround()){
@@ -38,6 +43,7 @@ public class ChestCollect : MonoBehaviour
 
     private void Rotate(){
         transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime);
+        gameObject.transform.GetChild(0).eulerAngles = iconRotation;
     }
 
     private void OnTriggerEnter(Collider other) {
