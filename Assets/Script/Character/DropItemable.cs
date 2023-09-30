@@ -24,7 +24,8 @@ public class DropItemable : MonoBehaviour
                                            gameObject.transform.localPosition.z);
         foreach(dropList drop in drops){
             if (UnityEngine.Random.Range(0f, 100f) <= drop.chance){
-                GameObject item = Instantiate(drop.dropItem, position + new Vector3(UnityEngine.Random.Range(-2f, 2f), 0, UnityEngine.Random.Range(-2f, 2f)), Quaternion.identity, GameObject.Find("Collectable").transform);
+                GameObject item = Instantiate(drop.dropItem, position, Quaternion.identity, GameObject.Find("Collectable").transform);
+                return;
                 //item.transform.position = gameObject.transform.position + Vector3.up*3;
             }
         }

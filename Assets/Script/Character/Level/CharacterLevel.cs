@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterLevel : MonoBehaviour
@@ -32,6 +29,6 @@ public class CharacterLevel : MonoBehaviour
         currentEXP -= needEXP;
         currentLevel += 1;
         needEXP = CalculateLevel();
-        Instantiate(rewardChest, transform.position + new Vector3(5.0f, 5.0f, 5.0f), Quaternion.identity);
+        Instantiate(rewardChest, transform.position + new Vector3(Random.Range(-5.0f, 5.0f), 5.0f, Random.Range(-5.0f, 5.0f)), Quaternion.identity);
     }
 }
