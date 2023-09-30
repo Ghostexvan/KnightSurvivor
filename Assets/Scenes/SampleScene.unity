@@ -728,7 +728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1438546959266459337, guid: eab3af78bfdbaa047b6438fd6ccf56fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 1438546959266459337, guid: eab3af78bfdbaa047b6438fd6ccf56fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3705,7 +3705,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   isSet: 0
   enemyList: []
-  maxNumberEnemy: 100
+  maxNumberEnemy: 10
   enemyPrefab: {fileID: 1922417409238373823, guid: 668047a09f5076845b85a235d80208cc, type: 3}
   player: {fileID: 0}
   spawnRadius: 100
