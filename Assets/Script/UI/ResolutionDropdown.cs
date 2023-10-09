@@ -5,7 +5,7 @@ public class ResolutionDropdown : MonoBehaviour
 {
     public GameSettings gameSettings;
 
-    private void Awake() {
+    private void Start() {
         switch (gameSettings.resolution.width){
             case 1920:
                 if (gameSettings.resolution.isFullscreen)

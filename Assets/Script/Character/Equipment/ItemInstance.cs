@@ -18,6 +18,7 @@ public class ItemInstance{
     }
     
     public void Equip(CharacterData data){
+        itemType.isGet = true;
         for (int index = 0; index < itemType.itemStats.Count; index++){
             if (itemType.itemStats[index].level > currentLevel)
                 return;

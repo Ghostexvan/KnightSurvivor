@@ -24,6 +24,7 @@ MonoBehaviour:
     statAffect: 3
     statType: 200
     value: -90
+  isGet: 0
   weaponType: 6
   handleType: 0
   model: {fileID: 3548874538517711366, guid: 6d2456ba08276d340a70ec1065d49e05, type: 3}

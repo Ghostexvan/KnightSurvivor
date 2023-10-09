@@ -27,6 +27,9 @@ public class WeaponSelect : MonoBehaviour, IPointerEnterHandler
                 itemName.text += "Max";
             else
                 itemName.text += GetLevel();
+            if (itemInstance.itemType.isGet == false){
+                itemName.text += " | New";
+            }
                 
             description.text = itemInstance.itemType.description;
             stat.text = GetDescription();

@@ -18,4 +18,5 @@ public class ItemData : ScriptableObject
     public string description;
     public Sprite icon;
     public List<itemStat> itemStats = new List<itemStat>();
+    public bool isGet;
 }

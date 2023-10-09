@@ -6,7 +6,7 @@ public class FrameRateDropdown : MonoBehaviour
     public GameSettings gameSettings;
 
 
-    private void Awake() {
+    private void Start() {
         switch (gameSettings.frameRate) {
             case -1:
                 GetComponent<TMP_Dropdown>().value = 2;
