@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Tree
+  - Terrain
+  - Chest
+  - Structures
   layers:
   - Default
   - TransparentFX
@@ -12,11 +16,11 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Foliage
+  - Structures
+  - Player
+  - Enemy
+  - Loot
   - 
   - 
   - 

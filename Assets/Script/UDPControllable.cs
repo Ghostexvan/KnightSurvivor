@@ -128,7 +128,7 @@ public class UDPControllable : MonoBehaviour
         if (elapsedKBTime > 0)
             elapsedKBTime -= Time.deltaTime;
 
-        // Thêm trường hợp cho việc người chơi NHẤN GIỮ nút di chuyển thay vì nhấn (Khi NHẤN GIỮ, KBInputTime sẽ ko đc cập nhật)
+        // Thêm trường hợp cho việc người chơi NHẤN GIỮ nút di chuyển thay vì nhấn (Khi NHẤN GIỮ, KBInputTime sẽ ko đc cập nhật --> fix cho nó cập nhật lại)
         if (isKeyboardInput && player.GetComponent<Movable>().moveVector != Vector2.zero)
         {
             KBInputWaitTime = Time.time + TimeToWait;

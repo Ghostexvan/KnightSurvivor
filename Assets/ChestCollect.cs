@@ -5,7 +5,9 @@ using System;
 
 public class ChestCollect : MonoBehaviour
 {
+    [Tooltip("List of Items that CAN be dropped from the chest.")]
     public DropableItems data;
+    [Tooltip("Items CURRENTLY in the chest. You don't need to modify its data in the Inspector since the whole process is automated.")]
     public List<ItemInstance> itemInstances = new List<ItemInstance>();
     public int itemCount;
     public float rotateSpeed;

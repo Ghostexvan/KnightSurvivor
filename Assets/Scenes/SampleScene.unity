@@ -3661,6 +3661,7 @@ GameObject:
   - component: {fileID: 1774604075}
   - component: {fileID: 1774604076}
   - component: {fileID: 1774604077}
+  - component: {fileID: 1774604078}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -3705,7 +3706,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   isSet: 0
   enemyList: []
-  maxNumberEnemy: 100
+  maxNumberEnemy: 0
   enemyPrefab: {fileID: 1922417409238373823, guid: 668047a09f5076845b85a235d80208cc, type: 3}
   player: {fileID: 0}
   spawnRadius: 100
@@ -3813,11 +3814,23 @@ MonoBehaviour:
   onLookUDP:
     m_PersistentCalls:
       m_Calls: []
-  isActive: 1
+  isActive: 0
   isCameraActive: 0
   player: {fileID: 0}
   selectPanel: {fileID: 0}
   isKBInput: 0
+--- !u!114 &1774604078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774604073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458a532d5ec541a48b81c316ee8e0e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1810403690
 GameObject:
   m_ObjectHideFlags: 0

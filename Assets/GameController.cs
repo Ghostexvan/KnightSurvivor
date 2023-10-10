@@ -15,8 +15,21 @@ public class GameController : MonoBehaviour
 
     private void Awake() {
         Screen.SetResolution(1600, 900, true);
-        planeCenter = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.center;
-        planeExtends = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.extents;
+        Terrain _Data = transform.GetChild(0).gameObject.GetComponent<Terrain>();
+        planeCenter = _Data.terrainData.bounds.center;
+        planeExtends = _Data.terrainData.bounds.extents;
+        //if (transform.GetChild(0).gameObject.GetComponent<Renderer>() == null)
+        //{
+        //    print("---Abayo");
+        //}
+        //else
+        //{
+        //    print("---Abayo2");
+
+        //}
+        //planeCenter = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.center;
+        //planeExtends = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.extents;
+
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
