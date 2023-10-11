@@ -262,6 +262,10 @@ public class UDPControllable : MonoBehaviour
 
     public void SetKeyboardInput()
     {
+        if (!isActive)
+        {
+            return;     // If UDP Controller is not active then there's not really any point of, well, calling this function to begin with.
+        }
         isKeyboardInput = true;
         InputSystem.EnableDevice(Mouse.current); // You forgot to enable the mouse
 

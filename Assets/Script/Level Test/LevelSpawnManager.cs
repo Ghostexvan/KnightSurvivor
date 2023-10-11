@@ -55,7 +55,8 @@ public class LevelSpawnManager : MonoBehaviour
         // After everything, I changed the Time.timeScale = 1 and maxNumberEnemy = 100, allowing the game to run like normal (will it though?)
 
         Time.timeScale = 0f;
-        //gameController.GetComponent<GameController>().maxNumberEnemy = 0;
+        //gameController.SetActive(false);
+        gameController.GetComponent<GameController>().maxNumberEnemy = 0;
 
         structureBlockedArea = GameObject.Find("Struct Blocked Area");
         //structureBlockedArea.GetComponent<MeshCollider>().isTrigger = true;

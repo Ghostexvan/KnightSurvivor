@@ -12,6 +12,13 @@ public class StructureLootSpawn : MonoBehaviour
     private float xExtents;
     private float zExtents;
 
+    private GameObject collectableParent;
+
+    private void Awake()
+    {
+        collectableParent = GameObject.Find("Collectable");
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -101,7 +108,8 @@ public class StructureLootSpawn : MonoBehaviour
                 }
 
                 GameObject chest = Instantiate(chestPrefab, new Vector3(randPos.x, 0.1f + halfChestHeight + yPoint, randPos.z), randRota);
-                chest.transform.parent = transform;
+                //chest.transform.parent = transform;
+                chest.transform.parent = collectableParent.transform;
             }
         }
         else
