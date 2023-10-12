@@ -3993,11 +3993,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   isSet: 0
   enemyList: []
-<<<<<<< HEAD:Assets/Scenes/SampleScene.unity
-  maxNumberEnemy: 0
-=======
   maxNumberEnemy: 10
->>>>>>> 5f48aee4b890130f2cd05fb674393ead1b86733a:Assets/Scenes/Gameplay.unity
   enemyPrefab: {fileID: 1922417409238373823, guid: 668047a09f5076845b85a235d80208cc, type: 3}
   player: {fileID: 0}
   spawnRadius: 100
