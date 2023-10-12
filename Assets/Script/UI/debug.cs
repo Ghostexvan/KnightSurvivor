@@ -1,13 +1,15 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class debug : MonoBehaviour
 {
-    public GameSettings gameSettings;
+    public InputActionReference inputAction;
+    public int index;
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<TMP_Text>().text = gameSettings.resolution.width + " x " + gameSettings.resolution.height + " | " + gameSettings.volume + " | " + gameSettings.frameRate;
+        GetComponent<TMP_Text>().text = inputAction.action.GetBindingDisplayString(index);
     }
 }
