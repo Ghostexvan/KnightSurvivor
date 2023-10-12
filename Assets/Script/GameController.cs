@@ -14,7 +14,6 @@ public class GameController : MonoBehaviour
     public float spawnRadius;
 
     private void Awake() {
-        Screen.SetResolution(1600, 900, true);
         planeCenter = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.center;
         planeExtends = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.extents;
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
