@@ -128,7 +128,7 @@ public class UDPControllable : MonoBehaviour
         if (elapsedKBTime > 0)
             elapsedKBTime -= Time.deltaTime;
 
-        // Thêm trường hợp cho việc người chơi NHẤN GIỮ nút di chuyển thay vì nhấn (Khi NHẤN GIỮ, KBInputTime sẽ ko đc cập nhật)
+        // Thêm trường hợp cho việc người chơi NHẤN GIỮ nút di chuyển thay vì nhấn (Khi NHẤN GIỮ, KBInputTime sẽ ko đc cập nhật --> fix cho nó cập nhật lại)
         if (isKeyboardInput && player.GetComponent<Movable>().moveVector != Vector2.zero)
         {
             KBInputWaitTime = Time.time + TimeToWait;
@@ -262,6 +262,10 @@ public class UDPControllable : MonoBehaviour
 
     public void SetKeyboardInput()
     {
+        if (!isActive)
+        {
+            return;     // If UDP Controller is not active then there's not really any point of, well, calling this function to begin with.
+        }
         isKeyboardInput = true;
         InputSystem.EnableDevice(Mouse.current); // You forgot to enable the mouse
 

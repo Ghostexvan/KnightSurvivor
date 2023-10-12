@@ -10,14 +10,35 @@ public class GameController : MonoBehaviour
     public List<GameObject> enemyList;
     public int maxNumberEnemy;
     public GameObject enemyPrefab,
-                      player;
+                      player,
+                      enemyParent;
     public float spawnRadius;
 
     private void Awake() {
+<<<<<<< HEAD:Assets/GameController.cs
+        Screen.SetResolution(1600, 900, true);
+        Terrain _Data = transform.GetChild(0).gameObject.GetComponent<Terrain>();
+        planeCenter = _Data.terrainData.bounds.center;
+        planeExtends = _Data.terrainData.bounds.extents;
+        //if (transform.GetChild(0).gameObject.GetComponent<Renderer>() == null)
+        //{
+        //    print("---Abayo");
+        //}
+        //else
+        //{
+        //    print("---Abayo2");
+
+        //}
+        //planeCenter = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.center;
+        //planeExtends = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.extents;
+
+=======
         planeCenter = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.center;
         planeExtends = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.extents;
+>>>>>>> 5f48aee4b890130f2cd05fb674393ead1b86733a:Assets/Script/GameController.cs
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         player = GameObject.FindGameObjectWithTag("Player");
+        enemyParent = GameObject.Find("Enemy Pool");
     }
 
     // Start is called before the first frame update
@@ -36,7 +57,13 @@ public class GameController : MonoBehaviour
 
     void SpawnEnemy(){
         while (enemyList.Count < maxNumberEnemy){
-            GameObject enemy = Instantiate(enemyPrefab, GetSpawnPosition(), Quaternion.identity, gameObject.transform.GetChild(1));
+            //GameObject enemy = Instantiate(enemyPrefab, GetSpawnPosition(), Quaternion.identity, gameObject.transform.GetChild(1));
+            // Fixed parent object for enemies
+            GameObject enemy = Instantiate(enemyPrefab, GetSpawnPosition(), Quaternion.identity, enemyParent.transform);
+            if (enemy)
+            {
+                print("---- DOES SPAWN ----");
+            }
             enemyList.Add(enemy);
         }
 
