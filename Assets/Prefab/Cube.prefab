@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - dropItem: {fileID: 6708878025693594088, guid: e002e407efff86541b9c1f0ba5b900c3, type: 3}
-    chance: 100
   - dropItem: {fileID: 199258223908812765, guid: 49047d898ebc5fd429e07f412751380f, type: 3}
     chance: 5
+  - dropItem: {fileID: 6708878025693594088, guid: e002e407efff86541b9c1f0ba5b900c3, type: 3}
+    chance: 100
