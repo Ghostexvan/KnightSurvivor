@@ -2,10 +2,18 @@ using UnityEngine;
 
 public class GameSettingsController : MonoBehaviour
 {
+    private static GameSettingsController _Instance;
+
     public GameSettings gameSettings;
 
     private void Awake() {
-        DontDestroyOnLoad(gameObject);
+        if (_Instance == null){
+            _Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+            Destroy(this.gameObject);
+        
         LoadSettings();
         ApplySettings();
     }

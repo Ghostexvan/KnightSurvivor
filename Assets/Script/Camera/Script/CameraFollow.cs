@@ -3,7 +3,6 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public GameObject player;
-    
 
     private void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");

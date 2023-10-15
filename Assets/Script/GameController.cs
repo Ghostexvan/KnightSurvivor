@@ -13,7 +13,8 @@ public class GameController : MonoBehaviour
     public GameObject enemyPrefab,
                       player,
                       enemyParent,
-                      gameSettings;
+                      gameSettings,
+                      gameOverPanel;
     public bool isBossBattle,
                 isPlayerDeath;
     public float spawnRadius;
@@ -38,6 +39,7 @@ public class GameController : MonoBehaviour
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         player = GameObject.FindGameObjectWithTag("Player");
         enemyParent = GameObject.Find("Enemy Pool");
+        gameOverPanel.SetActive(false);
         isPlayerDeath = false;
         isBossBattle = false;
     }
@@ -55,16 +57,17 @@ public class GameController : MonoBehaviour
             return;
 
         if (player.GetComponent<Health>().health <= 0){
+            gameOverPanel.SetActive(true);
             isPlayerDeath = true;
             return;
         }
         
         CheckEnemyList();
         if (isSet)
-            SpawnEnemy();
+            StartCoroutine(SpawnEnemy());
     }
 
-    void SpawnEnemy(){
+    IEnumerator SpawnEnemy(){
         while (enemyList.Count < maxNumberEnemy){
             //GameObject enemy = Instantiate(enemyPrefab, GetSpawnPosition(), Quaternion.identity, gameObject.transform.GetChild(1));
             // Fixed parent object for enemies
@@ -77,6 +80,7 @@ public class GameController : MonoBehaviour
         }
 
         isSet = false;
+        yield return null;
     }
 
     void CheckEnemyList(){   

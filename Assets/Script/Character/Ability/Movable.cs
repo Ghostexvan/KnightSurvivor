@@ -11,6 +11,11 @@ public class Movable : MonoBehaviour
     public bool isActive;
 
     private void FixedUpdate() {
+        if (GetComponent<Health>().health <= 0){
+            moveVector = Vector2.zero;
+            return;
+        }
+        
         characterData.isOnGround = IsOnGround();
         characterData.isMove = moveVector != Vector2.zero;
         characterData.moveDirection = GetMoveDirection(Vector2.SignedAngle(moveVector, lookVector));
@@ -26,7 +31,6 @@ public class Movable : MonoBehaviour
 
     private bool IsOnGround()
     {
-        Debug.Log(Physics.Raycast(transform.position, Vector3.down, 0.01f));
         return Physics.Raycast(transform.position, Vector3.down, 0.01f);
     }
 
