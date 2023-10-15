@@ -81,6 +81,9 @@ public class Controllable : MonoBehaviour
     }
 
     public void OnMousePositionInput(InputAction.CallbackContext context){
+        if (!isActive)
+            return;
+            
         Vector2 lookVector = context.ReadValue<Vector2>() - new Vector2(Screen.width / 2, Screen.height / 2);
         onLook.Invoke(new Vector2 (Remap(lookVector.x, -Screen.width / 2, Screen.width / 2, -1, 1),
                                    Remap(lookVector.y, -Screen.width / 2, Screen.width / 2, -1, 1)));

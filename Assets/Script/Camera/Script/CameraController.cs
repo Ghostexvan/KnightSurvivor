@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
     public CameraData cameraData;
     public float default_distance,
                  default_angle;
+    public Animator animator1;
 
     private void Awake() {
         Cursor.lockState = CursorLockMode.Confined;
@@ -16,6 +17,15 @@ public class CameraController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
 
         FollowingPlayer();
+    }
+
+    private void Update() {
+        if (GameObject.Find("GameController").GetComponent<GameController>().isPlayerDeath){
+            animator1 = GetComponent<Animator>();
+            if (animator1 != null){
+                animator1.Play("Death");
+            }
+        }
     }
 
     private void LateUpdate() {

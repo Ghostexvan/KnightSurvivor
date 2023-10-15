@@ -26,6 +26,7 @@ public class Movable : MonoBehaviour
 
     private bool IsOnGround()
     {
+        Debug.Log(Physics.Raycast(transform.position, Vector3.down, 0.01f));
         return Physics.Raycast(transform.position, Vector3.down, 0.01f);
     }
 

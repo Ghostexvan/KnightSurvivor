@@ -8,10 +8,13 @@ public class StateController : MonoBehaviour
 {
     IState currentState;
     public CharacterData playerData;
+    public Health health;
+    public GameObject playerObject;
     public Animator ani;
     public RunState runState = new RunState();
     public JumpState jumpState = new JumpState();
     public FallState fallState = new FallState();
+    public DeathState deathState = new DeathState();
     //public AttackState attackState = new AttackState();
 
     public float timeBeforeOut,
@@ -20,10 +23,13 @@ public class StateController : MonoBehaviour
     public UnityEvent onRunStart,
                       onJumpStart,
                       onFallStart,
-                      onAttackStart;
+                      onAttackStart,
+                      onDeath;
 
     private void Awake() {
         ani = GetComponent<Animator>();
+        health = GetComponent<Health>();
+        playerObject = gameObject;
     }
 
     // Start is called before the first frame update

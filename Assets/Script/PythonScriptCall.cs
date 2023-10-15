@@ -152,7 +152,7 @@ public class PythonScriptCall : MonoBehaviour
     }
 
     private void OnApplicationQuit()
-    {
+    { 
         if (!appProcess.HasExited)
         {
             appProcess.Kill();

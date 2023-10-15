@@ -11,5 +11,6 @@ public class VolumeSlider : MonoBehaviour
 
     public void OnValueChange(){
         gameSettings.volume = gameObject.GetComponent<Slider>().value;
+        gameSettings.isSet = true;
     }
 }

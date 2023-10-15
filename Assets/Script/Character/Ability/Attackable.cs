@@ -20,6 +20,12 @@ public class Attackable : MonoBehaviour
     }
 
     private void FixedUpdate() {
+        if (!isActive){
+            gameObject.GetComponent<Animator>().SetInteger("AttackCount", 0);
+            return;
+        }
+            
+
         Attack();
         if (gameObject.GetComponent<Animator>().GetInteger("AttackCount") == -1 && !isCooldown){
             StartCoroutine(CooldownAttack());

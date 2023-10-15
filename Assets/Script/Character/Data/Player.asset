@@ -28,9 +28,9 @@ MonoBehaviour:
     BaseValue: 5
   critDamage:
     BaseValue: 100
-  isOnGround: 1
+  isOnGround: 0
   isJump: 0
   isMove: 0
   isAttack: 0
-  currentState: RunState
+  currentState: FallState
   moveDirection: 0
