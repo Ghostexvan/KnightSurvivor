@@ -39,10 +39,14 @@ public class GameplayMusicController : MonoBehaviour
         isGettingAudioClip = true;
         int tempIndex;
 
-        do {
+        if (clipList.audioList.Count > 1){
+            do {
             tempIndex = UnityEngine.Random.Range(0, clipList.audioList.Count);
-        } while (index == tempIndex);
-        index = tempIndex;
+            } while (index == tempIndex);
+            index = tempIndex;
+        }
+        else
+            index = 0;
         
         audioSource.clip = clipList.audioList[index];
         audioSource.Play();

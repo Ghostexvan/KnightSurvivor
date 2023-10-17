@@ -18,6 +18,7 @@ public class MenuMusicController : MonoBehaviour
 
     void Awake()
     {
+        index = -1;
         audioSource = GameObject.Find("GameSettings").GetComponent<AudioSource>();
         StartCoroutine(GetAudioClipToPlay());
     }

@@ -38,6 +38,8 @@ public class GameSettingsController : MonoBehaviour
         Application.targetFrameRate = gameSettings.frameRate;
         GetComponent<AudioSource>().volume = gameSettings.volume;
         gameSettings.isSet = false;
+
+        SaveSettings();
     }
 
     public void LoadSettings(){
@@ -51,6 +53,10 @@ public class GameSettingsController : MonoBehaviour
     }
 
     private void OnApplicationQuit() {
+        SaveSettings();
+    }
+
+    public void SaveSettings(){
         PlayerPrefs.SetInt("width", gameSettings.resolution.width);
         PlayerPrefs.SetInt("height", gameSettings.resolution.height);
         PlayerPrefs.SetInt("fullscreen", gameSettings.resolution.isFullscreen ? 1 : 0);

@@ -27,7 +27,7 @@ public class LoadScreenButton : MonoBehaviour
     }
 
     private void Update() {
-        Debug.Log(loadingOperation);
+        //Debug.Log(loadingOperation);
         // if (isAsync && isClick){
         //     loadingPanel.transform.GetChild(0).GetComponent<Slider>().value = Mathf.Clamp01(loadingOperation.progress) / 0.9f;
         // }
@@ -37,6 +37,7 @@ public class LoadScreenButton : MonoBehaviour
         loadingOperation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
         loadingOperation.allowSceneActivation = false;
         loadingPanel.SetActive(true);
+        loadingPanel.transform.GetChild(0).gameObject.SetActive(true);
 
         while (!loadingOperation.isDone){
             loadingPanel.transform.GetChild(0).GetComponent<Slider>().value = Mathf.Clamp01(loadingOperation.progress) / 0.9f;
