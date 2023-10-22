@@ -27,18 +27,27 @@ public class LoadScreenButton : MonoBehaviour
     }
 
     private void Update() {
-        Debug.Log(loadingOperation);
+        //Debug.Log(loadingOperation);
         // if (isAsync && isClick){
         //     loadingPanel.transform.GetChild(0).GetComponent<Slider>().value = Mathf.Clamp01(loadingOperation.progress) / 0.9f;
         // }
     }
 
     IEnumerator LoadAsyncScene(){
-        loadingOperation = SceneManager.LoadSceneAsync(sceneName);
+        loadingOperation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+        loadingOperation.allowSceneActivation = false;
         loadingPanel.SetActive(true);
+        loadingPanel.transform.GetChild(0).gameObject.SetActive(true);
 
         while (!loadingOperation.isDone){
             loadingPanel.transform.GetChild(0).GetComponent<Slider>().value = Mathf.Clamp01(loadingOperation.progress) / 0.9f;
+            Debug.Log("Slider value: " + Mathf.Clamp01(loadingOperation.progress) / 0.9f + " - " + loadingPanel.transform.GetChild(0).GetComponent<Slider>().value);
+            
+            if (loadingOperation.progress >= 0.9f){
+                yield return new WaitForSeconds(2.0f);
+                loadingOperation.allowSceneActivation = true;
+            }
+
             yield return null;
         }
     }

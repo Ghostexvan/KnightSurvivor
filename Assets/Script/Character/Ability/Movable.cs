@@ -11,6 +11,11 @@ public class Movable : MonoBehaviour
     public bool isActive;
 
     private void FixedUpdate() {
+        if (GetComponent<Health>().health <= 0){
+            moveVector = Vector2.zero;
+            return;
+        }
+        
         characterData.isOnGround = IsOnGround();
         characterData.isMove = moveVector != Vector2.zero;
         characterData.moveDirection = GetMoveDirection(Vector2.SignedAngle(moveVector, lookVector));

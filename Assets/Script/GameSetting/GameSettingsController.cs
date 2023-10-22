@@ -2,10 +2,18 @@ using UnityEngine;
 
 public class GameSettingsController : MonoBehaviour
 {
+    private static GameSettingsController _Instance;
+
     public GameSettings gameSettings;
 
     private void Awake() {
-        DontDestroyOnLoad(gameObject);
+        if (_Instance == null){
+            _Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+            Destroy(this.gameObject);
+        
         LoadSettings();
         ApplySettings();
     }
@@ -30,6 +38,8 @@ public class GameSettingsController : MonoBehaviour
         Application.targetFrameRate = gameSettings.frameRate;
         GetComponent<AudioSource>().volume = gameSettings.volume;
         gameSettings.isSet = false;
+
+        SaveSettings();
     }
 
     public void LoadSettings(){
@@ -43,6 +53,10 @@ public class GameSettingsController : MonoBehaviour
     }
 
     private void OnApplicationQuit() {
+        SaveSettings();
+    }
+
+    public void SaveSettings(){
         PlayerPrefs.SetInt("width", gameSettings.resolution.width);
         PlayerPrefs.SetInt("height", gameSettings.resolution.height);
         PlayerPrefs.SetInt("fullscreen", gameSettings.resolution.isFullscreen ? 1 : 0);

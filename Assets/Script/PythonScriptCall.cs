@@ -145,6 +145,9 @@ public class PythonScriptCall : MonoBehaviour
     // Tắt Camera app khi thoát scene
     private void OnDestroy()
     {
+        if (appProcess == null)
+            return;
+            
         if (!appProcess.HasExited)
         {
             appProcess.Kill();
@@ -153,6 +156,9 @@ public class PythonScriptCall : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        if (appProcess == null)
+            return;
+
         if (!appProcess.HasExited)
         {
             appProcess.Kill();
