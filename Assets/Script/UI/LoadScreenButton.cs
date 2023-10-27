@@ -44,8 +44,9 @@ public class LoadScreenButton : MonoBehaviour
             Debug.Log("Slider value: " + Mathf.Clamp01(loadingOperation.progress) / 0.9f + " - " + loadingPanel.transform.GetChild(0).GetComponent<Slider>().value);
             
             if (loadingOperation.progress >= 0.9f){
-                yield return new WaitForSeconds(2.0f);
+                //yield return new WaitForSeconds(2.0f);
                 loadingOperation.allowSceneActivation = true;
+                Time.timeScale = 1.0f;
             }
 
             yield return null;
