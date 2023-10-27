@@ -20,6 +20,13 @@ public class LoadingBehaviour : MonoBehaviour
     }
 
     private void Update() {
+        if (isSet && !ContainsParams(mainCamera.GetComponent<Animator>(), gameObject.name)){
+            for(int index = 0; index < gameObject.transform.childCount; index++){
+                gameObject.transform.GetChild(index).gameObject.SetActive(true);
+            }
+            isSet = false;
+        }
+
         //Debug.Log(mainCamera.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag(gameObject.name));
         if (isSet && mainCamera.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag(gameObject.name) && mainCamera.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f){
             for(int index = 0; index < gameObject.transform.childCount; index++){
@@ -28,6 +35,14 @@ public class LoadingBehaviour : MonoBehaviour
             isSet = false;
             //mainCamera.gameObject.GetComponent<Animator>().SetBool(gameObject.name, false);
         }
+    }
+
+    public bool ContainsParams(Animator animator, string paramName){
+        foreach (AnimatorControllerParameter param in animator.parameters){
+            if (param.name == paramName)
+                return true;
+        }
+        return false;
     }
 
     private void OnEnable() {

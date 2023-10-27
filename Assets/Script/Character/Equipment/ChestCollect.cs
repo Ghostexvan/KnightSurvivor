@@ -51,9 +51,9 @@ public class ChestCollect : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player"){
             GetDropItems(other.gameObject);
-            GameObject.Find("GameCanvas").GetComponent<GameUIController>().selectItem.SetActive(true);
-            GameObject.Find("GameCanvas").GetComponent<GameUIController>().selectItem.GetComponent<SelectItemPanel>().SetPlayer(other.gameObject);
-            GameObject.Find("GameCanvas").GetComponent<GameUIController>().selectItem.GetComponent<SelectItemPanel>().SetItemList(itemInstances);
+            GameObject.Find("GameCanvas").GetComponent<GameUIController>().selectItemPanel.SetActive(true);
+            GameObject.Find("GameCanvas").GetComponent<GameUIController>().selectItemPanel.GetComponent<SelectItemPanel>().SetPlayer(other.gameObject);
+            GameObject.Find("GameCanvas").GetComponent<GameUIController>().selectItemPanel.GetComponent<SelectItemPanel>().SetItemList(itemInstances);
             Debug.Log("Done setting to canvas!");
             Destroy(gameObject);
         }

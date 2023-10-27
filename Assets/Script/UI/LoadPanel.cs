@@ -2,11 +2,18 @@ using UnityEngine;
 
 public class LoadPanel : MonoBehaviour
 {
-    public GameObject panelToLoad;
+    public GameObject panelToLoad,
+                      parentPanel;
+    public bool useCustomePanel;
 
     public void OnClick(){
-        transform.parent.gameObject.SetActive(false);
+        if (useCustomePanel){
+            parentPanel.SetActive(false);
+        }
+        else {
+            transform.parent.gameObject.SetActive(false);
+        }
         GameObject.Find("Main Camera").GetComponent<Animator>().SetTrigger(panelToLoad.name);
-        panelToLoad.SetActive(true);
+        panelToLoad?.SetActive(true);
     }
 }
