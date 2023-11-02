@@ -10,20 +10,52 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4abb9cc79a61b16479e5a71a413b0d7e, type: 3}
-  m_Name: Bow2Hand
+  m_Name: Bow2H
   m_EditorClassIdentifier: 
   itemName: Bow
   description: A basic bow that can shoot arrows.
   icon: {fileID: 21300000, guid: fb2acd264db5e24428dbf84cf8f0f467, type: 3}
   itemStats:
   - level: 1
+    statAffect: 3
+    statType: 100
+    value: -0.5
+  - level: 1
+    statAffect: 6
+    statType: 100
+    value: 5
+  - level: 1
+    statAffect: 2
+    statType: 200
+    value: -0.2
+  - level: 1
+    statAffect: 7
+    statType: 200
+    value: -0.15
+  - level: 2
+    statAffect: 2
+    statType: 200
+    value: 1
+  - level: 3
     statAffect: 4
     statType: 100
+    value: 1
+  - level: 4
+    statAffect: 6
+    statType: 300
     value: 2
-  - level: 2
+  - level: 5
+    statAffect: 7
+    statType: 200
+    value: 0.1
+  - level: 6
+    statAffect: 4
+    statType: 100
+    value: 1
+  - level: 7
     statAffect: 3
     statType: 200
-    value: -90
+    value: -0.5
   isGet: 0
   weaponType: 6
   handleType: 0

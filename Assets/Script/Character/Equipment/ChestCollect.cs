@@ -79,8 +79,11 @@ public class ChestCollect : MonoBehaviour
         for (int index = 0; index < currentItems.Count; index++)
             currentItemsData.Add(currentItems[index].itemType);
 
-        int numberGetCurrentItem = itemNumber < 5 ? UnityEngine.Random.Range(0, Math.Min(itemCount, currentItems.Count)) : 3;
-        Debug.Log(numberGetCurrentItem);
+        // Them phan xu ly truong hop so luong item co the drop nho hon so luong can drop
+        int numberGetCurrentItem = data.itemLists.Count > itemCount 
+                                   ? (itemNumber < 5 ? UnityEngine.Random.Range(0, Math.Min(itemCount, currentItems.Count)) : 3)
+                                   : Math.Min(currentItems.Count, data.itemLists.Count);
+        Debug.Log("Number of item to get from current list: " + numberGetCurrentItem);
 
         currentItems.Shuffle();
         int getIndex = 0;

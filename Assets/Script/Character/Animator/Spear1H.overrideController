@@ -6,15 +6,17 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mace1Hand
+  m_Name: Spear1H
   m_Controller: {fileID: 9100000, guid: 27718ddd9b3f2a54e9b557f065d432a0, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: ce17781955d25c647922801319f24e9e, type: 3}
-    m_OverrideClip: {fileID: 7400000, guid: 1fc94e9b71f1f5e4f97b6a0021007bf5, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: e926e621b8f1c664cb310c28338c232f, type: 3}
   - m_OriginalClip: {fileID: 7400000, guid: 8b4aea68a09b24149ab89408f7199bb1, type: 3}
-    m_OverrideClip: {fileID: 7400000, guid: 9e5d42c64f4181e4e92729d62fa2d0fd, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 96f8270c0e4678d4580d41b43babe823, type: 3}
   - m_OriginalClip: {fileID: 7400000, guid: 3414c515c6a2f334da03b4ab3d547691, type: 3}
-    m_OverrideClip: {fileID: 7400000, guid: fcc82476d966e864da60dc606a6adcb0, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: c42fb2a62071d5f4faa8b8cc189a4387, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 589a11892e95f834dbf23f9e1cc1f090, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 9a26352c93a81e947b73b8e47cc931bb, type: 3}
   - m_OriginalClip: {fileID: 7400000, guid: 8164d5f25ce079442917b5582dfdbf2b, type: 3}
     m_OverrideClip: {fileID: 7400000, guid: 46e2b1e38f646914fb06aa0f33dbf4a5, type: 3}
   - m_OriginalClip: {fileID: 7400000, guid: 94c75858633b4e04f9e28db3b52b2bba, type: 3}
@@ -37,5 +39,3 @@ AnimatorOverrideController:
     m_OverrideClip: {fileID: 7400000, guid: e41ef2ee1fd48ce44a90e4f74de68318, type: 3}
   - m_OriginalClip: {fileID: 7400000, guid: a76b11de25f4d4e4ab91d27f3603c7e7, type: 3}
     m_OverrideClip: {fileID: 7400000, guid: 747d6482083d851468836035b9743418, type: 3}
-  - m_OriginalClip: {fileID: 7400000, guid: 589a11892e95f834dbf23f9e1cc1f090, type: 3}
-    m_OverrideClip: {fileID: 7400000, guid: 9a26352c93a81e947b73b8e47cc931bb, type: 3}
