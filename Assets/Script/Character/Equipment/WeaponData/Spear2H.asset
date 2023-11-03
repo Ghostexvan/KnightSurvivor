@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Two-handed Spear
   description: A spear that too long, it need to be hold by two hand.
-  icon: {fileID: 21300000, guid: bbceae73b019590439ef5129744308a1, type: 3}
+  icon: {fileID: 21300000, guid: cc2fc20f0f4c1264aa897c67dfcc4553, type: 3}
   itemStats:
   - level: 1
     statAffect: 2
