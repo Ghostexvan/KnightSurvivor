@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mace1H
   m_EditorClassIdentifier: 
   itemName: Mace
-  description: A mace that maybe small, but it still dangerous.
+  description: A versatile weapon for who want to bludgeon opponents.
   icon: {fileID: 21300000, guid: e67e11d800ebc144b9a0a05702c468e4, type: 3}
   itemStats:
   - level: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
     value: 1
   - level: 7
     statAffect: 5
-    statType: 200
+    statType: 300
     value: 0.75
   isGet: 1
   weaponType: 1

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae86a51090652484290cfd68631cac3b, type: 3}
+  m_Name: AttackDamage
+  m_EditorClassIdentifier: 
+  itemName: Increase Attack Damage
+  description: Increase your attack damage for a period of time.
+  icon: {fileID: 21300000, guid: dee0528180a6d794288f42ccc7c24df7, type: 3}
+  itemStats:
+  - level: 1
+    statAffect: 2
+    statType: 200
+    value: 1
+  isGet: 0
+  timeEffect: 10

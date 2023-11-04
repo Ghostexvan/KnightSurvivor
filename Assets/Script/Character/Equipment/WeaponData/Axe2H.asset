@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Axe2H
   m_EditorClassIdentifier: 
   itemName: Axe
-  description: An axe so heavy that it need to be hold by two hand.
+  description: Unleashing devastating blows for who rely on brute strength.
   icon: {fileID: 21300000, guid: b9505e419a14dda4ea399d26d5955f94, type: 3}
   itemStats:
   - level: 1
@@ -22,8 +22,8 @@ MonoBehaviour:
     value: 30
   - level: 1
     statAffect: 7
-    statType: 100
-    value: 50
+    statType: 200
+    value: 30
   - level: 1
     statAffect: 3
     statType: 200
@@ -33,9 +33,9 @@ MonoBehaviour:
     statType: 200
     value: -0.1
   - level: 2
-    statAffect: 2
+    statAffect: 7
     statType: 200
-    value: 0.15
+    value: 0.7
   - level: 3
     statAffect: 4
     statType: 100

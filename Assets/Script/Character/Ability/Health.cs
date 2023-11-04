@@ -17,6 +17,8 @@ public class Health : MonoBehaviour
 
     private void Update() {
         maxHealth = characterData.health.Value;
+        if (health > maxHealth)
+            health =  maxHealth;
     }
 
     public void ChangeHealth(float amountToChange){
