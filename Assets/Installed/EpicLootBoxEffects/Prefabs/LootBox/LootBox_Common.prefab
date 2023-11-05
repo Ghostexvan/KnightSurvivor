@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1154276601159950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4842734794826876}
+  - component: {fileID: 61380802733233514}
+  - component: {fileID: 114204861024592316}
+  m_Layer: 5
+  m_Name: LootBox_Common
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4842734794826876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154276601159950}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.393, y: 2.5, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61380802733233514
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154276601159950}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.704, y: 1.704}
+  m_EdgeRadius: 0
+--- !u!114 &114204861024592316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154276601159950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b65ef60b86ef049acb6261cf7d066f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idIcon: 0
+  idEffect: 0
+  isOpened: 0
+  IconPrefabs:
+  - {fileID: 1245167691184882, guid: 93b12d47a5032c24eb73bbf658094ea7, type: 3}
+  - {fileID: 1245167691184882, guid: 93b12d47a5032c24eb73bbf658094ea7, type: 3}
+  - {fileID: 1316699685223464, guid: 33f37ea22d5022248a4f87146fd66b0c, type: 3}
+  EffectPrefabs:
+  - {fileID: 1875953545431352, guid: e7a21d2880543a54eabfc3ac1170551a, type: 3}
+  - {fileID: 1875953545431352, guid: e7a21d2880543a54eabfc3ac1170551a, type: 3}
+  - {fileID: 1579721459114674, guid: f062e9ace27f8e347abc65e9252fee75, type: 3}
+  - {fileID: 1772312957667526, guid: 3b89d71ba100285469a4d3f69bbd1c1c, type: 3}
+  - {fileID: 1697787293125932, guid: 1cc56ebf3b56c3d42b82170360572370, type: 3}
+  - {fileID: 1246591095655200, guid: c1fdeb25f41e5db428bc614cce020284, type: 3}
+  - {fileID: 1327900810887282, guid: 0f6864399ff43d9468514e1bd280a9c9, type: 3}
+  - {fileID: 1072430665180934, guid: 1c7dea1d5bc941a4d84e6c78d174e0c4, type: 3}
+  - {fileID: 1605518195047906, guid: 228d07d0bd729ff47896e4f5b6104512, type: 3}
+  - {fileID: 1051893467454786, guid: 908325077eb6ccf42b83c32c5e0a17b9, type: 3}
+  - {fileID: 1543607804108138, guid: 333399008f5da13409bdd81a500c3313, type: 3}
+  - {fileID: 1976348847057990, guid: 2d871eec7dc02274ea66eb9f0fa9d76d, type: 3}
+  - {fileID: 1784973163047888, guid: 406c3d46f801ca44495961785ebdce07, type: 3}
+  - {fileID: 1735981105901650, guid: d4a6e79278990d14a8adb6939e4a9f64, type: 3}
+  - {fileID: 1038251880935154, guid: adc4787d3a823aa458ba2528b4d37543, type: 3}
+  - {fileID: 1085453163710670, guid: 5eacb110bb9e54e4fb696da0706b88b4, type: 3}
+  - {fileID: 1064211445580096, guid: e7e45fd018811c64c80342907dde389b, type: 3}
+  - {fileID: 1089154624610952, guid: cf6dcc955bcaa2b48b87be7664ad3e85, type: 3}
+  - {fileID: 1457676736140380, guid: c23e560549ae9f949b154fed8b780371, type: 3}
+  - {fileID: 1621396740559314, guid: 5bd758f33527df347a25ea1a566f646f, type: 3}
+  - {fileID: 1912531259730030, guid: fe92781e621c55c4ab87199dd3c246c1, type: 3}
+  - {fileID: 1821593349849712, guid: dca5e85d6f34448468bc15310d9ab7a7, type: 3}
+  - {fileID: 1487853121247640, guid: 7918c986ceb26bb4da2871e4ef1a0704, type: 3}
+  - {fileID: 1387001328650880, guid: 34b7f2f5180f7de45804c11d238a9250, type: 3}
+  - {fileID: 1895801658266920, guid: 6caec93c4258acc4e872428883212b0a, type: 3}
+  - {fileID: 1292799928609656, guid: 36443b50aae24b540927880560e93bd8, type: 3}
+  DesFxObjs: []
+  DesIconObjs: []
+  effectsText: {fileID: 0}
+  nameEffectText: {fileID: 0}

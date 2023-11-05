@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18682bddacfe6204686f2103146141d6, type: 3}
+  m_Name: ChestDrop
+  m_EditorClassIdentifier: 
+  itemLists:
+  - {fileID: 11400000, guid: 25371ff361aeb944a8db41ee4ef8c03f, type: 2}
+  - {fileID: 11400000, guid: ff3289d757d8d9140a22b557ba380ecc, type: 2}
+  - {fileID: 11400000, guid: 5503eba76c622c845beaaf7a1fe60278, type: 2}
+  - {fileID: 11400000, guid: 568d0dac36440b04d89af3fe72ed6e65, type: 2}
+  - {fileID: 11400000, guid: a377391addb49204a9fb9892b01be454, type: 2}
+  - {fileID: 11400000, guid: 2d919f428e9c1bd42b0f88d4c787518a, type: 2}
+  - {fileID: 11400000, guid: dbec9e938d26357479e6f547ae8efbca, type: 2}
+  - {fileID: 11400000, guid: 546c82727592cbb4e82e70c2ec94003c, type: 2}
+  - {fileID: 11400000, guid: 6cc3fc0fade7e4b439aeeb0f8e00c903, type: 2}

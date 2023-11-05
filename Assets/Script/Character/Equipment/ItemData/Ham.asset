@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c539f5e45a9b394b8f5f99435e0204c, type: 3}
+  m_Name: Ham
+  m_EditorClassIdentifier: 
+  itemName: Ham
+  description: An elaborately prepared piece of pork.
+  icon: {fileID: 21300000, guid: c1101a972f67d164db2754844fbeeda2, type: 3}
+  itemStats:
+  - level: 1
+    statAffect: 0
+    statType: 200
+    value: 0.1
+  - level: 2
+    statAffect: 0
+    statType: 200
+    value: 0.1
+  - level: 3
+    statAffect: 0
+    statType: 200
+    value: 0.1
+  - level: 4
+    statAffect: 0
+    statType: 200
+    value: 0.1
+  - level: 5
+    statAffect: 0
+    statType: 200
+    value: 0.1
