@@ -82,7 +82,10 @@ public class WeaponSelect : MonoBehaviour, IPointerEnterHandler
                     statDescription += "x";
                 }
 
-                statDescription += itemInstance.itemType.itemStats[index].value;
+                if (itemInstance.itemType.itemStats[index].statType == StatModType.Flat)
+                    statDescription += itemInstance.itemType.itemStats[index].value;
+                else
+                    statDescription += itemInstance.itemType.itemStats[index].value * 100;
 
                 if (itemInstance.itemType.itemStats[index].statType == StatModType.PercentAdd || itemInstance.itemType.itemStats[index].statType == StatModType.PercentMult){
                     statDescription += "%";

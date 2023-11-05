@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abb9cc79a61b16479e5a71a413b0d7e, type: 3}
+  m_Name: Spear1H
+  m_EditorClassIdentifier: 
+  itemName: One-handed Spear
+  description: A swift and agile weapon for who value speed and precision in their
+    strikes.
+  icon: {fileID: 21300000, guid: bbceae73b019590439ef5129744308a1, type: 3}
+  itemStats:
+  - level: 1
+    statAffect: 2
+    statType: 200
+    value: -0.15
+  - level: 1
+    statAffect: 3
+    statType: 200
+    value: -0.1
+  - level: 1
+    statAffect: 5
+    statType: 200
+    value: -0.15
+  - level: 1
+    statAffect: 6
+    statType: 100
+    value: 30
+  - level: 2
+    statAffect: 5
+    statType: 200
+    value: 0.1
+  - level: 3
+    statAffect: 4
+    statType: 100
+    value: 1
+  - level: 4
+    statAffect: 2
+    statType: 200
+    value: 0.1
+  - level: 5
+    statAffect: 3
+    statType: 200
+    value: -0.15
+  - level: 6
+    statAffect: 4
+    statType: 100
+    value: 1
+  - level: 7
+    statAffect: 6
+    statType: 100
+    value: 35
+  isGet: 0
+  weaponType: 3
+  handleType: 1
+  model: {fileID: 120945116408855725, guid: 5a7799182e2ca0d43a931d1f0a4b24e1, type: 3}
+  animator: {fileID: 22100000, guid: fd72416dee68e4a4c941e3d58cd9912f, type: 2}

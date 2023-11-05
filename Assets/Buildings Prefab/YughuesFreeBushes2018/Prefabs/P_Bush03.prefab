@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6786704563916574243}
   - component: {fileID: 6786704563917573347}
   - component: {fileID: 6145571236868537627}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bush03_L_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786704563919835681}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6786704563919474195}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6786704563916574243
 MeshFilter:
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 6786704563916574269}
   - component: {fileID: 6786704563917573373}
   - component: {fileID: 2194724067326259961}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bush03_L_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,13 +130,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786704563919835683}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6786704563919474195}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6786704563916574269
 MeshFilter:
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 6786704563916574247}
   - component: {fileID: 6786704563917573351}
   - component: {fileID: 9014628113902477023}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bush03_L_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,13 +234,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786704563919835685}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6786704563919474195}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6786704563916574247
 MeshFilter:
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 6786704563916574241}
   - component: {fileID: 6786704563917573345}
   - component: {fileID: 352935460293453361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bush03_L_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,13 +338,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786704563919835687}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6786704563919474195}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6786704563916574241
 MeshFilter:
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 6786704563916574259}
   - component: {fileID: 6786704563917573363}
   - component: {fileID: 7322723659542793700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bush03_B_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,13 +442,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786704563919835697}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6786704563919474195}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6786704563916574259
 MeshFilter:
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 6786704563900488371}
   - component: {fileID: -8150563693209800853}
   - component: {fileID: 7469214082424201614}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: P_Bush03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -546,7 +546,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786704563919835699}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -564,6 +563,7 @@ Transform:
   - {fileID: 6786704563919474183}
   - {fileID: 6786704563919474181}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &6786704563900488371
 LODGroup:
@@ -625,18 +625,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786704563919835699}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &6786704563919835701
 GameObject:
@@ -650,7 +642,7 @@ GameObject:
   - component: {fileID: 6786704563916574263}
   - component: {fileID: 6786704563917573367}
   - component: {fileID: 3993960452609066106}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bush03_B_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,13 +656,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786704563919835701}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6786704563919474195}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6786704563916574263
 MeshFilter:
@@ -754,7 +746,7 @@ GameObject:
   - component: {fileID: 6786704563916574257}
   - component: {fileID: 6786704563917573361}
   - component: {fileID: 1228423643864352573}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bush03_B_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -768,13 +760,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786704563919835703}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6786704563919474195}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6786704563916574257
 MeshFilter:
@@ -858,7 +850,7 @@ GameObject:
   - component: {fileID: 6786704563916574267}
   - component: {fileID: 6786704563917573371}
   - component: {fileID: 2620429329953732978}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bush03_F_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -872,13 +864,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786704563919835705}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6786704563919474195}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6786704563916574267
 MeshFilter:
@@ -962,7 +954,7 @@ GameObject:
   - component: {fileID: 6786704563916574261}
   - component: {fileID: 6786704563917573365}
   - component: {fileID: 1739048901018807252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bush03_B_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -976,13 +968,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786704563919835707}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6786704563919474195}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6786704563916574261
 MeshFilter:
@@ -1066,7 +1058,7 @@ GameObject:
   - component: {fileID: 6786704563916574271}
   - component: {fileID: 6786704563917573375}
   - component: {fileID: 2452608322736616668}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bush03_F_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1080,13 +1072,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786704563919835709}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6786704563919474195}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6786704563916574271
 MeshFilter:
@@ -1170,7 +1162,7 @@ GameObject:
   - component: {fileID: 6786704563916574265}
   - component: {fileID: 6786704563917573369}
   - component: {fileID: 71762559497741482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bush03_F_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1184,13 +1176,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786704563919835711}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6786704563919474195}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6786704563916574265
 MeshFilter:

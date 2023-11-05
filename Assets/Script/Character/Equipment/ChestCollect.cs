@@ -71,17 +71,26 @@ public class ChestCollect : MonoBehaviour
         int itemNumber = currentItems.Count;
         Debug.Log(itemNumber);
         
-        if (character.GetComponent<Equipment>().weapon.itemType != null)
+        // Bien nay dung de kiem tra so luong vu khi co the lay
+        // Neu da co vu khi tren tay thi khong the lay qua n-1 vu khi (khong ep nguoi choi doi vu khi)
+        int numberWeaponsGet = itemCount;
+        if (character.GetComponent<Equipment>().weapon.itemType != null){
             currentItems.Add(new ItemInstance(character.GetComponent<Equipment>().weapon));
+            numberWeaponsGet -= 1;
+        }
         Debug.Log("Curent after add weapon: " + currentItems.Count);
 
         List<ItemData> currentItemsData = new List<ItemData>();
         for (int index = 0; index < currentItems.Count; index++)
             currentItemsData.Add(currentItems[index].itemType);
 
-        int numberGetCurrentItem = itemNumber < 5 ? UnityEngine.Random.Range(0, Math.Min(itemCount, currentItems.Count)) : 3;
-        Debug.Log(numberGetCurrentItem);
+        // Them phan xu ly truong hop so luong item co the drop nho hon so luong can drop
+        int numberGetCurrentItem = data.itemLists.Count > itemCount 
+                                   ? (itemNumber < 5 ? UnityEngine.Random.Range(0, Math.Min(itemCount, currentItems.Count)) : 3)
+                                   : Math.Min(currentItems.Count, data.itemLists.Count);
+        Debug.Log("Number of item to get from current list: " + numberGetCurrentItem);
 
+        // Khong xet so luong vu khi co the lay trong kho do cua nguoi choi
         currentItems.Shuffle();
         int getIndex = 0;
         while(numberGetCurrentItem > 0 && getIndex < currentItems.Count){
@@ -106,8 +115,19 @@ public class ChestCollect : MonoBehaviour
                 continue;
             }
                 
-
             if (!dropList.Contains(avaiableList[getIndex]) && !currentItemsData.Contains(avaiableList[getIndex])){
+                // Kiem tra xem co phai vu khi khong
+                if (avaiableList[getIndex].GetType().Name == "WeaponData"){
+                    // So luong vu khi co the lay kha dung thi lay
+                    if (numberWeaponsGet > 0)
+                        numberWeaponsGet -= 1;
+                    else {
+                        // Khong thi bo qua
+                        getIndex++;
+                        continue;
+                    }
+                }
+                
                 Debug.Log("Add item from avaiable list: " + avaiableList[getIndex].name);
                 dropList.Add(avaiableList[getIndex]);
                 numberToGet -= 1;
@@ -116,6 +136,14 @@ public class ChestCollect : MonoBehaviour
             getIndex++;
         }
         Debug.Log(numberToGet + " - " + getIndex);
+
+        // Truong hop sau khi lay xong ma chua du, lay nhung effect ngau nhien
+        data.effectLists.Shuffle();
+        getIndex = 0;
+        while(dropList.Count < itemCount){
+            dropList.Add(data.effectLists[getIndex]);
+            getIndex++;
+        }
 
         for (int index = 0; index < dropList.Count; index++){
             itemInstances.Add(new ItemInstance(dropList[index]));

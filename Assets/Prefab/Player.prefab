@@ -1157,6 +1157,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 95be2555-5aa6-4ce8-b84e-1ebff09ab0d5
     m_ActionName: GUI/Confirm[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 71cc57a0-207e-4a65-9c4c-ee9c962e7c3e
+    m_ActionName: Player/PauseGame[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e7b55944-a5a1-4ebf-89ed-3debb595e733
+    m_ActionName: GUI/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1178,7 +1186,7 @@ MonoBehaviour:
   characterData: {fileID: 11400000, guid: 73eee4827ea731d4c86acc85bb425655, type: 2}
   weapon:
     itemType: {fileID: 0}
-    currentLevel: 0
+    currentLevel: 1
   item: []
   itemJoinRight: {fileID: 0}
   itemJoinLeft: {fileID: 0}
