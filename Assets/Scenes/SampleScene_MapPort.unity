@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18631649, g: 0.5225311, b: 0.8326769, a: 1}
+  m_IndirectSpecularColor: {r: 0.18631656, g: 0.5225312, b: 0.83267707, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6404,7 +6404,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 631
+    m_Bits: 1655
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -8730,6 +8730,110 @@ MonoBehaviour:
   m_DefaultActionMap: GUI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!1 &1418898309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1418898312}
+  - component: {fileID: 1418898311}
+  - component: {fileID: 1418898310}
+  m_Layer: 0
+  m_Name: AStar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1418898310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418898309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a634230476dc478b88eceac73b1c8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  updateDistance: 10
+  target: {fileID: 1163647749}
+  graphIndex: 0
+--- !u!114 &1418898311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418898309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  data:
+    dataString: UEsDBBQAAAgIAAA4IezHgeUtWQIAABYFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1T2zAQ/SsZndtO7BACvbUmhB6ADKHDxRfFWseayJJHHySByX/vSpZj15wsvX27+/ZD/iRcmgYKq/RKc/aoGJCfE+LP5NukNz7Ake6U3PAP6DhvnNnKk2jgvFDLFeKJdzOqBqt58UvuhCdPEXSSl0rXS7aDTBlrEC6pMIAmraz3lgh9TsgxOpzi98N/J2c8FSAt6J41n455iASmk4WgdQPMK+4dknnngKdAlFhN5HjlhRKCmyiF2FMTSs1oYxwWggTGKZYWREx/LOaIVMB3lcV7OvR/LksDNirT9HTHNTapDUx+q7ZzNTX7Vtw7Fc6nmt3Mg6w26OMXe5osrgKh1Kp+6DInoQ+24sX+hZ4KauyguUP4rlefhC4dqNjTrYC3CuSTWmnlJEOj1c67OgPp3SDUpbqsgmLf81q1I9A1X8eZ9OM8h/qPmeD1NjLwuhEqtPzW30HjcP6g3LAcJrIQ9RL+Gnilu+EWRcM918aiKaaTXttWOe2pZBk65ktxNlNaQoCj4gYkFfa0xjB2PMKRbZB2ZLmn/r3E5NHWPYORS4B7/nQ6Mq3V4TIqU6nDI5jq2VnBJfSiveEJ+5QpKdsNG/akc9s4XdJi4LZznP2/WiSZl+WMzbYpKklv4er7LWXFYrso0+ub5Cq9piRsHpdYJxXrVmhsD05N9sElbln3G5msNG3CtjNNDyv+UatBy7ks1abQAPK5jXARDhqT4MNkS8axQRuwlsswb/KZE6GKPbD8EigPlS6PVtO8j5KThr8r65GcZOHnkRMPXxZ5reGdw8En74KdyfkfUEsDBBQAAAgIAAA4IezN9xMCbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSoWlamnGKcZKRoYGBkWWqia5lYkqyeZJ5mpGZhaGJkVmiUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAA4IezHgeUtWQIAABYFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAA4IezN9xMCbQAAAHgAAAAJACQAAAAAAAAAAAAAAKYCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAXgMAAAAA
+    upgradeData: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 1
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 1
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors:
+    - {r: 0, g: 0, b: 0, a: 0}
+  tagNames: []
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 10
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
+--- !u!4 &1418898312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418898309}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 500, y: 0, z: 500}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1426529052
 GameObject:
   m_ObjectHideFlags: 0
@@ -10688,7 +10792,7 @@ MonoBehaviour:
   isSet: 0
   enemyList: []
   maxNumberEnemy: 0
-  enemyPrefab: {fileID: 1922417409238373823, guid: 668047a09f5076845b85a235d80208cc, type: 3}
+  enemyPrefab: {fileID: 576688414589418247, guid: 3fdd263b440079541b6ff77dc1632553, type: 3}
   player: {fileID: 0}
   enemyParent: {fileID: 0}
   gameSettings: {fileID: 0}
@@ -12962,7 +13066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4200344161634953903, guid: 5706f92428d8ef446a9a8a6138292032, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -344.3999
+      value: -344.39993
       objectReference: {fileID: 0}
     - target: {fileID: 4200344161634953903, guid: 5706f92428d8ef446a9a8a6138292032, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -13106,7 +13210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4200344162421407665, guid: 5706f92428d8ef446a9a8a6138292032, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -360
+      value: -359.99997
       objectReference: {fileID: 0}
     - target: {fileID: 4200344162421407665, guid: 5706f92428d8ef446a9a8a6138292032, type: 3}
       propertyPath: m_AnchoredPosition.y
