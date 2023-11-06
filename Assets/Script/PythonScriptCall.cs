@@ -15,13 +15,13 @@ public class PythonScriptCall : MonoBehaviour
     //[Tooltip("Specify your Python Path")]
     //public static string pythonPath = "";
 
-    [Tooltip("Specify the path to the included Python executable app. This will be a const since this app may or may not be put in ")]
+    [Tooltip("Specify the path to the included Python executable app. This will be a const since this app may or may not be put in. Do have the path lead right to the .exe file.")]
     // public const string pythonAppPath = "E:\\Pycharm\\NLN\\hand-gesture-recognition-mediapipe-main\\dist\\app_v2.exe";
     //public const string pythonAppPath = "E:/Pycharm/NLN/hand-gesture-recognition-mediapipe-main/dist/app_v2/app_v2.exe";
-    public const string pythonAppPath = "E:\\Pycharm\\NLN\\hand-gesture-recognition-mediapipe-main\\dist\\app_v2\\app_v2.exe";
+    public string pythonAppPath = "E:\\Pycharm\\NLN\\hand-gesture-recognition-mediapipe-main\\dist\\app_v2\\app_v2.exe";
 
     private static Process appProcess;
-    private bool isActive;
+    private bool isActive = false;      // Initial value will be false
 
     void Awake()
     {
@@ -38,7 +38,11 @@ public class PythonScriptCall : MonoBehaviour
         if (isActive)
         {
             StartCoroutine(RunOnStart());
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
+        }
+        else
+        {
+            UnityEngine.Debug.LogWarning("UDP is disabled! App will not be started");
         }
     }
 
@@ -120,7 +124,7 @@ public class PythonScriptCall : MonoBehaviour
     IEnumerator RunOnStart()
     {
         print(Application.dataPath);
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
 
         ProcessStartInfo appInfo = new ProcessStartInfo();
         appInfo.FileName = pythonAppPath;
@@ -145,17 +149,24 @@ public class PythonScriptCall : MonoBehaviour
     // Tắt Camera app khi thoát scene
     private void OnDestroy()
     {
-        if (!appProcess.HasExited)
+        if (appProcess != null)
         {
-            appProcess.Kill();
+            if (!appProcess.HasExited)
+            {
+                appProcess.Kill();
+            }
+
         }
     }
 
     private void OnApplicationQuit()
     {
-        if (!appProcess.HasExited)
+        if (appProcess != null)
         {
-            appProcess.Kill();
+            if (!appProcess.HasExited)
+            {
+                appProcess.Kill();
+            }
         }
     }
 }

@@ -11,12 +11,15 @@ public class Movable : MonoBehaviour
     public bool isActive;
 
     private void FixedUpdate() {
+        // These are mostly for Animation States
         characterData.isOnGround = IsOnGround();
         characterData.isMove = moveVector != Vector2.zero;
         characterData.moveDirection = GetMoveDirection(Vector2.SignedAngle(moveVector, lookVector));
         //Debug.Log(GetMoveDirection(Vector2.SignedAngle(moveVector, lookVector)));
 
         //print("Move Vector: " + moveVector);
+
+        // This is the real movement method
         Move();
     }
 
@@ -62,6 +65,7 @@ public class Movable : MonoBehaviour
         lookVector = vec;
     }
 
+    // Mostly for animation States I think
     Direction GetMoveDirection(float angle){
         if (-22.5f < angle && angle < 22.5f)
             return Direction.Forward;

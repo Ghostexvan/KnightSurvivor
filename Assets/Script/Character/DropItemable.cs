@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,14 +13,17 @@ public class DropItemable : MonoBehaviour
 
     public List<dropList> drops;
 
-    private void OnDestroy() {
-        //Debug.Log("Instantiate position: " + gameObject.transform.position + ", local: " + gameObject.transform.localPosition);
-        DropItem();
-    }
+    //private void OnDestroy() {
+    //    //Debug.Log("Instantiate position: " + gameObject.transform.position + ", local: " + gameObject.transform.localPosition);
+    //    DropItem();
+    //}
     
+    /// <summary>
+    /// Tắt OnDestroy và đưa DropItem() vào làm action của event onHealthZero của Health.cs
+    /// </summary>
     public void DropItem(){
         Vector3 position = new Vector3(gameObject.transform.localPosition.x,
-                                           gameObject.transform.localPosition.y,
+                                           gameObject.transform.localPosition.y + 1.0f,
                                            gameObject.transform.localPosition.z);
         foreach(dropList drop in drops){
             if (UnityEngine.Random.Range(0f, 100f) <= drop.chance){
