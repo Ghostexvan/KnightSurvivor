@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692035983730573058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7868875249252564559}
   - component: {fileID: 391326740179888473}
   - component: {fileID: 8719937949382922129}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 743464065245190757}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2567609789571215295}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawn Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 8446816849802485725}
   - component: {fileID: 6042194396462180006}
   - component: {fileID: 6387396899984575012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ruins Test 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1019410765476778046}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 343851753633913700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

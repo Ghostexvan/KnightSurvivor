@@ -7,19 +7,26 @@ public class NavMeshAgentControl : MonoBehaviour
     public CharacterData characterData;
 
     private float enemySpeed;
+    public GameObject target;
 
     private void Awake()
     {
         enemySpeed = characterData.moveSpeed.Value;
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
         agent.speed = enemySpeed;
+        target = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Start is called before the first frame update
     void FixedUpdate()
     {
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.destination = GameObject.FindGameObjectWithTag("Player").transform.position;       
+        if (target.GetComponent<Health>().health > 0){
+            agent.destination = target.transform.position;      
+        }
+        else{
+            agent.isStopped = true;
+        }
     }
 
     public void SetData(CharacterData data)

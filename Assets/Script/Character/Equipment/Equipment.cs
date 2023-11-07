@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,45 +27,64 @@ public class Equipment : MonoBehaviour
 
     public void Equip(ItemInstance item){
         switch (item.itemType.GetType().Name){
-                case "WeaponData":
-                    if (weapon != null && weapon.itemType != item.itemType){
-                        weapon.Unequip(characterData);
-                        if (weaponInstance != itemJoinRight.transform.GetChild(0).gameObject)
-                            Destroy(weaponInstance);
-                        weapon = item;
-                        weapon.Equip(characterData);
-                        DisplayWeapon();
+            case "WeaponData":
+                if (weapon != null && weapon.itemType != item.itemType){
+                    weapon.Unequip(characterData);
+                    if (weaponInstance != itemJoinRight.transform.GetChild(0).gameObject)
+                        Destroy(weaponInstance);
+                    weapon = item;
+                    weapon.Equip(characterData);
+                    DisplayWeapon();
+                }
+                else if (weapon != null && weapon.itemType == item.itemType){
+                    weapon.LevelUp(characterData);
+                }
+                else {
+                    weapon = item;
+                    weapon.Equip(characterData);
+                    DisplayWeapon();
+                }
+                break;
+            case "ItemData":
+                bool isAdded = false;
+                for (int index = 0; index < this.item.Count; index++){
+                    if (this.item[index].itemType == item.itemType){
+                        this.item[index].LevelUp(characterData);
+                        Debug.Log("Add item: Level up");
+                        isAdded = true;
+                        break;
                     }
-                    else if (weapon != null && weapon.itemType == item.itemType){
-                        weapon.LevelUp(characterData);
-                    }
-                    else {
-                        weapon = item;
-                        weapon.Equip(characterData);
-                        DisplayWeapon();
-                    }
-                    break;
-                case "ItemData":
-                    bool isAdded = false;
-                    for (int index = 0; index < this.item.Count; index++){
-                        if (this.item[index].itemType == item.itemType){
-                            this.item[index].LevelUp(characterData);
-                            Debug.Log("Add item: Level up");
-                            isAdded = true;
-                            break;
-                        }
-                    }
+                }
 
-                    if (!isAdded && this.item.Count < maxItem){
-                        item.Equip(characterData);
-                        Debug.Log("Add item: New");
-                        this.item.Add(item);
-                    }
+                if (!isAdded && this.item.Count < maxItem){
+                    item.Equip(characterData);
+                    Debug.Log("Add item: New");
+                    this.item.Add(item);
+                }
                     
-                    break;
-                default:
-                    break;
-            }  
+                break;
+            case "EffectData":
+                StartCoroutine(EquipEffect(item));
+                break;
+            default:
+                break;
+        }  
+    }
+
+    IEnumerator EquipEffect(ItemInstance item){
+        if (((EffectData) item.itemType).itemStats[0].statAffect == StatType.health){
+            float amountAdd = ((EffectData) item.itemType).itemStats[0].statType == StatModType.Flat ?
+                            ((EffectData) item.itemType).itemStats[0].value :
+                            ((EffectData) item.itemType).itemStats[0].value * characterData.health.Value;
+            GetComponent<Health>().health += amountAdd;
+        }
+        else {
+            item.Equip(characterData);
+        }
+        yield return new WaitForSeconds(((EffectData) item.itemType).timeEffect);
+        if (((EffectData) item.itemType).itemStats[0].statAffect != StatType.health){
+            item.Unequip(characterData);
+        }
     }
 
     public void DisplayWeapon(){

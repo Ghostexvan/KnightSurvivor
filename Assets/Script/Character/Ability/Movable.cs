@@ -1,17 +1,25 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
 
 [SelectionBase]
 public class Movable : MonoBehaviour
 {
+    public bool firstGroundContact;
     public CharacterData characterData;
     public float rotateSpeed;
     public Vector2 moveVector,
                    lookVector;
     public bool isActive;
-
+    private void Awake() {
+        firstGroundContact = true;
+    }
     private void FixedUpdate() {
-        // These are mostly for Animation States
+        if (GetComponent<Health>().health <= 0){
+            moveVector = Vector2.zero;
+            return;
+        }
+        
         characterData.isOnGround = IsOnGround();
         characterData.isMove = moveVector != Vector2.zero;
         characterData.moveDirection = GetMoveDirection(Vector2.SignedAngle(moveVector, lookVector));
@@ -29,6 +37,10 @@ public class Movable : MonoBehaviour
 
     private bool IsOnGround()
     {
+        if(firstGroundContact){
+            AstarPath.active.Scan();
+            firstGroundContact=false;
+        }
         return Physics.Raycast(transform.position, Vector3.down, 0.01f);
     }
 

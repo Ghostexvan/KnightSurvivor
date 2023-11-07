@@ -4,5 +4,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class DropableItems : ScriptableObject
 {
-    public List<ItemData> itemLists = new List<ItemData>();
+    public List<ItemData> itemLists = new List<ItemData>(),
+                          effectLists = new List<ItemData>();
 }

@@ -5,6 +5,10 @@ using UnityEngine;
 public class TouchDealDamage : MonoBehaviour
 {
     public CharacterData characterData;
+    // Them cooldown
+    public bool isCooldown;
+    // Thoi gian cooldown
+    public float cooldownTime;
 
     // Is used to check whether the enemy can attack again
     private float attackTimer;
@@ -16,6 +20,10 @@ public class TouchDealDamage : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
+        // Dang cooldown thi khong gay damage
+        if (isCooldown)
+            return;
+
         if (collision.gameObject.TryGetComponent(out Damageable damageObject) && collision.gameObject.tag == "Player"){
             // Check if the enemy can attack again
             damageObject.DealDamage(-characterData.attackDamage.Value);

@@ -23,7 +23,7 @@ public class DropItemable : MonoBehaviour
     /// </summary>
     public void DropItem(){
         Vector3 position = new Vector3(gameObject.transform.localPosition.x,
-                                           gameObject.transform.localPosition.y + 1.0f,
+                                           gameObject.transform.localPosition.y + 2.0f,
                                            gameObject.transform.localPosition.z);
         foreach(dropList drop in drops){
             if (UnityEngine.Random.Range(0f, 100f) <= drop.chance){

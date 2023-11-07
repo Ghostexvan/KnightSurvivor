@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3710385182699093885}
   - component: {fileID: 602422948168757346}
   - component: {fileID: 4324524935850628773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PT_Pine_Tree_03_green_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8777796800643862215}
   - component: {fileID: 6562611745911730426}
   - component: {fileID: 5624711370870518306}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PT_Pine_Tree_03_green_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 6474837661480019989}
   - component: {fileID: 8740814055838547745}
   - component: {fileID: 4638044351695276680}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PT_Pine_Tree_03_green_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 3940227790074720740}
   - component: {fileID: 3741027869366506481}
   - component: {fileID: -4775651564945144484}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PT_Pine_Tree_03_green
   m_TagString: Tree
   m_Icon: {fileID: 0}

@@ -2,9 +2,15 @@ using UnityEngine;
 
 public class GameUIController : MonoBehaviour
 {
-    public GameObject selectItem;
+    public GameObject selectItemPanel,
+                      gamePausePanel;
 
     private void Awake() {
-        selectItem = GameObject.Find("SelectItemPanel");
+        selectItemPanel = GameObject.Find("SelectItemPanel");
+        gamePausePanel = GameObject.Find("GamePausePanel");
+    }
+
+    public void PauseGame(){
+        gamePausePanel.SetActive(true);
     }
 }

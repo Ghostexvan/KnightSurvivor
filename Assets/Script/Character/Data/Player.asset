@@ -15,7 +15,7 @@ MonoBehaviour:
   health:
     BaseValue: 100
   defense:
-    BaseValue: 0
+    BaseValue: 1
   attackDamage:
     BaseValue: 10
   attackCooldown:

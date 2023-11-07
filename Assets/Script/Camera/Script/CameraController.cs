@@ -18,7 +18,15 @@ public class CameraController : MonoBehaviour
         FollowingPlayer();
     }
 
+    private void Update() {
+        if (GameObject.Find("GameController").GetComponent<GameController>().isPlayerDeath){
+            GetComponent<Animator>().Play("Death");
+        }
+    }
+
     private void LateUpdate() {
+        if (GameObject.Find("GameController").GetComponent<GameController>().isPlayerDeath)
+            return;
         FollowingPlayer();
     }
 

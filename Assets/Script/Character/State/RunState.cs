@@ -13,6 +13,9 @@ public class RunState : IState
 
     public void UpdateState(StateController sc){
         // Change state condition check
+        if (sc.health.health <= 0)
+            sc.ChangeState(sc.deathState);
+            
         if (!sc.playerData.isOnGround){
             if (sc.playerData.isJump)
                 sc.ChangeState(sc.jumpState);

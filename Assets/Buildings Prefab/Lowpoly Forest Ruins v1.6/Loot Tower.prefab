@@ -904,7 +904,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5786732994549420695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawn Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1035,7 +1035,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3172245968395258237}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1264,7 +1264,7 @@ GameObject:
   - component: {fileID: 5201208361682010905}
   - component: {fileID: 5607108036499227654}
   - component: {fileID: 948590032259176111}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Loot Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1523,7 +1523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6365972425497429618}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1599,6 +1599,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8869de5adf0b2ce4db892967e50eb19b, type: 3}
       propertyPath: m_Name
       value: Pillar
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8869de5adf0b2ce4db892967e50eb19b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8869de5adf0b2ce4db892967e50eb19b, type: 3}
@@ -1701,6 +1705,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e9c2fb892bced9a48b6918dadb2671b9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9c2fb892bced9a48b6918dadb2671b9, type: 3}
 --- !u!1 &8396754841995057311 stripped
@@ -1801,6 +1809,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8869de5adf0b2ce4db892967e50eb19b, type: 3}
       propertyPath: m_Name
       value: Pillar (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8869de5adf0b2ce4db892967e50eb19b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8869de5adf0b2ce4db892967e50eb19b, type: 3}

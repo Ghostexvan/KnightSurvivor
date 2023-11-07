@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +12,11 @@ public class GameController : MonoBehaviour
     public int maxNumberEnemy;
     public GameObject enemyPrefab,
                       player,
-                      enemyParent;
+                      enemyParent,
+                      gameSettings,
+                      gameOverPanel;
+    public bool isBossBattle,
+                isPlayerDeath;
     public float spawnRadius;
 
     //public List<SpawnWave> waves;
@@ -37,6 +41,9 @@ public class GameController : MonoBehaviour
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         player = GameObject.FindGameObjectWithTag("Player");
         enemyParent = GameObject.Find("Enemy Pool");
+        gameOverPanel.SetActive(false);
+        isPlayerDeath = false;
+        isBossBattle = false;
     }
 
     // Start is called before the first frame update
@@ -48,12 +55,21 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isPlayerDeath)
+            return;
+
+        if (player.GetComponent<Health>().health <= 0){
+            gameOverPanel.SetActive(true);
+            isPlayerDeath = true;
+            return;
+        }
+        
         CheckEnemyList();
         if (isSet)
-            SpawnEnemy();
+            StartCoroutine(SpawnEnemy());
     }
 
-    void SpawnEnemy(){
+    IEnumerator SpawnEnemy(){
         while (enemyList.Count < maxNumberEnemy){
             //GameObject enemy = Instantiate(enemyPrefab, GetSpawnPosition(), Quaternion.identity, gameObject.transform.GetChild(1));
             // Fixed parent object for enemies
@@ -66,9 +82,14 @@ public class GameController : MonoBehaviour
         }
 
         isSet = false;
+        yield return null;
     }
 
-    void CheckEnemyList(){
+    void CheckEnemyList(){   
+        if (isSet)
+            return;
+
+        Debug.Log("Start check enemy list");
         if (enemyList.Count < maxNumberEnemy)
             isSet = true;
 
@@ -78,6 +99,7 @@ public class GameController : MonoBehaviour
                 isSet = true;
             }
         }
+        Debug.Log("Done check enemy list");
     }
 
     Vector3 GetSpawnPosition(){

@@ -360,6 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &101557978531525203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 0}
+  isCooldown: 0
+  cooldownTime: 0.1
 --- !u!114 &3637974993926685730
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -68,6 +68,9 @@ public class Health : MonoBehaviour
         {
             maxHealth = characterData.health.Value;
         }
+        maxHealth = characterData.health.Value;
+        if (health > maxHealth)
+            health =  maxHealth;
     }
 
     public void ChangeHealth(float amountToChange){
