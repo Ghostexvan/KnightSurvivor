@@ -3,9 +3,17 @@ using UnityEngine.AI;
 
 public class NavMeshAgentControl : MonoBehaviour
 {
+    // DataControl.cs has a SendMsg that sets
+    public CharacterData characterData;
+
+    private float enemySpeed;
     public GameObject target;
 
-    private void Awake() {
+    private void Awake()
+    {
+        enemySpeed = characterData.moveSpeed.Value;
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        agent.speed = enemySpeed;
         target = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -19,5 +27,10 @@ public class NavMeshAgentControl : MonoBehaviour
         else{
             agent.isStopped = true;
         }
+    }
+
+    public void SetData(CharacterData data)
+    {
+        characterData = data;
     }
 }

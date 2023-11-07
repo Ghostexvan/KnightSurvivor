@@ -26,7 +26,11 @@ public class UDPControllable : MonoBehaviour
     public UnityEvent<Vector2> onMove, onLook;
     public UnityEvent<int> onUIMove;
     public UnityEvent<bool> onUIAccept;
-    public bool isActive, isCameraActive;
+    [Header("Important UDP values")]
+    [Tooltip("Flag to check if user wanted to enable UDP or not, since this will be used in PythonScriptCall to determine whether the game would open the hand-tracking app or not")]
+    public bool isActive;
+    [Tooltip("Currently unused, for now")]
+    public bool isCameraActive;
 
     /// <summary>
     ///  NOT REALLY NEEDED AS OF NOW, except for selectPanel, we need it for OnGestureInput_
@@ -99,14 +103,26 @@ public class UDPControllable : MonoBehaviour
         //isCameraActive = GetComponent<Controllable>().isCameraActive;
         InitUDPSocket();
         isKeyboardInput = false;
+
+        if (!isActive)
+        {
+            //isKeyboardInput = true;
+            InputSystem.EnableDevice(Mouse.current);
+        }
+
         clInput = new ConvertedLabel();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Sử dụng khi UI chọn đồ được hiển thị (When UI GameObj is active)
+        // Lấy giá trị panel cũ trc đó (Để tránh việc UI bị chạy lên hoặc xuống liên tục)
         oldPanelNum = -(int)clInput.DirectionInput.y;
+
+        // Lấy giá trị dữ liệu mới từ UDP ở mỗi frame
         clInput.LabelConverter(dataReceived);
+
         //OnGestureInput(LabelConverter(dataReceived));
         
         // Nếu thời điểm hiện tại > Thời điểm dùng để chờ thêm KB Input ==> isKBInput = false, sd lại đc UDP
@@ -115,6 +131,7 @@ public class UDPControllable : MonoBehaviour
         //    isKeyboardInput = false;
         //}
 
+        // Tham số là clInput (ConvertedLabel Obj), Invoke các Actions của các Events (cho việc di chuyển và thap tác với UI)
         OnGestureInput_(clInput);
     }
 
@@ -124,23 +141,26 @@ public class UDPControllable : MonoBehaviour
         //clInput.LabelConverter(dataReceived);
         //OnGestureInput(LabelConverter(dataReceived));
 
-        // Sử dụng hiển thị cho UI
-        if (elapsedKBTime > 0)
-            elapsedKBTime -= Time.deltaTime;
-
-        // Thêm trường hợp cho việc người chơi NHẤN GIỮ nút di chuyển thay vì nhấn (Khi NHẤN GIỮ, KBInputTime sẽ ko đc cập nhật --> fix cho nó cập nhật lại)
-        if (isKeyboardInput && player.GetComponent<Movable>().moveVector != Vector2.zero)
+        if (isActive == true)
         {
-            KBInputWaitTime = Time.time + TimeToWait;
-            print(KBInputWaitTime);
-            elapsedKBTime = TimeToWait;
-        }
+            // Sử dụng hiển thị cho UI
+            if (elapsedKBTime > 0)
+                elapsedKBTime -= Time.deltaTime;
 
-        // Nếu thời điểm hiện tại > Thời điểm dùng để chờ thêm KB Input ==> isKBInput = false, sd lại đc UDP
-        if (Time.time > KBInputWaitTime)
-        {
-            isKeyboardInput = false;
-            InputSystem.DisableDevice(Mouse.current); // Time-out then disable mouse input
+            // Thêm trường hợp cho việc người chơi NHẤN GIỮ nút di chuyển thay vì nhấn (Khi NHẤN GIỮ, KBInputTime sẽ ko đc cập nhật --> fix cho nó cập nhật lại)
+            if (isKeyboardInput && player.GetComponent<Movable>().moveVector != Vector2.zero)
+            {
+                KBInputWaitTime = Time.time + TimeToWait;
+                print(KBInputWaitTime);
+                elapsedKBTime = TimeToWait;
+            }
+
+            // Nếu thời điểm hiện tại > Thời điểm dùng để chờ thêm KB Input ==> isKBInput = false, sd lại đc UDP
+            if (Time.time > KBInputWaitTime)
+            {
+                isKeyboardInput = false;
+                InputSystem.DisableDevice(Mouse.current); // Time-out then disable mouse input
+            }
         }
 
         //OnGestureInput_(clInput);
@@ -311,6 +331,10 @@ public class UDPControllable : MonoBehaviour
     {
         if (isActive)
             InputSystem.DisableDevice(Mouse.current);
+        else
+        {
+            InputSystem.EnableDevice(Mouse.current);
+        }
     }
 
     private void OnDisable()
@@ -406,6 +430,23 @@ public class ConvertedLabel
                 DirectionInput = Vector2.zero;
                 UIConfirmSelect = true;
                 break;
+            case "D-UPLEFT":
+                DirectionInput = new Vector2(-1, 1).normalized;
+                UIConfirmSelect = false;
+                break;
+            case "D-UPRIGHT":
+                DirectionInput = new Vector2(1, 1).normalized;
+                UIConfirmSelect = false;
+                break;
+            case "D-DOWNLEFT":
+                DirectionInput = new Vector2(-1, -1).normalized;
+                UIConfirmSelect = false;
+                break;
+            case "D-DOWNRIGHT":
+                DirectionInput = new Vector2(1, -1).normalized;
+                UIConfirmSelect = false;
+                break;
+            // D-UPLEFT D-DOWNLEFT
             // v2convert =  new Vector2(Mathf.Sin(facingAngle * Mathf.Deg2Rad), Mathf.Cos(facingAngle * Mathf.Deg2Rad));
             default:
                 DirectionInput = defaultV2;

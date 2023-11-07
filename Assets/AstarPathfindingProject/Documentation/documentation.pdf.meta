@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Plugins/QuickOutline.meta
+guid: dc0c03ef1d433ce4186489027f31bc78
+folderAsset: yes
+========
 guid: 3b746da7b40c860c894ce656f273a7de
+>>>>>>>> 0b746e546c3c67a234e17f7bb64a5813797aa994:Assets/AstarPathfindingProject/Documentation/documentation.pdf.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

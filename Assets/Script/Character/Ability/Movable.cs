@@ -26,6 +26,8 @@ public class Movable : MonoBehaviour
         //Debug.Log(GetMoveDirection(Vector2.SignedAngle(moveVector, lookVector)));
 
         //print("Move Vector: " + moveVector);
+
+        // This is the real movement method
         Move();
     }
 
@@ -75,6 +77,7 @@ public class Movable : MonoBehaviour
         lookVector = vec;
     }
 
+    // Mostly for animation States I think
     Direction GetMoveDirection(float angle){
         if (-22.5f < angle && angle < 22.5f)
             return Direction.Forward;
