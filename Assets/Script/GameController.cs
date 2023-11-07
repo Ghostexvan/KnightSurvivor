@@ -15,7 +15,6 @@ public class GameController : MonoBehaviour
     public float spawnRadius;
 
     private void Awake() {
-<<<<<<< HEAD:Assets/GameController.cs
         Screen.SetResolution(1600, 900, true);
         Terrain _Data = transform.GetChild(0).gameObject.GetComponent<Terrain>();
         planeCenter = _Data.terrainData.bounds.center;
@@ -32,10 +31,6 @@ public class GameController : MonoBehaviour
         //planeCenter = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.center;
         //planeExtends = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.extents;
 
-=======
-        planeCenter = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.center;
-        planeExtends = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().bounds.extents;
->>>>>>> 5f48aee4b890130f2cd05fb674393ead1b86733a:Assets/Script/GameController.cs
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         player = GameObject.FindGameObjectWithTag("Player");
         enemyParent = GameObject.Find("Enemy Pool");
