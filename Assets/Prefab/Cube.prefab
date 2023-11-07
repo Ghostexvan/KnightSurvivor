@@ -156,7 +156,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6547d23c8f8822140b10d941bdccb3e7, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -250,18 +250,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3637974993926685730}
-        m_TargetAssemblyTypeName: DropItemable, Assembly-CSharp
-        m_MethodName: DropItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   isActive: 1
 --- !u!114 &1922417409238373810
 MonoBehaviour:
@@ -279,18 +267,6 @@ MonoBehaviour:
   onDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922417409238373810}
-        m_TargetAssemblyTypeName: Damageable, Assembly-CSharp
-        m_MethodName: KnockbackFeedback
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1922417409238373809}
         m_TargetAssemblyTypeName: Health, Assembly-CSharp
         m_MethodName: ChangeHealth
@@ -303,9 +279,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  blinkDuration: 0.075
-  blinkIntensity: 10
-  isPlayer: 0
   characterData: {fileID: 0}
   damageText: {fileID: 6642447777672061837, guid: cc38ba14498668e4f8c9964012933b2f, type: 3}
   isCrit: 0
@@ -323,7 +296,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!195 &524860404994703460
 NavMeshAgent:
@@ -359,7 +332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203542584b5606d4a8bc844b26a466fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData: {fileID: 0}
 --- !u!114 &101557978531525203
 MonoBehaviour:
   m_ObjectHideFlags: 0

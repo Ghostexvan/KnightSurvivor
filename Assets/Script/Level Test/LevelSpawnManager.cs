@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,7 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(TreeGenerator), typeof(StructureGenerator), typeof(FoliageGenerator))]
 public class LevelSpawnManager : MonoBehaviour
 {
-    [Header("Turning this script off would basically mean turning the LEVEL GENERATION + ENEMY SPAWNING off.")]
     public bool generateStructures = true;
 
     private TreeGenerator tg;
@@ -21,8 +20,6 @@ public class LevelSpawnManager : MonoBehaviour
     private GameObject gameController;
 
     private GameObject gameCanvas;
-
-    public bool isPaused = false;
 
     private void Awake()
     {
@@ -58,17 +55,8 @@ public class LevelSpawnManager : MonoBehaviour
         // After everything, I changed the Time.timeScale = 1 and maxNumberEnemy = 100, allowing the game to run like normal (will it though?)
 
         Time.timeScale = 0f;
-        isPaused = true;
         //gameController.SetActive(false);
-
-        // Old spawning system
-        //gameController.GetComponent<GameController>().maxNumberEnemy = 0;
-
-        //gameController.GetComponent<EnemySpawnController>().waves[0].minWaveQuota = 0;
-        //Debug.LogWarning("Map Gen Quota: " + gameController.GetComponent<EnemySpawnController>().waves[0].minWaveQuota);
-        gameController.GetComponent<EnemySpawnController>().enabled = false;
-        gameController.GetComponent<BossSpawnController>().enabled = false;
-        gameController.GetComponent<PythonScriptCall>().enabled = false;
+        gameController.GetComponent<GameController>().maxNumberEnemy = 0;
 
         structureBlockedArea = GameObject.Find("Struct Blocked Area");
         //structureBlockedArea.GetComponent<MeshCollider>().isTrigger = true;
@@ -87,20 +75,13 @@ public class LevelSpawnManager : MonoBehaviour
     {
         player.SetActive(true);
         
-        //Time.timeScale = 1f;
+        Time.timeScale = 1f;
 
-        yield return null;
-    }
-
-    IEnumerator EnableEnemySpawner()
-    {
         yield return null;
     }
 
     IEnumerator InitField()
     {
-        // Each Coroutine will wait for the prior one to finish, hence yield return StartCorou
-        // Normally they'd be more on the asynchronous side
         yield return StartCoroutine(tg.SpawnTrees());
         if (generateStructures)
         {
@@ -118,22 +99,8 @@ public class LevelSpawnManager : MonoBehaviour
         //player.SetActive(true);
         //Time.timeScale = 1f;
         yield return StartCoroutine(EnablePlayer());
-        // Phải enable player trước để UI và EnemySpawnController có thể lấy các giá trị của Player 
 
-        gameController.GetComponent<PythonScriptCall>().enabled = true;
-        // Old spawning system
-        //gameController.GetComponent<GameController>().maxNumberEnemy = 10;
-
-        //gameController.GetComponent<EnemySpawnController>().CalculateWaveQuota();
-        Debug.LogWarning("Map Gen Quota 2: " + gameController.GetComponent<EnemySpawnController>().waves[0].minWaveQuota);
-        // Cho spawnTimer = spawnInterval để có thể spawn liền 1 đợt enemy lúc mới khởi tạo map
-        gameController.GetComponent<EnemySpawnController>().spawnTimer = gameController.GetComponent<EnemySpawnController>().waves[0].spawnInterval;
-        // Cho Time.timeScale = 1f
-        Time.timeScale = 1f;
-        gameController.GetComponent<EnemySpawnController>().enabled = true;
-        gameController.GetComponent<BossSpawnController>().enabled = true;
-
-        /// --------------- Game timer starts here --------------- ///
+        gameController.GetComponent<GameController>().maxNumberEnemy = 10;
 
         print("--- Finished ---");
     }

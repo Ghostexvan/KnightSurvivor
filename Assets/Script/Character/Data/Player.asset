@@ -34,4 +34,3 @@ MonoBehaviour:
   isAttack: 0
   currentState: RunState
   moveDirection: 0
-  isHPScale: 0

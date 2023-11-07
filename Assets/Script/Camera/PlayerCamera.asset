@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dc2399b3f476747bb60e3e843d1b18, type: 3}
   m_Name: PlayerCamera
   m_EditorClassIdentifier: 
-  angle: 53
+  angle: 45
   step: 0
-  distance: 10.03
+  distance: 10
   min_distance: 0
   max_distance: 0

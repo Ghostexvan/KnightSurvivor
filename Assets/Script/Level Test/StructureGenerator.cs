@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -159,17 +159,6 @@ public class StructureGenerator : MonoBehaviour
                     //}
                     GameObject structPlacement = Instantiate(structure, new Vector3(randX, yExtent, randZ), randRota);
                     structPlacement.layer = LayerMask.NameToLayer("Structures");
-                    structPlacement.tag = "Structures";
-                    // Thêm Layer/Tags vào các GameObj con của Structures (ngoại trừ Spawn Points ra)
-                    for (int l = 0; l < structPlacement.transform.childCount; l++)
-                    {
-                        if (structPlacement.transform.GetChild(l).name != "Spawn Points")
-                        {
-                            structPlacement.transform.GetChild(l).gameObject.layer = LayerMask.NameToLayer("Structures");
-                            structPlacement.transform.GetChild(l).gameObject.tag = "Structures";
-                        }
-                    }
-
                     structPlacement.transform.parent = ParentObject.transform;
                 }
             }
@@ -259,15 +248,6 @@ public class StructureGenerator : MonoBehaviour
             }
         }
 
-        // Call OverlapBox to check if building Collided with Walls from Layer Wall
-        Collider[] hitColliders_ = Physics.OverlapBox(new Vector3(randX, 1f, randZ), new Vector3(xExtents, 5f, zExtents), Quaternion.identity, LayerMask.GetMask("Wall"));
-        print("Wall cols: " + hitColliders_.Length);
-        if (hitColliders_.Length > 0)
-        {
-            print("--- Wall(s) found");
-            return true;
-        }
-
         //Collider[] result = new Collider[10];
         //int colliderCount = Physics.OverlapBoxNonAlloc(new Vector3(randX, yExtents, randZ), new Vector3(xExtents, yExtents, zExtents), result, Quaternion.identity, LayerMask.NameToLayer("Foliage"));
         //if (colliderCount > 0 || result.Length > 0)
@@ -314,13 +294,6 @@ public class StructureGenerator : MonoBehaviour
         if (colliderCount > 0)
         {
             print("--- Trees found 2");
-            return true;
-        }
-
-        int colliderCount_ = Physics.OverlapBoxNonAlloc(new Vector3(randX, 1f, randZ), new Vector3(xExtents + 2f, 1f, zExtents + 2f), result, randAngle, LayerMask.GetMask("Wall"));
-        if (colliderCount_ > 0)
-        {
-            print("--- Wall(s) found 2");
             return true;
         }
 

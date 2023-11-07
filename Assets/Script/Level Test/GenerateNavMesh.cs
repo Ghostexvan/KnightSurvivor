@@ -15,7 +15,6 @@ public class GenerateNavMesh : MonoBehaviour
     // Navmesh(es) for Humanoid and Boss characters
     public NavMeshSurface humanoidNav;
     public NavMeshSurface bossNav;
-    public NavMeshSurface humanoidBossNav;
     //public NavMeshSurface[]
 
     private void Awake()
@@ -37,7 +36,6 @@ public class GenerateNavMesh : MonoBehaviour
 
         humanoidNav = GameObject.Find("Humanoid Navmesh").GetComponent<NavMeshSurface>();
         bossNav = GameObject.Find("Boss Navmesh").GetComponent<NavMeshSurface>();
-        humanoidBossNav = GameObject.Find("Humanoid Boss Navmesh").GetComponent<NavMeshSurface>();
     }
 
     // Update is called once per frame
@@ -56,7 +54,6 @@ public class GenerateNavMesh : MonoBehaviour
         // After that, we bake each of the areas for their respective Agent Types
         humanoidNav.BuildNavMesh();
         bossNav.BuildNavMesh();
-        humanoidBossNav.BuildNavMesh();
 
         yield return null;
     }
@@ -66,14 +63,5 @@ public class GenerateNavMesh : MonoBehaviour
         // Delete Navmesh when scene is finished
         humanoidNav.RemoveData();
         bossNav.RemoveData();
-        humanoidBossNav.RemoveData();
-    }
-
-    private void OnApplicationQuit()
-    {
-        // Delete Navmesh when exited from app
-        humanoidNav.RemoveData();
-        bossNav.RemoveData();
-        humanoidBossNav.RemoveData();
     }
 }

@@ -136,8 +136,7 @@ public class TreeGenerator : MonoBehaviour
             // If the tree hits anything within a 10f radius, it won't spawn
             if (Physics.Raycast(new Vector3(xCoordInt, 0.25f, zCoordInt), Quaternion.Euler(0, i, 0) * Vector3.forward, out RaycastHit hit, 10f))
             {
-                if (hit.transform.gameObject.layer != LayerMask.NameToLayer("Wall"))
-                    return false;
+                return false;
             }
         }
         return true;

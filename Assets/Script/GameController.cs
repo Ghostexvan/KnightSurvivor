@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,10 +14,8 @@ public class GameController : MonoBehaviour
                       enemyParent;
     public float spawnRadius;
 
-    //public List<SpawnWave> waves;
-
     private void Awake() {
-        //Screen.SetResolution(1600, 900, true);
+        Screen.SetResolution(1600, 900, true);
         Terrain _Data = transform.GetChild(0).gameObject.GetComponent<Terrain>();
         planeCenter = _Data.terrainData.bounds.center;
         planeExtends = _Data.terrainData.bounds.extents;
@@ -82,14 +79,14 @@ public class GameController : MonoBehaviour
 
     Vector3 GetSpawnPosition(){
         Vector3 playerPosition = GetPlayerPosition();
-        Vector3 position = new Vector3(playerPosition.x + UnityEngine.Random.Range(-spawnRadius, spawnRadius),
+        Vector3 position = new Vector3(playerPosition.x + Random.Range(-spawnRadius, spawnRadius),
                                        5f,
-                                       playerPosition.z + UnityEngine.Random.Range(-spawnRadius, spawnRadius));
+                                       playerPosition.z + Random.Range(-spawnRadius, spawnRadius));
         Debug.Log("Is in viewport: " + IsPositionOnCameraViewPort(position) + ", " + mainCamera.WorldToViewportPoint(position));
         while (IsPositionOnCameraViewPort(position) || !IsPositionInPlane(position)){
-            position = new Vector3(playerPosition.x + UnityEngine.Random.Range(-spawnRadius, spawnRadius),
+            position = new Vector3(playerPosition.x + Random.Range(-spawnRadius, spawnRadius),
                                    5f,
-                                   playerPosition.z + UnityEngine.Random.Range(-spawnRadius, spawnRadius));
+                                   playerPosition.z + Random.Range(-spawnRadius, spawnRadius));
         }
 
         return position;
@@ -117,20 +114,3 @@ public class GameController : MonoBehaviour
         return player.transform.position;
     }
 }
-
-//[System.Serializable]
-//public class SpawnWave
-//{
-//    public string waveName;
-//    public List<GameObject> enemyPrefabs;
-//    public List<string> enemyName;
-//    public List<int> waveMaxEnemy;      // The max number of enemies allowed in this wave
-//    public int waveQuota;               // The minimun number of enemies to spawn in this wave
-//    public float spawnInterval;         // The interval between each enemy spawns
-//    public int currentEnemyCount;       // The current number of enemies in this wave
-//}
-
-//public class EnemyGroup
-//{
-
-//}

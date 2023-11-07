@@ -103,7 +103,7 @@ public class FoliageGenerator : MonoBehaviour
                             yPoint = hit.point.y;
                         }
                         GameObject bush = Instantiate(randBush, new Vector3(x, yPoint, z), randRota);
-                        bush.tag = "Foliage";
+                        bush.tag = "Tree";
                         bush.layer = LayerMask.NameToLayer("Foliage");
                         bush.transform.parent = FoliageGen.transform;
                     }
@@ -156,7 +156,7 @@ public class FoliageGenerator : MonoBehaviour
 
         foreach (Collider col in hitColliders)
         {
-            if (col.transform.gameObject.layer != LayerMask.NameToLayer("Ground"))
+            if (col.transform.gameObject.layer != LayerMask.GetMask("Ground"))
             {
                 //print("No bushes for you");
                 return false;
