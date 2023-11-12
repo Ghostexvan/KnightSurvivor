@@ -17,7 +17,7 @@ MonoBehaviour:
   defense:
     BaseValue: 0
   attackDamage:
-    BaseValue: 10
+    BaseValue: 25
   attackCooldown:
     BaseValue: 1
   attackCount:

@@ -150,6 +150,9 @@ public class EnemySpawnController : MonoBehaviour
         //SpawnEnemies();
         spawnTimer += Time.deltaTime;
 
+        /// We don't need to check whether DespawnAllEnemies and SpawnEnemies happen at the same time (like how the BossSpawner does) because:
+        /// 1. It's pretty hard for spawnTimer to stop right at DespawnAllEnemies
+        /// 2. Even if it does, enemies would spawn in hordes to fill the minimum wave quota regardless
         if (spawnTimer >= waves[currentWaveIdx].spawnInterval)
         {
             spawnTimer = 0;

@@ -37,6 +37,8 @@ public class BossSpawnController : MonoBehaviour
     /// Used to despawn enemies
     //private List<GameObject> enemyList = new List<GameObject>();
     public List<GameObject> bossList = new List<GameObject>();
+
+    public List<GameObject> crsh;
     [Tooltip("Number of enemies to check per frame")]
     public int bossesCheckPerFrame = 10;
     private int bossIdxToCheck = 0;    // Current enemy index to be checked in the list, default value is 0
@@ -77,6 +79,7 @@ public class BossSpawnController : MonoBehaviour
     void Start()
     {
         //bossList = new List<GameObject>();
+        crsh = new List<GameObject>();
 
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         // Get ESC Component
@@ -111,7 +114,8 @@ public class BossSpawnController : MonoBehaviour
         /// DO MAKE SURE THAT the numbers of Waves in both Enemy and Boss spawners are EQUAL
         if (enableDespawnAll)
         {
-            if (currentBossWaveIdx == esc.waves.Count - 1 && isWaveActive && resetAllEnemies == false)
+            /// Adding isBossSpawned = false to ensure SpawnBoss and DespawnAllBosses doesn't happen all at once in a single frame
+            if (currentBossWaveIdx == esc.waves.Count - 1 && isWaveActive && resetAllEnemies == false && isBossSpawned == false)
             {
                 // This is the same as DespawnEnemies, but without the Despawn Zone check
                 // This is called once in every frame (since it's in Update) as long as the conds are met.
@@ -119,6 +123,8 @@ public class BossSpawnController : MonoBehaviour
                 // It will truly stop when enemyList.Count == 0.
                 DespawnAllBosses();
                 // resetAllEnemies will be set to true when enemyList.Count == 0
+
+                // Giữ isBossSpawned == false để frame sau spawn boss thay vì SpawnBoss và Despawn ở cùng 1 frame
             }
         }
         /// Theo flow DespawnAll trc --> SpawnBoss
@@ -133,9 +139,29 @@ public class BossSpawnController : MonoBehaviour
             // Spawning boss
             if (isBossSpawned == false)
             {
-                Debug.LogWarning("Current oldBossWave: " + oldBossWave);
-                StartCoroutine(SpawnBoss());
-                isBossSpawned = true;
+                // Check if current wave is the last; If it is and all enemies have been reset, spawn boss
+                /// THIS is used the prevent the workflow where SpawnBoss and DespawnAllBosses happened all at once  in a single frame,
+                /// resulting in the last boss not being able to spawn.
+                /// And since SpawnBoss is only called exactly 1 time each wave
+                if (currentBossWaveIdx == esc.waves.Count - 1)
+                {
+                    if (resetAllEnemies == true)
+                    {
+                        
+                        Debug.LogWarning("Current oldBossWave: " + oldBossWave);
+                        //StartCoroutine(SpawnBoss());
+                        SpawnBoss();
+                        isBossSpawned = true;
+                    }
+                }
+                // Otherwise, spawn boss like normal
+                else
+                {
+                    Debug.LogWarning("Current oldBossWave: " + oldBossWave);
+                    //StartCoroutine(SpawnBoss());
+                    SpawnBoss();
+                    isBossSpawned = true;
+                }
             }
         }
 
@@ -144,11 +170,105 @@ public class BossSpawnController : MonoBehaviour
     }
 
     // When this is called, isBossSpawned will be set to TRUE. isBossSpawned is used to check whether SpawnBoss() has been called or not.
-    IEnumerator SpawnBoss()
+    //IEnumerator SpawnBoss()
+    //{
+    //    if (isBossSpawned)
+    //    {
+    //        yield break;
+    //    }
+
+    //    // If BossWave is Empty
+    //    if (waves[currentBossWaveIdx].bossGroup.Count <= 0 || waves[currentBossWaveIdx].numberToSpawn == 0)
+    //    {
+    //        isBossSpawned = true;
+    //        Debug.LogWarning("--- EMPTY BOSS WAVE ---");
+    //        yield break;
+    //    }
+
+    //    if (!maxBossesReached)
+    //    {
+    //        Debug.LogWarning("--- BOSS SPAWN ---");
+
+    //        //int randomMode = Random.Range(1, 3);        // Random Mode 1 or Mode 2
+    //        int randomMode = 1;
+    //        if (waves[currentBossWaveIdx].bossGroup.Count == 1)
+    //            randomMode = 1;
+    //        /// Mode 1: Spawn Each type of boss in the current BossWave's bossGroup List
+    //        if (randomMode == 1)
+    //        {
+    //            Debug.LogWarning("--- Random Boss Spawn 1 ---");
+    //            foreach (var bossType in waves[currentBossWaveIdx].bossGroup)
+    //            {
+    //                GameObject boss = Instantiate(bossType.bossPrefab, GetSpawnPosition(bossType.bossPrefab), Quaternion.identity, bossParent.transform);
+    //                boss.tag = "Enemy";
+    //                // Calls OnEnemyKilled when object (boss) is destroyed / when onDestroy event (Destroyable.cs) is Invoked
+    //                boss.GetComponent<Destroyable>().onDestroy.AddListener(OnBossKilled);
+    //                // Calls IncreaseKillCount when enemy is DEFEATED by the player (onHealthZero event (Health.cs), since onDestroy event is used in Despawning)
+    //                boss.GetComponent<Health>().onHealthZero.AddListener(esc.IncreaseKillCount);
+    //                // Add to bossList (for despawn check)
+    //                bossList.Add(boss);
+    //                crsh.Add(boss);
+
+    //                isBossSpawned = true;
+    //                currentBossesAlive++;
+
+    //                if (currentBossesAlive >= maxBossesAllowed)
+    //                {
+    //                    maxBossesReached = true;
+    //                    yield break;
+    //                }
+    //            }
+
+    //            yield break;
+    //        }    
+    //        //
+    //        /// Mode 2: Spawn random types of bosses from the bossGroup List, with the number of bosses being numberToSpawn
+    //        //if (randomMode == 2)
+    //        //{
+    //        //    Debug.LogWarning("--- Random Boss Spawn 2 ---");
+    //        //    int bossGroupCount = waves[currentBossWaveIdx].bossGroup.Count;
+    //        //    for (int i = 0; i < waves[currentBossWaveIdx].numberToSpawn; i++)
+    //        //    {
+
+    //        //        BossGroup bossGroup_ = waves[currentBossWaveIdx].bossGroup[Random.Range(0, bossGroupCount)];
+    //        //        GameObject boss = Instantiate(bossGroup_.bossPrefab, GetSpawnPosition(bossGroup_.bossPrefab), Quaternion.identity, bossParent.transform);
+    //        //        boss.tag = "Enemy";
+    //        //        // Calls OnEnemyKilled when object (boss) is destroyed / when onDestroy event (Destroyable.cs) is Invoked
+    //        //        boss.GetComponent<Destroyable>().onDestroy.AddListener(OnBossKilled);
+    //        //        // Calls IncreaseKillCount when enemy is DEFEATED by the player (onHealthZero event (Health.cs), since onDestroy event is used in Despawning)
+    //        //        boss.GetComponent<Health>().onHealthZero.AddListener(esc.IncreaseKillCount);
+    //        //        // Add to bossList (for despawn check)
+    //        //        bossList.Add(boss);
+
+    //        //        isBossSpawned = true;
+    //        //        currentBossesAlive++;
+
+    //        //        if (currentBossesAlive >= maxBossesAllowed)
+    //        //        {
+    //        //            maxBossesReached = true;
+    //        //            yield break;
+    //        //        }
+    //        //    }
+
+    //        //    yield break;
+    //        //}
+    //        //
+    //    }
+
+    //    else
+    //    {
+    //        isBossSpawned = true;
+    //        Debug.LogWarning("--- MAXED OUT NUMBER OF BOSSES ---");
+    //        yield break;
+    //    }
+
+    //    yield break;
+    //}
+    void SpawnBoss()
     {
         if (isBossSpawned)
         {
-            yield break;
+            return;
         }
 
         // If BossWave is Empty
@@ -156,7 +276,7 @@ public class BossSpawnController : MonoBehaviour
         {
             isBossSpawned = true;
             Debug.LogWarning("--- EMPTY BOSS WAVE ---");
-            yield break;
+            return;
         }
 
         if (!maxBossesReached)
@@ -180,7 +300,8 @@ public class BossSpawnController : MonoBehaviour
                     // Calls IncreaseKillCount when enemy is DEFEATED by the player (onHealthZero event (Health.cs), since onDestroy event is used in Despawning)
                     boss.GetComponent<Health>().onHealthZero.AddListener(esc.IncreaseKillCount);
                     // Add to bossList (for despawn check)
-                    //bossList.Add(boss);
+                    bossList.Add(boss);
+                    crsh.Add(boss);
 
                     isBossSpawned = true;
                     currentBossesAlive++;
@@ -188,12 +309,12 @@ public class BossSpawnController : MonoBehaviour
                     if (currentBossesAlive >= maxBossesAllowed)
                     {
                         maxBossesReached = true;
-                        yield break;
+                        return;
                     }
                 }
 
-                yield break;
-            }    
+                return;
+            }
             //
             /// Mode 2: Spawn random types of bosses from the bossGroup List, with the number of bosses being numberToSpawn
             //if (randomMode == 2)
@@ -232,10 +353,8 @@ public class BossSpawnController : MonoBehaviour
         {
             isBossSpawned = true;
             Debug.LogWarning("--- MAXED OUT NUMBER OF BOSSES ---");
-            yield break;
+            return;
         }
-
-        yield break;
     }
 
     //
@@ -268,8 +387,9 @@ public class BossSpawnController : MonoBehaviour
                         bossList[bossIdxToCheck].transform.position.z < (playerPos.z - teleportRadius))
                     {
                         bossList[bossIdxToCheck].transform.position = GetSpawnPosition(bossList[bossIdxToCheck]);
-                        bossIdxToCheck++;
                     }
+                    
+                    bossIdxToCheck++;
                     
                 }
                 // THợp enemy bị killed thay vì despawned

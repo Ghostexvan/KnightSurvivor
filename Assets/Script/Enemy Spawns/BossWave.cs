@@ -12,7 +12,7 @@ public class BossWave : ScriptableObject
     [Header("List containing groups of Bosses to spawn in this wave")]
     public List<BossGroup> bossGroup; // List containing groups of enemies to spawn in this wave
 
-    [Header("The number of bosses to spawn in this wave")]
+    [Header("The number of bosses to spawn in this wave (CURRENTLY UNUSED FOR NOW)")]
     //[Tooltip("You don't need to edit this")]
     public int numberToSpawn;               // The number of bosses to spawn in this wave
 

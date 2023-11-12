@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28866a1636ae38448b343dbb6886fbec, type: 3}
+  m_Name: Wave7
+  m_EditorClassIdentifier: 
+  waveName: Wave 7
+  enemyGroup:
+  - enemyName: Cube 1
+    enemyPrefab: {fileID: 1922417409238373823, guid: 668047a09f5076845b85a235d80208cc, type: 3}
+  - enemyName: Cube 2
+    enemyPrefab: {fileID: 1922417409238373823, guid: 36be19b36a50dd843a1730a14e22c1bc, type: 3}
+  - enemyName: Strong Cube
+    enemyPrefab: {fileID: 1922417409238373823, guid: b2f366adaaf22b4408a402d626187bde, type: 3}
+  minWaveQuota: 50
+  spawnInterval: 3.5
+  currentSpawnCount: 0

@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28866a1636ae38448b343dbb6886fbec, type: 3}
-  m_Name: Wave 3
+  m_Name: Wave6
   m_EditorClassIdentifier: 
-  waveName: Wave3
+  waveName: Wave 6
   enemyGroup:
-  - enemyName: Red Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: 97b59e03bd0d2b541b93e085e8fc7485, type: 3}
-  minWaveQuota: 30
-  spawnInterval: 2.5
+  - enemyName: Blue-ish Cube
+    enemyPrefab: {fileID: 1922417409238373823, guid: 20f7592c753ac6042afcbe6d90f71173, type: 3}
+  - enemyName: Strong Cube
+    enemyPrefab: {fileID: 1922417409238373823, guid: b2f366adaaf22b4408a402d626187bde, type: 3}
+  minWaveQuota: 20
+  spawnInterval: 4
   currentSpawnCount: 0

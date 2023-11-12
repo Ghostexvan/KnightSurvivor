@@ -262,7 +262,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onBulletHealthZero:
+    m_PersistentCalls:
+      m_Calls: []
   isActive: 1
+  healthMultiplier: 1
 --- !u!114 &1922417409238373810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,6 +298,7 @@ MonoBehaviour:
   blinkDuration: 0.075
   blinkIntensity: 10
   isPlayer: 0
+  isBullet: 0
   characterData: {fileID: 0}
   damageText: {fileID: 6642447777672061837, guid: cc38ba14498668e4f8c9964012933b2f, type: 3}
   isCrit: 0
@@ -311,7 +316,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 14
+  m_Constraints: 46
   m_CollisionDetection: 0
 --- !u!195 &524860404994703460
 NavMeshAgent:
@@ -348,6 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &101557978531525203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,6 +367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 0}
+  isCooldown: 0
+  cooldownTime: 0
 --- !u!114 &3637974993926685730
 MonoBehaviour:
   m_ObjectHideFlags: 0

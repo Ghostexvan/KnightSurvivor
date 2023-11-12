@@ -132,7 +132,10 @@ public class EnemyShoot : MonoBehaviour
 		{
 			Vector3 vector2 = Quaternion.AngleAxis(0f - m_SpreadStats.ShotgunSpread + m_ShotgunAngleInterval * (float)i + m_ShotgunAngleInterval / 2f + offset, Vector3.up) * vector;
 			// This Takes bullets from BulletType Enemy cache, I will add more later
-			bulletMngr.GetComponent<BulletManager>().TakeBulletFromCache(BulletType.Enemy, spawnPos, vector2.normalized * m_SpreadStats.BulletSpeed);
+			//bulletMngr.GetComponent<BulletManager>().TakeBulletFromCache(BulletType.Enemy, spawnPos, vector2.normalized * m_SpreadStats.BulletSpeed);
+
+			// Taking Bullet from m_Bullet's BulletType's Corresponding Cache
+			bulletMngr.GetComponent<BulletManager>().TakeBulletFromCache(m_Bullet.GetComponent<Bullet>()._myType, spawnPos, vector2.normalized * m_SpreadStats.BulletSpeed);
 		}
 	}
 

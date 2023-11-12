@@ -262,7 +262,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onBulletHealthZero:
+    m_PersistentCalls:
+      m_Calls: []
   isActive: 1
+  healthMultiplier: 1
 --- !u!114 &1922417409238373810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +310,7 @@ MonoBehaviour:
   blinkDuration: 0.075
   blinkIntensity: 10
   isPlayer: 0
+  isBullet: 0
   characterData: {fileID: 0}
   damageText: {fileID: 6642447777672061837, guid: cc38ba14498668e4f8c9964012933b2f, type: 3}
   isCrit: 0
@@ -323,7 +328,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 46
   m_CollisionDetection: 0
 --- !u!195 &524860404994703460
 NavMeshAgent:
@@ -390,6 +395,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drops:
   - dropItem: {fileID: 199258223908812765, guid: 49047d898ebc5fd429e07f412751380f, type: 3}
-    chance: 5
+    chance: 1
   - dropItem: {fileID: 6708878025693594088, guid: e002e407efff86541b9c1f0ba5b900c3, type: 3}
     chance: 100
