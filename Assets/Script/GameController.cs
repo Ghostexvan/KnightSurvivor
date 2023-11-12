@@ -64,9 +64,9 @@ public class GameController : MonoBehaviour
             return;
         }
         
-        CheckEnemyList();
-        if (isSet)
-            StartCoroutine(SpawnEnemy());
+        // CheckEnemyList();
+        // if (isSet)
+        //     StartCoroutine(SpawnEnemy());
     }
 
     IEnumerator SpawnEnemy(){
