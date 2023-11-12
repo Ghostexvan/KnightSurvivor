@@ -277,7 +277,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 14
+  m_Constraints: 46
   m_CollisionDetection: 0
 --- !u!195 &524860404994703460
 NavMeshAgent:
@@ -314,6 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &101557978531525203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 0}
+  isCooldown: 0
+  cooldownTime: 0
 --- !u!114 &3637974993926685730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,7 +396,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922417409238373823}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
@@ -442,7 +445,7 @@ MonoBehaviour:
   IntervalBetweenBurstShots: 0.1
   RotationBetweenBurstShots: -3
   m_SpreadStats: {fileID: 11400000, guid: a2a449851c4b04f44a14e37355242f77, type: 2}
-  m_Bullet: {fileID: 1133241654157210, guid: d67f74de9919ead4da4270dcb051d245, type: 3}
+  m_Bullet: {fileID: 1133241654157210, guid: e98964ce23935be44bb8883ce1572319, type: 3}
   maxAttackDist: 50
   minAttackDist: 5
   targetPosOffset: 0

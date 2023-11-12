@@ -15,7 +15,7 @@ MonoBehaviour:
   health:
     BaseValue: 100
   defense:
-    BaseValue: 1
+    BaseValue: 5
   attackDamage:
     BaseValue: 10
   attackCooldown:
@@ -28,10 +28,10 @@ MonoBehaviour:
     BaseValue: 5
   critDamage:
     BaseValue: 100
-  isOnGround: 1
-  isJump: 0
+  isOnGround: 0
+  isJump: 1
   isMove: 0
   isAttack: 0
-  currentState: RunState
+  currentState: FallState
   moveDirection: 0
   isHPScale: 0

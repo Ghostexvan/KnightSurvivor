@@ -19,5 +19,5 @@ MonoBehaviour:
   - enemyName: Pink Cube
     enemyPrefab: {fileID: 1922417409238373823, guid: ee5f7f8619b3b5a429135dd6eaa9ff60, type: 3}
   minWaveQuota: 20
-  spawnInterval: 3
+  spawnInterval: 6
   currentSpawnCount: 0

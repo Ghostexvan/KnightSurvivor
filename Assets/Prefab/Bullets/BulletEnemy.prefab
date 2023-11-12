@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myType: 0
-  bulletDamage: 1
+  bulletDamage: 10
   timeToExist: 3
 --- !u!114 &2357332214753064969
 MonoBehaviour:
@@ -155,6 +155,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isActive: 1
+  healthMultiplier: 1
 --- !u!114 &-7826425612888246476
 MonoBehaviour:
   m_ObjectHideFlags: 0

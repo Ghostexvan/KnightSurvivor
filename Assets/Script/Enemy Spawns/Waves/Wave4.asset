@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28866a1636ae38448b343dbb6886fbec, type: 3}
+  m_Name: Wave4
+  m_EditorClassIdentifier: 
+  waveName: Wave 4
+  enemyGroup:
+  - enemyName: Red Cube
+    enemyPrefab: {fileID: 1922417409238373823, guid: 97b59e03bd0d2b541b93e085e8fc7485, type: 3}
+  - enemyName: Fast Cube
+    enemyPrefab: {fileID: 1922417409238373823, guid: 4e6950144a001ce4d8bbd3657b6fdc2c, type: 3}
+  minWaveQuota: 30
+  spawnInterval: 4.5
+  currentSpawnCount: 0

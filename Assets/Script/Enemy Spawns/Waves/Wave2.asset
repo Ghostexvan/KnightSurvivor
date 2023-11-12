@@ -17,5 +17,5 @@ MonoBehaviour:
   - enemyName: Gween Cube
     enemyPrefab: {fileID: 1922417409238373823, guid: be95a2d7b1672d34ebf9ad48e46679f5, type: 3}
   minWaveQuota: 30
-  spawnInterval: 3
+  spawnInterval: 5
   currentSpawnCount: 0
