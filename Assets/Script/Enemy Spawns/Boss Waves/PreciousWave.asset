@@ -17,7 +17,7 @@ MonoBehaviour:
   - bossName: Gorowing Cube
     bossPrefab: {fileID: 1922417409238373823, guid: 9a1ca18293de5a34a80a1ed636736fe5, type: 3}
   - bossName: Silver Cube
-    bossPrefab: {fileID: 1922417409238373823, guid: 8bb539504612b5b4b917786a6feb70bc, type: 3}
+    bossPrefab: {fileID: 5619331129278920165, guid: 8bb539504612b5b4b917786a6feb70bc, type: 3}
   - bossName: Giaian Cube
-    bossPrefab: {fileID: 1922417409238373823, guid: 420d6f64045d1fb48bc151abb88373ad, type: 3}
+    bossPrefab: {fileID: 1059417877346231901, guid: 420d6f64045d1fb48bc151abb88373ad, type: 3}
   numberToSpawn: 3

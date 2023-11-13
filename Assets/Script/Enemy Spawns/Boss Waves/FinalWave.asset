@@ -15,5 +15,5 @@ MonoBehaviour:
   bossWaveName: Final Boss Wave
   bossGroup:
   - bossName: Final Boss
-    bossPrefab: {fileID: 1922417409238373823, guid: 360f482faf1fb1c429ce639ae46f9b3e, type: 3}
+    bossPrefab: {fileID: 5242363333301990931, guid: 360f482faf1fb1c429ce639ae46f9b3e, type: 3}
   numberToSpawn: 1

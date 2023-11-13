@@ -15,9 +15,9 @@ MonoBehaviour:
   waveName: Wave 1
   enemyGroup:
   - enemyName: Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: 668047a09f5076845b85a235d80208cc, type: 3}
+    enemyPrefab: {fileID: 4352773402693731654, guid: 2a29e47006e576041b0c89669751df03, type: 3}
   - enemyName: Pink Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: ee5f7f8619b3b5a429135dd6eaa9ff60, type: 3}
+    enemyPrefab: {fileID: 7328942510785810530, guid: ee5f7f8619b3b5a429135dd6eaa9ff60, type: 3}
   minWaveQuota: 20
   spawnInterval: 6
   currentSpawnCount: 0

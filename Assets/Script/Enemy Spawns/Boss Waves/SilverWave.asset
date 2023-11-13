@@ -15,5 +15,5 @@ MonoBehaviour:
   bossWaveName: Silver Wave
   bossGroup:
   - bossName: Silver Cube
-    bossPrefab: {fileID: 1922417409238373823, guid: 8bb539504612b5b4b917786a6feb70bc, type: 3}
+    bossPrefab: {fileID: 5619331129278920165, guid: 8bb539504612b5b4b917786a6feb70bc, type: 3}
   numberToSpawn: 1

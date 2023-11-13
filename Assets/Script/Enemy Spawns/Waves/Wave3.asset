@@ -15,7 +15,7 @@ MonoBehaviour:
   waveName: Wave3
   enemyGroup:
   - enemyName: Red Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: 97b59e03bd0d2b541b93e085e8fc7485, type: 3}
+    enemyPrefab: {fileID: 304224668943489126, guid: 97b59e03bd0d2b541b93e085e8fc7485, type: 3}
   minWaveQuota: 30
   spawnInterval: 5
   currentSpawnCount: 0

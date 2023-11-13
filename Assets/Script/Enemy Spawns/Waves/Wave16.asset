@@ -15,9 +15,9 @@ MonoBehaviour:
   waveName: Wave 16 Strong Pink
   enemyGroup:
   - enemyName: Strong Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: b2f366adaaf22b4408a402d626187bde, type: 3}
+    enemyPrefab: {fileID: 3097168442205749080, guid: b2f366adaaf22b4408a402d626187bde, type: 3}
   - enemyName: Pink Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: ee5f7f8619b3b5a429135dd6eaa9ff60, type: 3}
+    enemyPrefab: {fileID: 7328942510785810530, guid: ee5f7f8619b3b5a429135dd6eaa9ff60, type: 3}
   minWaveQuota: 50
   spawnInterval: 2.5
   currentSpawnCount: 0

@@ -15,5 +15,5 @@ MonoBehaviour:
   bossWaveName: Giaian Wave
   bossGroup:
   - bossName: Giaian Cube
-    bossPrefab: {fileID: 1922417409238373823, guid: 420d6f64045d1fb48bc151abb88373ad, type: 3}
+    bossPrefab: {fileID: 1059417877346231901, guid: 420d6f64045d1fb48bc151abb88373ad, type: 3}
   numberToSpawn: 3

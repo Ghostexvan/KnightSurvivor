@@ -15,9 +15,9 @@ MonoBehaviour:
   waveName: Wave 12 Fest
   enemyGroup:
   - enemyName: Test Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: 668047a09f5076845b85a235d80208cc, type: 3}
+    enemyPrefab: {fileID: 4352773402693731654, guid: 2a29e47006e576041b0c89669751df03, type: 3}
   - enemyName: Fast Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: 4e6950144a001ce4d8bbd3657b6fdc2c, type: 3}
+    enemyPrefab: {fileID: 7085391695468556318, guid: 4e6950144a001ce4d8bbd3657b6fdc2c, type: 3}
   minWaveQuota: 30
   spawnInterval: 2
   currentSpawnCount: 0

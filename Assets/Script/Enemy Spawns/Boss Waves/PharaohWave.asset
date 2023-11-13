@@ -15,5 +15,5 @@ MonoBehaviour:
   bossWaveName: The Pharaoh's Curse
   bossGroup:
   - bossName: Pharaoh Cube
-    bossPrefab: {fileID: 1922417409238373823, guid: d9a6fe910474fb34d9d1f725ce257b15, type: 3}
+    bossPrefab: {fileID: 6631089047573281156, guid: d9a6fe910474fb34d9d1f725ce257b15, type: 3}
   numberToSpawn: 1

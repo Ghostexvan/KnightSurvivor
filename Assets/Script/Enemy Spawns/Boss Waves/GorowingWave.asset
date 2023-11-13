@@ -15,5 +15,5 @@ MonoBehaviour:
   bossWaveName: Gorowing Bat Wave
   bossGroup:
   - bossName: Gorowing Cube
-    bossPrefab: {fileID: 1922417409238373823, guid: 9a1ca18293de5a34a80a1ed636736fe5, type: 3}
+    bossPrefab: {fileID: 6096930136498462587, guid: 9a1ca18293de5a34a80a1ed636736fe5, type: 3}
   numberToSpawn: 1

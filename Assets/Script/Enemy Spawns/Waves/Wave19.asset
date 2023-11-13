@@ -15,9 +15,9 @@ MonoBehaviour:
   waveName: Wave 19 Calm Before the Storm
   enemyGroup:
   - enemyName: Cube 2
-    enemyPrefab: {fileID: 0}
+    enemyPrefab: {fileID: 4256477552425606196, guid: 36be19b36a50dd843a1730a14e22c1bc, type: 3}
   - enemyName: Cube 3
-    enemyPrefab: {fileID: 0}
+    enemyPrefab: {fileID: 8574136019001779750, guid: 3c44880a78244044a93e5483511dc4ee, type: 3}
   minWaveQuota: 45
   spawnInterval: 2.5
   currentSpawnCount: 0
