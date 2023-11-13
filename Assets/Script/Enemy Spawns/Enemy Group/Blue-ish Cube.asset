@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Blue-ish Cube
   m_EditorClassIdentifier: 
   health:
-    BaseValue: 30
+    BaseValue: 10
   defense:
     BaseValue: 0
   attackDamage:

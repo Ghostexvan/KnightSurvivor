@@ -50,7 +50,7 @@ public class Damageable : MonoBehaviour
             player = GameObject.Find("Player");
             currentRB = GetComponent<Rigidbody>();
 
-            enemyMesh = GetComponent<MeshRenderer>();
+            enemyMesh = gameObject.transform.GetChild(0).GetComponent<MeshRenderer>();
         }
 
         isBullet = this.CompareTag("Bullet");

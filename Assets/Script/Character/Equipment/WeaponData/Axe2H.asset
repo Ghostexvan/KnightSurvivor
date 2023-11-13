@@ -23,7 +23,7 @@ MonoBehaviour:
   - level: 1
     statAffect: 7
     statType: 200
-    value: 30
+    value: 0.3
   - level: 1
     statAffect: 3
     statType: 200
