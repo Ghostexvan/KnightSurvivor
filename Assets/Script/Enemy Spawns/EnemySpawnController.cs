@@ -239,6 +239,7 @@ public class EnemySpawnController : MonoBehaviour
 
                             GameObject enemy = Instantiate(enemyGroup.enemyPrefab, GetSpawnPosition(enemyGroup.enemyPrefab), Quaternion.identity, enemyParent.transform);
                             enemy.tag = "Enemy";
+                            enemy.layer = LayerMask.NameToLayer("Enemy");
                             // Calls OnEnemyKilled when object (enemy) is destroyed / when onDestroy event (Destroyable.cs) is Invoked
                             enemy.GetComponent<Destroyable>().onDestroy.AddListener(OnEnemyKilled);
                             // Calls IncreaseKillCount when enemy is DEFEATED by the player (onHealthZero event (Health.cs), since onDestroy event is used in Despawning)
@@ -282,6 +283,7 @@ public class EnemySpawnController : MonoBehaviour
                         EnemyGroup enemyGroup_ = waves[currentWaveIdx].enemyGroup[Random.Range(0, waves[currentWaveIdx].enemyGroup.Count)];
                         GameObject enemy = Instantiate(enemyGroup_.enemyPrefab, GetSpawnPosition(enemyGroup_.enemyPrefab), Quaternion.identity, enemyParent.transform);
                         enemy.tag = "Enemy";
+                        enemy.layer = LayerMask.NameToLayer("Enemy");
                         // Calls OnEnemyKilled when object (enemy) is destroyed / when onDestroy event is Invoked
                         enemy.GetComponent<Destroyable>().onDestroy.AddListener(OnEnemyKilled);
                         // Calls IncreaseKillCount when enemy is DEFEATED by the player (onHealthZero event (Health.cs), since onDestroy event is used in Despawning)
@@ -320,6 +322,7 @@ public class EnemySpawnController : MonoBehaviour
                 EnemyGroup enemyGroup_ = waves[currentWaveIdx].enemyGroup[Random.Range(0, waves[currentWaveIdx].enemyGroup.Count)];
                 GameObject enemy = Instantiate(enemyGroup_.enemyPrefab, GetSpawnPosition(enemyGroup_.enemyPrefab), Quaternion.identity, enemyParent.transform);
                 enemy.tag = "Enemy";
+                enemy.layer = LayerMask.NameToLayer("Enemy");
                 // Calls OnEnemyKilled when object (enemy) is destroyed / when onDestroy event is Invoked
                 enemy.GetComponent<Destroyable>().onDestroy.AddListener(OnEnemyKilled);
                 // Calls IncreaseKillCount when enemy is DEFEATED by the player (onHealthZero event (Health.cs), since onDestroy event is used in Despawning)

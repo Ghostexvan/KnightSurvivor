@@ -177,12 +177,13 @@ GameObject:
   m_Component:
   - component: {fileID: 576688414589418357}
   - component: {fileID: 576688414589418362}
+  - component: {fileID: 576688414589418367}
   - component: {fileID: 576688414589418363}
+  - component: {fileID: 3508404937133892412}
   - component: {fileID: 576688414589418360}
+  - component: {fileID: 576688414589418364}
   - component: {fileID: 576688414589418361}
   - component: {fileID: 576688414589418366}
-  - component: {fileID: 576688414589418367}
-  - component: {fileID: 576688414589418364}
   - component: {fileID: 576688414589418365}
   - component: {fileID: 576688414589418242}
   - component: {fileID: 576688414589418243}
@@ -241,6 +242,20 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &576688414589418367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576688414589418247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  target: {fileID: 1438546959266459337, guid: eab3af78bfdbaa047b6438fd6ccf56fb, type: 3}
 --- !u!114 &576688414589418363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +298,19 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
+--- !u!114 &3508404937133892412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576688414589418247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858f3094d210a4643ba8232a858ab9d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 0}
 --- !u!114 &576688414589418360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,6 +333,21 @@ MonoBehaviour:
   bezierTangentLength: 0.3
   offset: 0.2
   factor: 0.1
+--- !u!114 &576688414589418364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576688414589418247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f586f285b3847808d79083bd19ef1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  unwrap: 1
+  splitAtEveryPortal: 0
 --- !u!54 &576688414589418361
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -334,35 +377,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &576688414589418367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576688414589418247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  target: {fileID: 1438546959266459337, guid: eab3af78bfdbaa047b6438fd6ccf56fb, type: 3}
---- !u!114 &576688414589418364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576688414589418247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77f586f285b3847808d79083bd19ef1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  unwrap: 1
-  splitAtEveryPortal: 0
 --- !u!114 &576688414589418365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +420,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onBulletHealthZero:
+    m_PersistentCalls:
+      m_Calls: []
   isActive: 1
+  healthMultiplier: 1
 --- !u!114 &576688414589418243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,6 +453,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  blinkDuration: 0.05
+  blinkIntensity: 10
+  isPlayer: 0
+  isBullet: 0
   characterData: {fileID: 0}
   damageText: {fileID: 6642447777672061837, guid: cc38ba14498668e4f8c9964012933b2f, type: 3}
   isCrit: 0
@@ -467,6 +489,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 0}
+  isCooldown: 0
+  cooldownTime: 0
 --- !u!114 &576688414589418246
 MonoBehaviour:
   m_ObjectHideFlags: 0
