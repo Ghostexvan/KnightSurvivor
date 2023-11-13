@@ -18,7 +18,8 @@ public class PythonScriptCall : MonoBehaviour
     [Tooltip("Specify the path to the included Python executable app. This will be a const since this app may or may not be put in. Do have the path lead right to the .exe file.")]
     // public const string pythonAppPath = "E:\\Pycharm\\NLN\\hand-gesture-recognition-mediapipe-main\\dist\\app_v2.exe";
     //public const string pythonAppPath = "E:/Pycharm/NLN/hand-gesture-recognition-mediapipe-main/dist/app_v2/app_v2.exe";
-    public string file = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"\app_v2\app_v2.exe");
+    // public string file = System.IO.Path.Combine(AppContext.BaseDirectory, @"\app_v2\app_v2.exe");
+    public string file;
     public string pythonAppPath;
 
     private static Process appProcess;
@@ -26,8 +27,9 @@ public class PythonScriptCall : MonoBehaviour
 
     void Awake()
     {
+        pythonAppPath = Application.dataPath + "/../" + "app_v2/app_v2.exe";
         //pythonPath = FindPythonExecutable();
-        pythonAppPath = Path.GetFullPath(file);
+        //pythonAppPath = Path.GetFullPath(file);
     }
 
     // Start is called before the first frame update

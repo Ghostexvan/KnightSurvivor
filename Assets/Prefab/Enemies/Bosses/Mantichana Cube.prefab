@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6739189935721c408066271ff5b93fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IntervalBetweenBursts: 1
+  IntervalBetweenBursts: 3
   ShotsInBurst: 5
   IntervalBetweenBurstShots: 0.2
   RotationBetweenBurstShots: 0
