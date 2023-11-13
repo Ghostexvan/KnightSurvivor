@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18631656, g: 0.5225312, b: 0.83267707, a: 1}
+  m_IndirectSpecularColor: {r: 0.18631649, g: 0.5225311, b: 0.8326769, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15128,7 +15128,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  isActive: 0
+  isActive: 1
   isCameraActive: 0
   player: {fileID: 0}
   selectPanel: {fileID: 0}
@@ -20010,7 +20010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4200344162421407665, guid: 5706f92428d8ef446a9a8a6138292032, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -359.99994
+      value: -359.9999
       objectReference: {fileID: 0}
     - target: {fileID: 4200344162421407665, guid: 5706f92428d8ef446a9a8a6138292032, type: 3}
       propertyPath: m_AnchoredPosition.y
