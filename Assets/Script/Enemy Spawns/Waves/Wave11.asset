@@ -15,7 +15,7 @@ MonoBehaviour:
   waveName: Wave 11 Horde
   enemyGroup:
   - enemyName: Test Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: 668047a09f5076845b85a235d80208cc, type: 3}
+    enemyPrefab: {fileID: 4352773402693731654, guid: 2a29e47006e576041b0c89669751df03, type: 3}
   minWaveQuota: 60
   spawnInterval: 3
   currentSpawnCount: 0

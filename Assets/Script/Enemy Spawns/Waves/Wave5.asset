@@ -15,7 +15,7 @@ MonoBehaviour:
   waveName: Wave 5
   enemyGroup:
   - enemyName: Strong Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: b2f366adaaf22b4408a402d626187bde, type: 3}
+    enemyPrefab: {fileID: 3097168442205749080, guid: b2f366adaaf22b4408a402d626187bde, type: 3}
   minWaveQuota: 10
   spawnInterval: 4
   currentSpawnCount: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   waveName: Wave 8
   enemyGroup:
   - enemyName: Blue-ish Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: 20f7592c753ac6042afcbe6d90f71173, type: 3}
+    enemyPrefab: {fileID: 3864156853566597799, guid: 20f7592c753ac6042afcbe6d90f71173, type: 3}
   minWaveQuota: 50
   spawnInterval: 4
   currentSpawnCount: 0

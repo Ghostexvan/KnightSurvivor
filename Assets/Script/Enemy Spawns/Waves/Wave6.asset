@@ -15,9 +15,9 @@ MonoBehaviour:
   waveName: Wave 6
   enemyGroup:
   - enemyName: Blue-ish Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: 20f7592c753ac6042afcbe6d90f71173, type: 3}
+    enemyPrefab: {fileID: 3864156853566597799, guid: 20f7592c753ac6042afcbe6d90f71173, type: 3}
   - enemyName: Strong Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: b2f366adaaf22b4408a402d626187bde, type: 3}
+    enemyPrefab: {fileID: 3097168442205749080, guid: b2f366adaaf22b4408a402d626187bde, type: 3}
   minWaveQuota: 20
   spawnInterval: 4
   currentSpawnCount: 0

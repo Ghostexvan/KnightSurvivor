@@ -15,7 +15,7 @@ MonoBehaviour:
   waveName: Wave 15 Lone Wolf
   enemyGroup:
   - enemyName: Alpha Wolf Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: b07723d87cecab54da079e435c5cac8c, type: 3}
+    enemyPrefab: {fileID: 1595680916066472447, guid: b07723d87cecab54da079e435c5cac8c, type: 3}
   minWaveQuota: 50
   spawnInterval: 2.5
   currentSpawnCount: 0

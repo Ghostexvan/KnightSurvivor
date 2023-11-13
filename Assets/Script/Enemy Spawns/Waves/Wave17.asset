@@ -15,7 +15,7 @@ MonoBehaviour:
   waveName: Wave 17 Tougher Nut To Crack
   enemyGroup:
   - enemyName: Stronger Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: 4462209aeb89a1c478584403144f659f, type: 3}
+    enemyPrefab: {fileID: 6219293446047879041, guid: 4462209aeb89a1c478584403144f659f, type: 3}
   minWaveQuota: 20
   spawnInterval: 1.5
   currentSpawnCount: 0

@@ -15,5 +15,5 @@ MonoBehaviour:
   bossWaveName: Mantichana Boss Wave
   bossGroup:
   - bossName: Mantichana Cube
-    bossPrefab: {fileID: 1922417409238373823, guid: 8a240a5ed3189ec41a24651b912eb548, type: 3}
+    bossPrefab: {fileID: 6343284532061310689, guid: 8a240a5ed3189ec41a24651b912eb548, type: 3}
   numberToSpawn: 1

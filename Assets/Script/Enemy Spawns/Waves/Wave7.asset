@@ -15,9 +15,9 @@ MonoBehaviour:
   waveName: Wave 7
   enemyGroup:
   - enemyName: Cube 1
-    enemyPrefab: {fileID: 1922417409238373823, guid: 668047a09f5076845b85a235d80208cc, type: 3}
+    enemyPrefab: {fileID: 4352773402693731654, guid: 2a29e47006e576041b0c89669751df03, type: 3}
   - enemyName: Cube 2
-    enemyPrefab: {fileID: 1922417409238373823, guid: 36be19b36a50dd843a1730a14e22c1bc, type: 3}
+    enemyPrefab: {fileID: 4256477552425606196, guid: 36be19b36a50dd843a1730a14e22c1bc, type: 3}
   - enemyName: Strong Cube
     enemyPrefab: {fileID: 1922417409238373823, guid: b2f366adaaf22b4408a402d626187bde, type: 3}
   minWaveQuota: 50

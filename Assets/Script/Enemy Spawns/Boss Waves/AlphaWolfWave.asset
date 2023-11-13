@@ -15,5 +15,5 @@ MonoBehaviour:
   bossWaveName: Alpha Wolf Wave
   bossGroup:
   - bossName: Alpha Wolf Cube
-    bossPrefab: {fileID: 1922417409238373823, guid: 9e6df77969bd0da47a01ecd81f6b3f34, type: 3}
+    bossPrefab: {fileID: 7811696838701608232, guid: 9e6df77969bd0da47a01ecd81f6b3f34, type: 3}
   numberToSpawn: 1

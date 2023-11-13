@@ -15,7 +15,7 @@ MonoBehaviour:
   waveName: Final-ish Wave (for now)
   enemyGroup:
   - enemyName: Reaper Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: ce90bc032aca50f4ca8ac5ae85bdb0ce, type: 3}
+    enemyPrefab: {fileID: 1156629890316199877, guid: ce90bc032aca50f4ca8ac5ae85bdb0ce, type: 3}
   minWaveQuota: 1
   spawnInterval: 60
   currentSpawnCount: 0

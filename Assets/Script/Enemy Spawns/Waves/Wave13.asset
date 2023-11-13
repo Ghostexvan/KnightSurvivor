@@ -15,9 +15,9 @@ MonoBehaviour:
   waveName: Wave 13 Fast Alpha Wolf
   enemyGroup:
   - enemyName: Alpha Wolf Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: b07723d87cecab54da079e435c5cac8c, type: 3}
+    enemyPrefab: {fileID: 1595680916066472447, guid: b07723d87cecab54da079e435c5cac8c, type: 3}
   - enemyName: Fast Cube
-    enemyPrefab: {fileID: 1922417409238373823, guid: 4e6950144a001ce4d8bbd3657b6fdc2c, type: 3}
+    enemyPrefab: {fileID: 7085391695468556318, guid: 4e6950144a001ce4d8bbd3657b6fdc2c, type: 3}
   minWaveQuota: 50
   spawnInterval: 2
   currentSpawnCount: 0
